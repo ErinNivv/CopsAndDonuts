@@ -164,7 +164,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &141271364
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -330,7 +330,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &234881294
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -764,7 +764,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &855997105
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -897,8 +897,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1774f2a7299ecec479d12f239be186cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerControls
-  moveSpeed: 5
-  rbP1: {fileID: 855997104}
 --- !u!114 &855997109
 MonoBehaviour:
   m_ObjectHideFlags: 0
