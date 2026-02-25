@@ -718,7 +718,7 @@ GameObject:
   - component: {fileID: 498474414}
   - component: {fileID: 498474413}
   - component: {fileID: 498474412}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Donut
   m_TagString: Donut
   m_Icon: {fileID: 0}
