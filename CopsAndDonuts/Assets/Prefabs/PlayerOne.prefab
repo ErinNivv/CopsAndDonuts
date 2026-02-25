@@ -242,6 +242,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: e2ae3633-d6be-4c23-96b4-e6bed7e5eef6
     m_ActionName: 'PlayerThree/Interact[/SwitchProControllerHID/buttonNorth]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7739537857720277465}
+        m_TargetAssemblyTypeName: PlayerControls, Assembly-CSharp
+        m_MethodName: OpenDoor
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 8696cc24-d649-44a3-b508-308b5e0c10d1
+    m_ActionName: 'PlayerOne/OpenDoor[/SwitchProControllerHID/buttonWest]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: PlayerOne

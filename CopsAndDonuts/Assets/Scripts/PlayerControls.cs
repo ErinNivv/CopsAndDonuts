@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -18,7 +19,7 @@ public class PlayerControls : MonoBehaviour
     [SerializeField] private Rigidbody2D rbP1;
 
     [Header("Door")]
-    [SerializeField] public GameObject door;
+    private GameObject door;
     private SpriteRenderer spriteRenderer;
     [SerializeField] private List<Sprite> Sprites;
 
@@ -106,7 +107,22 @@ public class PlayerControls : MonoBehaviour
     //    }
     //}
 
-    
+    public void OpenDoor(InputAction.CallbackContext context)
+    {
+        Vector2 direction = transform.right;
+        int layerMask = LayerMask.GetMask("Door");
 
+        RaycastHit2D hit = Physics2D.Raycast(rayP1.position, direction, grabRange, layerMask);
+        Debug.DrawRay(rayP1.position, direction * grabRange, Color.yellow, 0.5f);
 
+        if (hit.collider != null)
+        {
+            door = hit.collider.gameObject;
+            door.gameObject.SetActive(false);
+
+            print("Working Door" + hit.collider.name);
+            //PickUpObject(hit.collider.gameObject);
+
+        }
+    }
 }
