@@ -366,8 +366,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 450563a69ad5c6440b910804ce9aa21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerThreeControls
-  rayP3: {fileID: 0}
-  rbP3: {fileID: 141271363}
 --- !u!1 &234881292
 GameObject:
   m_ObjectHideFlags: 0
@@ -615,8 +613,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca850ca3063dfc4459c1bb98f5b55ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerTwoControls
-  rayP1: {fileID: 432037796}
-  rbP2: {fileID: 234881293}
 --- !u!1 &252836347
 GameObject:
   m_ObjectHideFlags: 0
@@ -1192,8 +1188,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2be7f328414e1544acc581da7cd5304, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PLayerOneControls
-  rayP1: {fileID: 0}
-  rbP1: {fileID: 0}
 --- !u!1 &937713563
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerOneControls : MonoBehaviour
+public class PayerOneControls : MonoBehaviour
 {
     [Header("PLAYER3")]
     private float moveSpeed = 5f;
