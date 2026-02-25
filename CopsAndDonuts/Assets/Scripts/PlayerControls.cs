@@ -36,6 +36,7 @@ public class PlayerControls : MonoBehaviour
         if (playerInput.playerIndex == 0)
         {
             //Assign Sprites
+
         }
         else if (playerInput.playerIndex == 1)//if its Player 2
         {
@@ -61,40 +62,51 @@ public class PlayerControls : MonoBehaviour
 
     public void Interact(InputAction.CallbackContext context)
     {
-        //interactP1 = context.ReadValue<float>();
-        //interactP2 = context.ReadValue<float>();
-        //interactP3 = context.ReadValue<float>();
+        
 
         if (context.performed)
         {
-            
-            RaycastHit2D hit = Physics2D.Raycast(rayP1.position, rayP1.up, 3);
+
+            Vector2 direction = transform.right;
+            int layerMask = LayerMask.GetMask("Donut");
+
+            RaycastHit2D hit = Physics2D.Raycast(rayP1.position, direction, grabRange, layerMask);
+            Debug.DrawRay(rayP1.position, direction * grabRange, Color.red, 0.5f);
+
                 if (hit.collider != null)
                 {
-                if (hit.collider.CompareTag("Donut"))
-                {
-                    print("Working");
+                print("Working Donut"+ hit.collider.name);
+                //PickUpObject(hit.collider.gameObject);
+                
                 }
-                }
-            Debug.DrawRay(rayP1.position, rayP1.up, Color.red, 3f);
+
+           
         }
         
     }
 
-    //private void OnTriggerEnter2D(Collider2D other)
+    //void PickUpObject(GameObject obj)
     //{
-    //    if (interactP1 > 0)
-    //    {
-    //        if (other.CompareTag("Donut"))
-    //        {
-    //            print("pick up");
-    //        }
-    //    }
+    //    heldObject = obj;
 
+    //    // Make it a child of the hold point
+    //    obj.transform.SetParent(holdPoint);
+
+    //    // Reset position to match hold point
+    //    obj.transform.localPosition = Vector3.zero;
+
+    //    // Disable physics so it doesn't interfere while held
+    //    if (obj.TryGetComponent<Rigidbody2D>(out Rigidbody2D rb))
+    //    {
+    //        rb.simulated = false;
+    //    }
+    //    if (obj.TryGetComponent<Collider2D>(out Collider2D col))
+    //    {
+    //        col.enabled = false;
+    //    }
     //}
 
-    public void Door()
-    {
-        
-    }
+    
+
+
 }

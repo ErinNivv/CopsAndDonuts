@@ -261,9 +261,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerControls
   rayP1: {fileID: 4821864943052070302}
   rbP1: {fileID: 9196905261255741158}
-  rbP2: {fileID: 0}
-  rbP3: {fileID: 0}
   door: {fileID: 0}
+  Sprites: []
 --- !u!1 &8055200063776139276
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,7 +289,7 @@ Transform:
   m_GameObject: {fileID: 8055200063776139276}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.52, y: -0.02, z: 0}
+  m_LocalPosition: {x: 0.014, y: -0.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
