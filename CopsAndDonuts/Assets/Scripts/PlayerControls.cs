@@ -144,4 +144,23 @@ public class PlayerControls : MonoBehaviour
 
     }
 
+    public void OpenDoor(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            Vector2 direction = transform.right;
+            int layerMask = LayerMask.GetMask("Door");
+
+            RaycastHit2D hit = Physics2D.Raycast(rayP1.position, direction, grabRange, layerMask);
+            Debug.DrawRay(rayP1.position, direction * grabRange, Color.red, 0.5f);
+
+            if (hit.collider != null)
+            {
+                door = hit.collider.gameObject;
+                door.gameObject.SetActive(false);
+
+                print("Working Door: " + hit.collider.name);
+            }
+        }
+    }
 }
