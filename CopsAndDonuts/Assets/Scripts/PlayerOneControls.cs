@@ -1,10 +1,9 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerControls : MonoBehaviour
+public class PlayerOneControls : MonoBehaviour
 {
-    [Header("PLAYER1")]
+    [Header("PLAYER3")]
     private float moveSpeed = 5f;
     private float grabRange = 2.5f;
 
@@ -44,7 +43,7 @@ public class PlayerControls : MonoBehaviour
         //    }
         //}
 
-        
+
     }
 
     public void Move(InputAction.CallbackContext context)
@@ -66,6 +65,6 @@ public class PlayerControls : MonoBehaviour
     //            print("pick up");
     //        }
     //    }
-            
+
     //}
 }

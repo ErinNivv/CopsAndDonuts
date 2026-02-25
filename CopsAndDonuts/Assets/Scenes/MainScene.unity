@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 141271364}
   - component: {fileID: 141271363}
   - component: {fileID: 141271368}
-  - component: {fileID: 141271367}
+  - component: {fileID: 141271369}
   m_Layer: 0
   m_Name: PlayerThree
   m_TagString: Untagged
@@ -284,25 +284,10 @@ Transform:
   m_LocalPosition: {x: 1.52, y: 1.3497999, z: 0}
   m_LocalScale: {x: 0.6971384, y: 0.6971384, z: 0.6971384}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1583231847}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &141271367
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 141271362}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1774f2a7299ecec479d12f239be186cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerControls
-  rayP1: {fileID: 0}
-  rbP1: {fileID: 0}
-  rbP2: {fileID: 0}
-  rbP3: {fileID: 141271363}
 --- !u!114 &141271368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -346,8 +331,8 @@ MonoBehaviour:
     m_ActionName: 'PlayerTwo/Interact[/SwitchProControllerHID/buttonNorth]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 141271367}
-        m_TargetAssemblyTypeName: PlayerControls, Assembly-CSharp
+      - m_Target: {fileID: 141271369}
+        m_TargetAssemblyTypeName: PlayerThreeControls, Assembly-CSharp
         m_MethodName: Move
         m_Mode: 0
         m_Arguments:
@@ -369,6 +354,20 @@ MonoBehaviour:
   m_DefaultActionMap: PlayerThree
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &141271369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141271362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 450563a69ad5c6440b910804ce9aa21c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerThreeControls
+  rayP3: {fileID: 0}
+  rbP3: {fileID: 141271363}
 --- !u!1 &234881292
 GameObject:
   m_ObjectHideFlags: 0
@@ -382,7 +381,7 @@ GameObject:
   - component: {fileID: 234881294}
   - component: {fileID: 234881293}
   - component: {fileID: 234881298}
-  - component: {fileID: 234881297}
+  - component: {fileID: 234881299}
   m_Layer: 0
   m_Name: PlayerTwo
   m_TagString: Untagged
@@ -534,25 +533,10 @@ Transform:
   m_LocalPosition: {x: -1.54, y: 1.34, z: 0}
   m_LocalScale: {x: 0.6971384, y: 0.6971384, z: 0.6971384}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 432037796}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &234881297
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 234881292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1774f2a7299ecec479d12f239be186cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerControls
-  rayP1: {fileID: 0}
-  rbP1: {fileID: 0}
-  rbP2: {fileID: 234881293}
-  rbP3: {fileID: 0}
 --- !u!114 &234881298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -588,8 +572,8 @@ MonoBehaviour:
     m_ActionName: 'PlayerOne/Interact[/SwitchProControllerHID/buttonNorth]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 234881297}
-        m_TargetAssemblyTypeName: PlayerControls, Assembly-CSharp
+      - m_Target: {fileID: 234881299}
+        m_TargetAssemblyTypeName: PlayerTwoControls, Assembly-CSharp
         m_MethodName: Move
         m_Mode: 0
         m_Arguments:
@@ -619,6 +603,20 @@ MonoBehaviour:
   m_DefaultActionMap: PlayerTwo
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &234881299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 234881292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca850ca3063dfc4459c1bb98f5b55ef7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerTwoControls
+  rayP1: {fileID: 432037796}
+  rbP2: {fileID: 234881293}
 --- !u!1 &252836347
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,6 +647,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &432037795
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 432037796}
+  m_Layer: 0
+  m_Name: Raypoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &432037796
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 432037795}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.55, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 234881296}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &498474411
 GameObject:
@@ -929,7 +958,7 @@ GameObject:
   - component: {fileID: 855997105}
   - component: {fileID: 855997104}
   - component: {fileID: 855997109}
-  - component: {fileID: 855997108}
+  - component: {fileID: 855997110}
   m_Layer: 0
   m_Name: PlayerOne
   m_TagString: Untagged
@@ -1085,22 +1114,6 @@ Transform:
   - {fileID: 937713564}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &855997108
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 855997103}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1774f2a7299ecec479d12f239be186cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerControls
-  rayP1: {fileID: 0}
-  rbP1: {fileID: 855997104}
-  rbP2: {fileID: 0}
-  rbP3: {fileID: 0}
 --- !u!114 &855997109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1128,8 +1141,8 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 855997108}
-        m_TargetAssemblyTypeName: PlayerControls, Assembly-CSharp
+      - m_Target: {fileID: 855997110}
+        m_TargetAssemblyTypeName: PLayerOneControls, Assembly-CSharp
         m_MethodName: Move
         m_Mode: 0
         m_Arguments:
@@ -1167,6 +1180,20 @@ MonoBehaviour:
   m_DefaultActionMap: PlayerOne
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &855997110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 855997103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2be7f328414e1544acc581da7cd5304, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PLayerOneControls
+  rayP1: {fileID: 0}
+  rbP1: {fileID: 0}
 --- !u!1 &937713563
 GameObject:
   m_ObjectHideFlags: 0
@@ -1372,6 +1399,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1583231846
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1583231847}
+  m_Layer: 0
+  m_Name: Raypoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1583231847
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1583231846}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.55, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 141271366}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1592777188
 GameObject:
