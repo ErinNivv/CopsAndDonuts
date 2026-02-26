@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -7,7 +8,7 @@ public class PlayerControls : MonoBehaviour
 {
     [Header("PLAYERS")]
     private float moveSpeed = 5f;
-    private float grabRange = 2.5f;
+    private float grabRange = 1f;
 
     private Vector2 moveP1;
 
@@ -158,9 +159,18 @@ public class PlayerControls : MonoBehaviour
             {
                 door = hit.collider.gameObject;
                 door.gameObject.SetActive(false);
+                StartCoroutine(Door());
 
                 print("Working Door: " + hit.collider.name);
             }
         }
+    }
+
+    IEnumerator Door()
+    {
+        yield return new WaitForSeconds(7f);
+        door.gameObject.SetActive(true);
+
+        yield return null;
     }
 }
