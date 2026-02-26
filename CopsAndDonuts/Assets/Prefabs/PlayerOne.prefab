@@ -281,6 +281,8 @@ MonoBehaviour:
   rbP1: {fileID: 9196905261255741158}
   door: {fileID: 0}
   Sprites: []
+  platePosition: {fileID: 0}
+  plateRange: 1
 --- !u!1 &1308890985346607320
 GameObject:
   m_ObjectHideFlags: 0

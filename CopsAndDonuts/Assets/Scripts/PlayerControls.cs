@@ -27,10 +27,15 @@ public class PlayerControls : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     [SerializeField] private List<Sprite> Sprites;
 
+    [Header("Plate")]
+    [SerializeField] private float plateDetect = 1.5f;
+    [SerializeField] private LayerMask plate;
+
+    private int donutsOnPlate = 0;
+    private int donutsWin = 3;
+    private bool hasWon = false;
     //input Manager
     private PlayerInput playerInput;
-
-
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -139,6 +144,7 @@ public class PlayerControls : MonoBehaviour
             col.enabled = true;
         }
 
+        
         heldObject.transform.SetParent(null);
         print("Donut is Dropped");
         heldObject = null;
@@ -173,4 +179,6 @@ public class PlayerControls : MonoBehaviour
 
         yield return null;
     }
+
+
 }
