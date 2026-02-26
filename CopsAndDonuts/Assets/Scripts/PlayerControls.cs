@@ -23,11 +23,12 @@ public class PlayerControls : MonoBehaviour
     [SerializeField] private Rigidbody2D rbP1;
 
     [Header("Door")]
-    [SerializeField] public GameObject door;
+    [SerializeField] private GameObject doorCurrent;
     public GameObject openDoor;
     private SpriteRenderer spriteRenderer;
     [SerializeField] private List<Sprite> Sprites;
-    public bool doorIsOpen = true;
+    public bool doorIsOpen = false;
+    private float doorOpenTime = 5f;
     
 
 
@@ -161,26 +162,36 @@ public class PlayerControls : MonoBehaviour
 
             if (hit.collider != null)
             {
-                //door = hit.collider.gameObject;
-                //gameObject.GetComponent<Transform>();
-                //gameObject.transform.position = openDoor.transform.position;
-                gameObject.SetActive(false);
-                doorIsOpen = true;
-                StartCoroutine(Door());
+                GameObject door = hit.collider.gameObject;
+                print("Detected Door: " + hit.collider.name);
 
-                print("Working Door: " + hit.collider.name);
+                OpenedDoor(door);
+            }
+            else
+            {
+                Debug.Log("no door in range");
             }
         }
     }
 
-    IEnumerator Door()
+    private void OpenedDoor(GameObject door)
     {
-        yield return new WaitForSeconds(7f);
-        if (doorIsOpen)
+        if(doorIsOpen && doorCurrent == door)
+            return;
+        doorCurrent = door;
+        door.SetActive(false);
+        doorIsOpen = true;
+        StartCoroutine(Door());
+    }
+
+    private IEnumerator Door()
+    {
+        yield return new WaitForSeconds(doorOpenTime);
+        if (doorCurrent != null && doorIsOpen)
         {
-            gameObject.SetActive(true);
-            yield return null;
+            doorCurrent.SetActive(true);
             doorIsOpen=false;
+            Debug.Log("door closed");
         }
     }
 }
