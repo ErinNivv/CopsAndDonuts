@@ -32,10 +32,15 @@ public class PlayerControls : MonoBehaviour
     
 
 
+    [Header("Plate")]
+    [SerializeField] private float plateDetect = 1.5f;
+    [SerializeField] private LayerMask plateLayer;
+
+    private int donutsOnPlate = 0;
+    private int donutsWin = 3;
+    private bool hasWon = false;
     //input Manager
     private PlayerInput playerInput;
-
-
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -83,7 +88,7 @@ public class PlayerControls : MonoBehaviour
             }
             else
             {
-                // PICK UP a donut
+                // this is to pick up the donut 
                 Vector2 direction = transform.right;
                 int layerMask = LayerMask.GetMask("Donut");
 
@@ -128,10 +133,9 @@ public class PlayerControls : MonoBehaviour
 
     void DropObject()
     {
-
         if (heldObject == null) return;
 
-        // Turm the physics back on 
+        
         Rigidbody2D rb = heldObject.GetComponent<Rigidbody2D>();
         if (rb != null)
         {
@@ -144,10 +148,26 @@ public class PlayerControls : MonoBehaviour
             col.enabled = true;
         }
 
+
+        // sooo check the position where we dropped the donut to see if it touched a plate
+        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, plateDetect, plateLayer);
+
+        foreach (var hit in hitColliders)
+        {
+            Debug.Log("Found plate: " + hit.name);
+            Plate plate = hit.GetComponent<Plate>();
+            if (plate != null)
+            {
+                plate.PlaceDonut(heldObject);// Tell the plate a donut was dropped
+                heldObject = null;
+                return;
+            }
+        }
+
+        
         heldObject.transform.SetParent(null);
         print("Donut is Dropped");
         heldObject = null;
-
     }
 
     public void OpenDoor(InputAction.CallbackContext context)
@@ -194,4 +214,6 @@ public class PlayerControls : MonoBehaviour
             Debug.Log("door closed");
         }
     }
+
+
 }

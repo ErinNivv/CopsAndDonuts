@@ -282,6 +282,10 @@ MonoBehaviour:
   door: {fileID: 0}
   openDoor: {fileID: 8382117582331657852, guid: 2ed895c6ccdd4a646a8544e5ac9715ad, type: 3}
   Sprites: []
+  plateDetect: 1.5
+  plateLayer:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &1308890985346607320
 GameObject:
   m_ObjectHideFlags: 0
