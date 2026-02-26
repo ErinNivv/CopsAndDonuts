@@ -281,7 +281,7 @@ MonoBehaviour:
   rbP1: {fileID: 9196905261255741158}
   door: {fileID: 0}
   Sprites: []
-  plateDetect: 2
+  plateDetect: 1.5
   plateLayer:
     serializedVersion: 2
     m_Bits: 256
