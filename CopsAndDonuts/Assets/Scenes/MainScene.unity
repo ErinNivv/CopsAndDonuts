@@ -304,8 +304,10 @@ MonoBehaviour:
   rbP1: {fileID: 0}
   door: {fileID: 0}
   Sprites: []
-  platePosition: {fileID: 0}
-  plateRange: 0
+  plateDetect: 1.5
+  plate:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &141271368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -561,8 +563,10 @@ MonoBehaviour:
   rbP1: {fileID: 0}
   door: {fileID: 0}
   Sprites: []
-  platePosition: {fileID: 0}
-  plateRange: 0
+  plateDetect: 1.5
+  plate:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &234881298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -896,7 +900,7 @@ GameObject:
   - component: {fileID: 622705424}
   m_Layer: 0
   m_Name: Plate1
-  m_TagString: Untagged
+  m_TagString: Plate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1164,7 +1168,7 @@ Transform:
   m_GameObject: {fileID: 1428194090}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.030000001, y: -3.89, z: 0}
+  m_LocalPosition: {x: -0.302, y: -3.925, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
