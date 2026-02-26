@@ -280,6 +280,7 @@ MonoBehaviour:
   holdPoint: {fileID: 1661022780376845044}
   rbP1: {fileID: 9196905261255741158}
   door: {fileID: 0}
+  openDoor: {fileID: 8382117582331657852, guid: 2ed895c6ccdd4a646a8544e5ac9715ad, type: 3}
   Sprites: []
 --- !u!1 &1308890985346607320
 GameObject:

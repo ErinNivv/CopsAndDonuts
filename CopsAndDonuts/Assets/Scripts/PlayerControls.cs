@@ -24,8 +24,12 @@ public class PlayerControls : MonoBehaviour
 
     [Header("Door")]
     [SerializeField] public GameObject door;
+    public GameObject openDoor;
     private SpriteRenderer spriteRenderer;
     [SerializeField] private List<Sprite> Sprites;
+    public bool doorIsOpen = true;
+    
+
 
     //input Manager
     private PlayerInput playerInput;
@@ -157,8 +161,11 @@ public class PlayerControls : MonoBehaviour
 
             if (hit.collider != null)
             {
-                door = hit.collider.gameObject;
-                door.gameObject.SetActive(false);
+                //door = hit.collider.gameObject;
+                //gameObject.GetComponent<Transform>();
+                //gameObject.transform.position = openDoor.transform.position;
+                gameObject.SetActive(false);
+                doorIsOpen = true;
                 StartCoroutine(Door());
 
                 print("Working Door: " + hit.collider.name);
@@ -169,8 +176,11 @@ public class PlayerControls : MonoBehaviour
     IEnumerator Door()
     {
         yield return new WaitForSeconds(7f);
-        door.gameObject.SetActive(true);
-
-        yield return null;
+        if (doorIsOpen)
+        {
+            gameObject.SetActive(true);
+            yield return null;
+            doorIsOpen=false;
+        }
     }
 }
