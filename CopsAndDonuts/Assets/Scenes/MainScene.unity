@@ -305,7 +305,7 @@ MonoBehaviour:
   door: {fileID: 0}
   Sprites: []
   plateDetect: 1.5
-  plate:
+  plateLayer:
     serializedVersion: 2
     m_Bits: 0
 --- !u!114 &141271368
@@ -564,7 +564,7 @@ MonoBehaviour:
   door: {fileID: 0}
   Sprites: []
   plateDetect: 1.5
-  plate:
+  plateLayer:
     serializedVersion: 2
     m_Bits: 0
 --- !u!114 &234881298
@@ -640,6 +640,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: e2ae3633-d6be-4c23-96b4-e6bed7e5eef6
     m_ActionName: 'PlayerThree/Interact[/SwitchProControllerHID/buttonNorth]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8696cc24-d649-44a3-b508-308b5e0c10d1
+    m_ActionName: PlayerOne/OpenDoor
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: PlayerTwo
@@ -898,7 +902,7 @@ GameObject:
   - component: {fileID: 622705426}
   - component: {fileID: 622705425}
   - component: {fileID: 622705424}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plate1
   m_TagString: Plate
   m_Icon: {fileID: 0}
@@ -1139,37 +1143,6 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.4832, y: 3.1413, z: 0}
   m_LocalScale: {x: 0.95784825, y: 0.95784825, z: 0.95784825}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1428194090
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1428194091}
-  m_Layer: 0
-  m_Name: PlateTransform
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1428194091
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1428194090}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.302, y: -3.925, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1618,4 +1591,3 @@ SceneRoots:
   - {fileID: 498474414}
   - {fileID: 252836349}
   - {fileID: 1650894066}
-  - {fileID: 1428194091}
