@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7739537857720277465}
   m_Layer: 0
   m_Name: PlayerOne
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -168,7 +168,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &2352599367992285800
 MonoBehaviour:
@@ -279,9 +279,10 @@ MonoBehaviour:
   rayP1: {fileID: 4821864943052070302}
   holdPoint: {fileID: 1661022780376845044}
   rbP1: {fileID: 9196905261255741158}
-  door: {fileID: 0}
+  doorCurrent: {fileID: 0}
   openDoor: {fileID: 8382117582331657852, guid: 2ed895c6ccdd4a646a8544e5ac9715ad, type: 3}
   Sprites: []
+  doorIsOpen: 0
   plateDetect: 1.5
   plateLayer:
     serializedVersion: 2

@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class PlayerControls : MonoBehaviour
 {
     [Header("PLAYERS")]
@@ -15,6 +16,13 @@ public class PlayerControls : MonoBehaviour
     private float interactP1;
 
     [SerializeField] Transform rayP1;
+
+    [Header("BOUNCE")]
+    private float bounceForce = 10f;
+    private float lastBounceTime;
+    private float bounceCoolDown = 0.5f;
+    private Vector2 bounceVelocity;
+
 
     [Header("PickUp")]
     [SerializeField] Transform holdPoint;
@@ -65,7 +73,16 @@ public class PlayerControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rbP1.linearVelocity = new Vector2(moveP1.x * moveSpeed, moveP1.y * moveSpeed);
+
+        if(Time.time < lastBounceTime + bounceCoolDown)
+        {
+            rbP1.linearVelocity = bounceVelocity;
+        }
+        else
+        {
+            rbP1.linearVelocity = new Vector2(moveP1.x * moveSpeed, moveP1.y * moveSpeed);
+        }
+       
 
 
     }
@@ -215,5 +232,14 @@ public class PlayerControls : MonoBehaviour
         }
     }
 
-
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("PLAYER"))
+        {
+            Debug.Log("Players collided");
+            Vector2 direction = (transform.position - collision.transform.position).normalized;
+            bounceVelocity += direction * bounceForce;
+            lastBounceTime = Time.time;
+        }
+    }
 }
