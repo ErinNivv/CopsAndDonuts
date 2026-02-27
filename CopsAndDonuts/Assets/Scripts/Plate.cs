@@ -4,31 +4,33 @@ public class Plate : MonoBehaviour
 {
     public int donutCount = 0;
     public int donutsToWin = 3;
-    public Transform donutPlate;
 
-    [Header("UI")]
+    [Header("Settings")]
+    public Transform[] donutPoints;
     public GameObject winPanel;
 
-    // This function is called by the Player
     public void PlaceDonut(GameObject donut)
     {
-        if (donutCount >= donutsToWin) return;
+        if (donutCount >= donutsToWin || donutCount >= donutPoints.Length) return;
 
-        // Snap donut to plate point
-        donut.transform.position = donutPlate.position;
-        donut.transform.rotation = donutPlate.rotation;
-        donut.transform.SetParent(donutPlate);
+        Transform targetPoint = donutPoints[donutCount];
 
-        // Disable physics
+        donut.transform.position = targetPoint.position;
+        donut.transform.rotation = targetPoint.rotation;
+        donut.transform.SetParent(targetPoint);
+
         Rigidbody2D rb = donut.GetComponent<Rigidbody2D>();
         if (rb != null) rb.simulated = false;
 
         donutCount++;
-        Debug.Log("Donut placed! Total: " + donutCount);
+    }
 
-        if (donutCount >= donutsToWin)
+    public void RemoveDonut()
+    {
+        if (donutCount > 0)
         {
-            WinGame();
+            donutCount--;
+            Debug.Log("Donut removed! Total: " + donutCount);
         }
     }
 
@@ -41,4 +43,3 @@ public class Plate : MonoBehaviour
         }
     }
 }
-
