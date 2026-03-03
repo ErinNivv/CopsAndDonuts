@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Donut
   - Plate
+  - PLAYER
   layers:
   - Default
   - TransparentFX

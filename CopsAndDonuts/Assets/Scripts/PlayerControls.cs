@@ -22,6 +22,7 @@ public class PlayerControls : MonoBehaviour
     private float lastBounceTime;
     private float bounceCoolDown = 0.5f;
     private Vector2 bounceVelocity;
+    public static PlayerControls instance;
 
 
     [Header("PickUp")]
@@ -74,17 +75,16 @@ public class PlayerControls : MonoBehaviour
     void Update()
     {
 
-        if(Time.time < lastBounceTime + bounceCoolDown)
-        {
-            rbP1.linearVelocity = bounceVelocity;
-        }
-        else
-        {
-            rbP1.linearVelocity = new Vector2(moveP1.x * moveSpeed, moveP1.y * moveSpeed);
-        }
+       
+        rbP1.linearVelocity = new Vector2(moveP1.x * moveSpeed, moveP1.y * moveSpeed);
        
 
 
+    }
+
+    public void Awake()
+    {
+        instance = this; 
     }
 
     public void Move(InputAction.CallbackContext context)
@@ -232,14 +232,26 @@ public class PlayerControls : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    public void OnCollisionEnter2D(Collision2D other)
     {
-        if (collision.gameObject.CompareTag("PLAYER"))
+        if (other.gameObject.CompareTag("PLAYER"))
         {
-            Debug.Log("Players collided");
-            Vector2 direction = (transform.position - collision.transform.position).normalized;
-            bounceVelocity += direction * bounceForce;
-            lastBounceTime = Time.time;
+            StartCoroutine(PlayerControls.instance.Bounce(lastBounceTime, bounceCoolDown, this.transform));
         }
     }
+
+    public IEnumerator Bounce(float bounceTime, float bounceForce, Transform obj)
+    {
+        float timer = 0;
+        while(bounceTime > timer)
+        {
+            timer += Time.deltaTime;
+            Vector2 direction = (obj.transform.position - this.transform.position).normalized;
+            rbP1.AddForce(-direction * bounceForce);
+        }
+
+        yield return 0;
+    }
+    
+    
 }
