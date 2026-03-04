@@ -261,7 +261,7 @@ MonoBehaviour:
     m_ActionId: 8696cc24-d649-44a3-b508-308b5e0c10d1
     m_ActionName: 'PlayerOne/OpenDoor[/SwitchProControllerHID/buttonWest]'
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Controller'
+  m_DefaultControlScheme: 
   m_DefaultActionMap: PlayerOne
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -277,16 +277,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1774f2a7299ecec479d12f239be186cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerControls
-  rayP1: {fileID: 4821864943052070302}
-  rayPoint: {fileID: 0}
-  holdPoint: {fileID: 1661022780376845044}
   rbP1: {fileID: 9196905261255741158}
+  rayP1: {fileID: 4821864943052070302}
+  holdPoint: {fileID: 1661022780376845044}
   door: {fileID: 0}
   Sprites: []
-  plateDetect: 3
-  plateLayer:
-    serializedVersion: 2
-    m_Bits: 256
 --- !u!114 &-6551262190574035151
 MonoBehaviour:
   m_ObjectHideFlags: 0

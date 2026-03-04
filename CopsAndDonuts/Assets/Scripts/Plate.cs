@@ -2,58 +2,66 @@ using UnityEngine;
 
 public class Plate : MonoBehaviour
 {
-    [Header("Settings")]
-    public Transform[] donutPoints;
+    public Transform[] donutSpots;   // Assign empty child transforms as spots
+    public int winAmount = 3;
     public GameObject winPanel;
 
-    public void PlaceDonut(GameObject donut)
+    private GameObject[] donutsOnPlate;
+
+    private void Awake()
     {
-        for (int i = 0; i < donutPoints.Length; i++)
+        donutsOnPlate = new GameObject[donutSpots.Length];
+    }
+
+    // Try to place a donut on this plate
+    public bool PlaceDonut(GameObject donut)
+    {
+        for (int i = 0; i < donutsOnPlate.Length; i++)
         {
-            if (donutPoints[i].childCount == 0)
+            if (donutsOnPlate[i] == null)
             {
-                donut.transform.position = donutPoints[i].position;
-                donut.transform.rotation = donutPoints[i].rotation;
-                donut.transform.SetParent(donutPoints[i]);
+                donutsOnPlate[i] = donut;
+                donut.transform.position = donutSpots[i].position;
+                donut.transform.parent = donutSpots[i];
+                donut.GetComponent<Rigidbody2D>().simulated = false;
 
-                // Disable physics ONLY - DO NOT disable collider!
-                Rigidbody2D rb = donut.GetComponent<Rigidbody2D>();
-                if (rb != null) rb.simulated = false;
+                if (CountDonuts() >= winAmount)
+                    Win();
 
-                Debug.Log("Donut placed on plate! Collider enabled: " +
-                    (donut.GetComponent<Collider2D>() != null ?
-                    donut.GetComponent<Collider2D>().enabled : "no collider"));
+                return true; // Successfully placed
+            }
+        }
+        return false; // Plate full
+    }
 
-                CheckWin();
-                return;
+    // Remove donut from plate so player can pick it up
+    public void RemoveDonut(GameObject donut)
+    {
+        for (int i = 0; i < donutsOnPlate.Length; i++)
+        {
+            if (donutsOnPlate[i] == donut)
+            {
+                donutsOnPlate[i] = null;
+                donut.transform.parent = null;
+                donut.GetComponent<Rigidbody2D>().simulated = true;
+                break;
             }
         }
     }
 
-    public void RemoveDonut(GameObject donut)
+    public int CountDonuts()
     {
-        // Re-enable physics so it can be picked up
-        Rigidbody2D rb = donut.GetComponent<Rigidbody2D>();
-        if (rb != null) rb.simulated = true;
-
-        // Remove from plate point
-        donut.transform.SetParent(null);
-
-        Debug.Log("Donut removed from plate");
+        int count = 0;
+        foreach (var d in donutsOnPlate)
+            if (d != null) count++;
+        return count;
     }
 
-    void CheckWin()
+    void Win()
     {
-        int donutCount = 0;
-        foreach (Transform child in transform)
-        {
-            if (child.CompareTag("Donut")) donutCount++;
-        }
+        if (winPanel != null)
+            winPanel.SetActive(true);
 
-        if (donutCount >= 3)
-        {
-            Debug.Log("YOU WIN!");
-            if (winPanel != null) winPanel.SetActive(true);
-        }
+        Debug.Log(name + " wins!");
     }
 }

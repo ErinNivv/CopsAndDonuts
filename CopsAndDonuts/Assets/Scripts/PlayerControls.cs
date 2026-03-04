@@ -8,38 +8,36 @@ public class PlayerControls : MonoBehaviour
     [Header("PLAYERS")]
     private float moveSpeed = 5f;
     private float grabRange = 1.5f;
-
     private Vector2 moveP1;
+    [SerializeField] private Rigidbody2D rbP1;
 
     private float interactP1;
 
     [SerializeField] Transform rayP1;
 
     [Header("PickUp")]
-    [SerializeField] Transform rayPoint;
     [SerializeField] Transform holdPoint;
-    private GameObject heldObject;
+    private GameObject heldDonut;
 
-    [SerializeField] private Rigidbody2D rbP1;
 
     [Header("Door")]
     [SerializeField] public GameObject door;
     private SpriteRenderer spriteRenderer;
     [SerializeField] private List<Sprite> Sprites;
 
-    [Header("Plate")]
-    [SerializeField] private float plateDetect = 1.5f;
-    [SerializeField] private LayerMask plateLayer;
+    //[Header("Plate")]
+    //[SerializeField] private float plateDetect = 1.5f;
+    //[SerializeField] private LayerMask plateLayer;
 
-    private int donutsOnPlate = 0;
-    private int donutsWin = 3;
-    private bool hasWon = false;
-    //input Manager
+    //private int donutsOnPlate = 0;
+    //private int donutsWin = 3;
+    //private bool hasWon = false;
+    ////input Manager
     private PlayerInput playerInput;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
         rbP1 = GetComponent<Rigidbody2D>();
         playerInput = GetComponent<PlayerInput>();
@@ -57,7 +55,7 @@ public class PlayerControls : MonoBehaviour
 
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         
@@ -82,92 +80,81 @@ public class PlayerControls : MonoBehaviour
 
     public void Interact(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        Debug.Log("INTERACT BUTTON PRESSED!");
+
+        if (!context.performed) return;
         {
-            if (heldObject != null)
+            Debug.Log("Context is performed!");
+
+            if (heldDonut == null)
             {
-                print("Dropping donut!");
-                DropObject();
+                Debug.Log("Dropping donut!");
+                TryGrabDonut();
             }
             else
             {
-                PickupObject();
+                Debug.Log("Trying to pickup...");
+                DropDonut();
             }
         }
     }
 
-    void PickupObject()
+    void TryGrabDonut()
     {
-        Debug.Log("=== PICKUP ATTEMPT ===");
-        Debug.Log("Player Position: " + transform.position);
-        Debug.Log("Grab Range: " + grabRange);
+        // Detect all donuts in range
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, 1.5f, LayerMask.GetMask("Donut"));
+        if (hits.Length == 0) return;
 
-        // Check ALL around player
-        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, grabRange);
+        // Pick the closest one
+        Collider2D closest = hits[0];
+        float closestDist = Vector2.Distance(transform.position, closest.transform.position);
 
-        Debug.Log("Found " + hitColliders.Length + " objects nearby");
-
-        foreach (var hit in hitColliders)
+        foreach (var hit in hits)
         {
-            Debug.Log("Object: " + hit.name + " | Tag: " + hit.tag + " | Layer: " + hit.gameObject.layer);
-
-            if (hit.CompareTag("Donut"))
+            float dist = Vector2.Distance(transform.position, hit.transform.position);
+            if (dist < closestDist)
             {
-                Debug.Log("FOUND DONUT! Picking up: " + hit.name);
-                PickUpObject(hit.gameObject);
-                return;
+                closest = hit;
+                closestDist = dist;
             }
         }
 
-        Debug.Log("No donut found to pick up");
-    }
+        heldDonut = closest.gameObject;
 
-    void PickUpObject(GameObject obj)
-    {
-        // Remove from plate if necessary
-        Plate plate = obj.GetComponentInParent<Plate>();
+        // If it was on a plate, remove it
+        Plate plate = heldDonut.transform.parent?.GetComponentInParent<Plate>();
         if (plate != null)
         {
-            plate.RemoveDonut(obj);
+            plate.RemoveDonut(heldDonut);
         }
 
-        heldObject = obj;
-
-        // Parent to holdPoint
-        obj.transform.SetParent(holdPoint);
-        obj.transform.localPosition = Vector3.zero;
-
-        // Disable physics only
-        Rigidbody2D rbObj = obj.GetComponent<Rigidbody2D>();
-        if (rbObj != null) rbObj.simulated = false;
+        // Grab it
+        heldDonut.transform.parent = holdPoint;
+        heldDonut.transform.position = holdPoint.position;
+        heldDonut.GetComponent<Rigidbody2D>().simulated = false;
     }
 
-    void DropObject()
-    {
-        if (heldObject == null) return;
 
-        // Re-enable physics
-        Rigidbody2D rbObj = heldObject.GetComponent<Rigidbody2D>();
-        if (rbObj != null) rbObj.simulated = true;
 
-        // Check plate
-        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, plateDetect, plateLayer);
-
-        foreach (var hit in hitColliders)
+    void DropDonut()
+    {  // Check for nearby plate
+        Collider2D hit = Physics2D.OverlapCircle(transform.position, 1.5f, LayerMask.GetMask("Plate"));
+        if (hit != null)
         {
             Plate plate = hit.GetComponent<Plate>();
-            if (plate != null)
+            if (plate != null && plate.PlaceDonut(heldDonut))
             {
-                plate.PlaceDonut(heldObject);
-                heldObject = null;
+                heldDonut = null; // Successfully placed
                 return;
             }
         }
 
-        // Drop normally
-        heldObject.transform.SetParent(null);
-        heldObject = null;
+        // If no plate or plate full, drop in world
+        heldDonut.GetComponent<Rigidbody2D>().simulated = true;
+        heldDonut.transform.parent = null;
+        heldDonut = null;
     }
+
     public void OpenDoor(InputAction.CallbackContext context)
     {
         if (context.performed)
