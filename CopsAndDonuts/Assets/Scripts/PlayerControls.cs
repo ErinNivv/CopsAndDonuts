@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -232,13 +233,13 @@ public class PlayerControls : MonoBehaviour
         }
     }
 
-    public void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("PLAYER"))
-        {
-            StartCoroutine(PlayerControls.instance.Bounce(lastBounceTime, bounceCoolDown, this.transform));
-        }
-    }
+    //public void OnCollisionEnter2D(Collision2D other)
+    //{
+    //    if (other.gameObject.CompareTag("PLAYER"))
+    //    {
+    //        StartCoroutine(PlayerControls.instance.Bounce(lastBounceTime, bounceCoolDown, this.transform));
+    //    }
+    //}
 
     public IEnumerator Bounce(float bounceTime, float bounceForce, Transform obj)
     {
@@ -246,12 +247,10 @@ public class PlayerControls : MonoBehaviour
         while(bounceTime > timer)
         {
             timer += Time.deltaTime;
-            Vector2 direction = (obj.transform.position - this.transform.position).normalized;
-            rbP1.AddForce(-direction * bounceForce);
+            Vector2 direction = (this.transform.position - obj.transform.position).normalized;
+            rbP1.AddForce(direction * bounceForce);
         }
 
         yield return 0;
     }
-    
-    
 }
