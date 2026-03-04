@@ -331,6 +331,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerControls
   rayP1: {fileID: 141271366}
+  rayPoint: {fileID: 0}
   holdPoint: {fileID: 0}
   rbP1: {fileID: 0}
   door: {fileID: 0}
@@ -681,6 +682,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerControls
   rayP1: {fileID: 234881296}
+  rayPoint: {fileID: 0}
   holdPoint: {fileID: 0}
   rbP1: {fileID: 0}
   door: {fileID: 0}
@@ -952,7 +954,7 @@ GameObject:
   - component: {fileID: 498474413}
   - component: {fileID: 498474412}
   - component: {fileID: 498474415}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Donut
   m_TagString: Donut
   m_Icon: {fileID: 0}
@@ -1104,7 +1106,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 7
 --- !u!1 &622705423
 GameObject:
@@ -1214,8 +1216,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b05be10746775c74ebe145b64eaf2d44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Plate
-  donutCount: 0
-  donutsToWin: 3
   donutPoints:
   - {fileID: 1721193199}
   - {fileID: 318036643}
@@ -1473,8 +1473,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b05be10746775c74ebe145b64eaf2d44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Plate
-  donutCount: 0
-  donutsToWin: 3
   donutPoints:
   - {fileID: 1772566683}
   - {fileID: 1014624551}
@@ -1492,7 +1490,7 @@ GameObject:
   - component: {fileID: 1285564462}
   - component: {fileID: 1285564461}
   - component: {fileID: 1285564460}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Donut (2)
   m_TagString: Donut
   m_Icon: {fileID: 0}
@@ -1524,7 +1522,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 7
 --- !u!61 &1285564461
 BoxCollider2D:
@@ -1927,8 +1925,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b05be10746775c74ebe145b64eaf2d44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Plate
-  donutCount: 0
-  donutsToWin: 3
   donutPoints:
   - {fileID: 399609887}
   - {fileID: 21230338}
@@ -2205,7 +2201,7 @@ GameObject:
   - component: {fileID: 1918865860}
   - component: {fileID: 1918865859}
   - component: {fileID: 1918865858}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Donut (1)
   m_TagString: Donut
   m_Icon: {fileID: 0}
@@ -2237,7 +2233,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 7
 --- !u!61 &1918865859
 BoxCollider2D:

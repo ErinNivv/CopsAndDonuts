@@ -10,11 +10,13 @@ public class PlayerControls : MonoBehaviour
     private float grabRange = 1.5f;
 
     private Vector2 moveP1;
+
     private float interactP1;
 
     [SerializeField] Transform rayP1;
 
     [Header("PickUp")]
+    [SerializeField] Transform rayPoint;
     [SerializeField] Transform holdPoint;
     private GameObject heldObject;
 
@@ -32,18 +34,46 @@ public class PlayerControls : MonoBehaviour
     private int donutsOnPlate = 0;
     private int donutsWin = 3;
     private bool hasWon = false;
+    //input Manager
     private PlayerInput playerInput;
 
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rbP1 = GetComponent<Rigidbody2D>();
         playerInput = GetComponent<PlayerInput>();
+
+        // if its Player 1
+        if (playerInput.playerIndex == 0)
+        {
+            //Assign Sprites
+
+        }
+        else if (playerInput.playerIndex == 1)//if its Player 2
+        {
+            //Assign Sprites
+        }
+
     }
 
+    // Update is called once per frame
     void Update()
     {
+        
         rbP1.linearVelocity = new Vector2(moveP1.x * moveSpeed, moveP1.y * moveSpeed);
+
     }
+
+    //void FixedUpdate()
+    //{
+    //    if (heldObject != null)
+    //    {
+    //        // Snap donut directly to holdPoint
+    //        heldObject.transform.position = holdPoint.position;
+    //        heldObject.transform.rotation = holdPoint.rotation;
+    //    }
+    //}
 
     public void Move(InputAction.CallbackContext context)
     {
@@ -61,41 +91,55 @@ public class PlayerControls : MonoBehaviour
             }
             else
             {
-                Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, grabRange);
-
-                foreach (var hit in hitColliders)
-                {
-                    if (hit.name.Contains("Donut"))
-                    {
-                        print("Picking up: " + hit.name);
-                        PickUpObject(hit.gameObject);
-                        return;
-                    }
-                }
-
-                print("No donut found");
+                PickupObject();
             }
         }
     }
 
+    void PickupObject()
+    {
+        Debug.Log("=== PICKUP ATTEMPT ===");
+        Debug.Log("Player Position: " + transform.position);
+        Debug.Log("Grab Range: " + grabRange);
+
+        // Check ALL around player
+        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, grabRange);
+
+        Debug.Log("Found " + hitColliders.Length + " objects nearby");
+
+        foreach (var hit in hitColliders)
+        {
+            Debug.Log("Object: " + hit.name + " | Tag: " + hit.tag + " | Layer: " + hit.gameObject.layer);
+
+            if (hit.CompareTag("Donut"))
+            {
+                Debug.Log("FOUND DONUT! Picking up: " + hit.name);
+                PickUpObject(hit.gameObject);
+                return;
+            }
+        }
+
+        Debug.Log("No donut found to pick up");
+    }
+
     void PickUpObject(GameObject obj)
     {
-        // Check if donut is on a plate
+        // Remove from plate if necessary
         Plate plate = obj.GetComponentInParent<Plate>();
         if (plate != null)
         {
-            plate.RemoveDonut();
+            plate.RemoveDonut(obj);
         }
 
         heldObject = obj;
+
+        // Parent to holdPoint
         obj.transform.SetParent(holdPoint);
         obj.transform.localPosition = Vector3.zero;
 
-       
-        Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
-        if (rb != null) rb.simulated = false;
-
-        print("Donut is picked");
+        // Disable physics only
+        Rigidbody2D rbObj = obj.GetComponent<Rigidbody2D>();
+        if (rbObj != null) rbObj.simulated = false;
     }
 
     void DropObject()
@@ -103,14 +147,10 @@ public class PlayerControls : MonoBehaviour
         if (heldObject == null) return;
 
         // Re-enable physics
-        Rigidbody2D rb = heldObject.GetComponent<Rigidbody2D>();
-        if (rb != null) rb.simulated = true;
+        Rigidbody2D rbObj = heldObject.GetComponent<Rigidbody2D>();
+        if (rbObj != null) rbObj.simulated = true;
 
-        // Re-enable collider
-        Collider2D col = heldObject.GetComponent<Collider2D>();
-        if (col != null) col.enabled = true;
-
-        // Check for plate
+        // Check plate
         Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, plateDetect, plateLayer);
 
         foreach (var hit in hitColliders)
@@ -124,11 +164,10 @@ public class PlayerControls : MonoBehaviour
             }
         }
 
+        // Drop normally
         heldObject.transform.SetParent(null);
-        print("Donut is Dropped");
         heldObject = null;
     }
-
     public void OpenDoor(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -144,6 +183,7 @@ public class PlayerControls : MonoBehaviour
                 door = hit.collider.gameObject;
                 door.gameObject.SetActive(false);
                 StartCoroutine(Door());
+
                 print("Working Door: " + hit.collider.name);
             }
         }
@@ -153,5 +193,7 @@ public class PlayerControls : MonoBehaviour
     {
         yield return new WaitForSeconds(7f);
         door.gameObject.SetActive(true);
+
+        yield return null;
     }
 }

@@ -2,44 +2,58 @@ using UnityEngine;
 
 public class Plate : MonoBehaviour
 {
-    public int donutCount = 0;
-    public int donutsToWin = 3;
-
     [Header("Settings")]
     public Transform[] donutPoints;
     public GameObject winPanel;
 
     public void PlaceDonut(GameObject donut)
     {
-        if (donutCount >= donutsToWin || donutCount >= donutPoints.Length) return;
-
-        Transform targetPoint = donutPoints[donutCount];
-
-        donut.transform.position = targetPoint.position;
-        donut.transform.rotation = targetPoint.rotation;
-        donut.transform.SetParent(targetPoint);
-
-        Rigidbody2D rb = donut.GetComponent<Rigidbody2D>();
-        if (rb != null) rb.simulated = false;
-
-        donutCount++;
-    }
-
-    public void RemoveDonut()
-    {
-        if (donutCount > 0)
+        for (int i = 0; i < donutPoints.Length; i++)
         {
-            donutCount--;
-            Debug.Log("Donut removed! Total: " + donutCount);
+            if (donutPoints[i].childCount == 0)
+            {
+                donut.transform.position = donutPoints[i].position;
+                donut.transform.rotation = donutPoints[i].rotation;
+                donut.transform.SetParent(donutPoints[i]);
+
+                // Disable physics ONLY - DO NOT disable collider!
+                Rigidbody2D rb = donut.GetComponent<Rigidbody2D>();
+                if (rb != null) rb.simulated = false;
+
+                Debug.Log("Donut placed on plate! Collider enabled: " +
+                    (donut.GetComponent<Collider2D>() != null ?
+                    donut.GetComponent<Collider2D>().enabled : "no collider"));
+
+                CheckWin();
+                return;
+            }
         }
     }
 
-    void WinGame()
+    public void RemoveDonut(GameObject donut)
     {
-        Debug.Log("YOU WIN!");
-        if (winPanel != null)
+        // Re-enable physics so it can be picked up
+        Rigidbody2D rb = donut.GetComponent<Rigidbody2D>();
+        if (rb != null) rb.simulated = true;
+
+        // Remove from plate point
+        donut.transform.SetParent(null);
+
+        Debug.Log("Donut removed from plate");
+    }
+
+    void CheckWin()
+    {
+        int donutCount = 0;
+        foreach (Transform child in transform)
         {
-            winPanel.SetActive(true);
+            if (child.CompareTag("Donut")) donutCount++;
+        }
+
+        if (donutCount >= 3)
+        {
+            Debug.Log("YOU WIN!");
+            if (winPanel != null) winPanel.SetActive(true);
         }
     }
 }
