@@ -52,6 +52,14 @@ public class PlayerControls : MonoBehaviour
     //input Manager
     private PlayerInput playerInput;
 
+    [Header("Slide")]
+    public float slipFriction = 0.01f;
+    public float slideDecrease = 0.95f;
+    public float minSlideSpeed = 0.1f;
+
+    private bool isOnSlipperySurface;
+    private bool controlDisabled;
+    private float currentFriction;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -73,11 +81,24 @@ public class PlayerControls : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        if (controlDisabled)
+        {
+            rbP1.linearVelocity *= slideDecrease;
 
+            if(rbP1.linearVelocity.magnitude < minSlideSpeed)
+            {
+                controlDisabled = false;
+                Debug.Log("Controls re-enabled");
+            }
+        }
+        else
+        {
+            rbP1.linearVelocity = new Vector2(moveP1.x * moveSpeed, moveP1.y * moveSpeed);
+        }
        
-        rbP1.linearVelocity = new Vector2(moveP1.x * moveSpeed, moveP1.y * moveSpeed);
+        
        
 
 
@@ -85,7 +106,9 @@ public class PlayerControls : MonoBehaviour
 
     public void Awake()
     {
-        instance = this; 
+        instance = this;
+
+        currentFriction = 0.1f;
     }
 
     public void Move(InputAction.CallbackContext context)
@@ -252,5 +275,21 @@ public class PlayerControls : MonoBehaviour
         }
 
         yield return 0;
+    }
+
+    public void OnEnterSlipperySurface(SlipperySurface surface)
+    {
+        isOnSlipperySurface = true;
+        controlDisabled = true;
+        currentFriction = slipFriction;
+        Debug.Log("Controls disabled and sliding");
+    }
+
+    public void OnExitSlipperySurface()
+    {
+        isOnSlipperySurface = false;
+        controlDisabled = false;
+        currentFriction = 0.1f;
+        Debug.Log("Controls enabled");
     }
 }
