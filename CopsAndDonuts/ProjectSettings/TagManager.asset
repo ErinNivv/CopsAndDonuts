@@ -4,16 +4,18 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - Plate
   - Donut
+  - Plate
+  - PLAYER
+  - Puddle
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Donut
+  - 'Donut '
   - Water
   - UI
-  - 
+  - Donut
   - Door
   - Plate
   - 

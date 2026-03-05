@@ -1,43 +1,68 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class PlayerControls : MonoBehaviour
 {
     [Header("PLAYERS")]
     private float moveSpeed = 5f;
-    private float grabRange = 1.5f;
+    private float grabRange = 1f;
+
     private Vector2 moveP1;
-    [SerializeField] private Rigidbody2D rbP1;
 
     private float interactP1;
 
     [SerializeField] Transform rayP1;
 
+    [Header("BOUNCE")]
+    private float bounceForce = 10f;
+    private float lastBounceTime;
+    private float bounceCoolDown = 0.5f;
+    private Vector2 bounceVelocity;
+    public static PlayerControls instance;
+
+
     [Header("PickUp")]
     [SerializeField] Transform holdPoint;
-    private GameObject heldDonut;
+    private GameObject heldObject;
 
+    [SerializeField] private Rigidbody2D rbP1;
 
     [Header("Door")]
-    [SerializeField] public GameObject door;
+    [SerializeField] private GameObject doorCurrent;
+    public GameObject openDoor;
     private SpriteRenderer spriteRenderer;
     [SerializeField] private List<Sprite> Sprites;
+    public bool doorIsOpen = false;
+    private float doorOpenTime = 5f;
+    
 
-    //[Header("Plate")]
-    //[SerializeField] private float plateDetect = 1.5f;
-    //[SerializeField] private LayerMask plateLayer;
 
-    //private int donutsOnPlate = 0;
-    //private int donutsWin = 3;
-    //private bool hasWon = false;
-    ////input Manager
+    [Header("Plate")]
+    [SerializeField] private float plateDetect = 1.5f;
+    [SerializeField] private LayerMask plateLayer;
+
+    private int donutsOnPlate = 0;
+    private int donutsWin = 3;
+    private bool hasWon = false;
+    //input Manager
     private PlayerInput playerInput;
 
+    [Header("Slide")]
+    public float slipFriction = 0.01f;
+    public float slideDecrease = 0.95f;
+    public float minSlideSpeed = 0.1f;
+
+    private bool isOnSlipperySurface;
+    private bool controlDisabled;
+    private float currentFriction;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Awake()
+    void Start()
     {
         rbP1 = GetComponent<Rigidbody2D>();
         playerInput = GetComponent<PlayerInput>();
@@ -55,23 +80,36 @@ public class PlayerControls : MonoBehaviour
 
     }
 
-
-    void Update()
+    // Update is called once per frame
+    void FixedUpdate()
     {
+        if (controlDisabled)
+        {
+            rbP1.linearVelocity *= slideDecrease;
+
+            if(rbP1.linearVelocity.magnitude < minSlideSpeed)
+            {
+                controlDisabled = false;
+                Debug.Log("Controls re-enabled");
+            }
+        }
+        else
+        {
+            rbP1.linearVelocity = new Vector2(moveP1.x * moveSpeed, moveP1.y * moveSpeed);
+        }
+       
         
-        rbP1.linearVelocity = new Vector2(moveP1.x * moveSpeed, moveP1.y * moveSpeed);
+       
+
 
     }
 
-    //void FixedUpdate()
-    //{
-    //    if (heldObject != null)
-    //    {
-    //        // Snap donut directly to holdPoint
-    //        heldObject.transform.position = holdPoint.position;
-    //        heldObject.transform.rotation = holdPoint.rotation;
-    //    }
-    //}
+    public void Awake()
+    {
+        instance = this;
+
+        currentFriction = 0.1f;
+    }
 
     public void Move(InputAction.CallbackContext context)
     {
@@ -80,80 +118,97 @@ public class PlayerControls : MonoBehaviour
 
     public void Interact(InputAction.CallbackContext context)
     {
-        Debug.Log("INTERACT BUTTON PRESSED!");
-
-        if (!context.performed) return;
+        if (context.performed)
         {
-            Debug.Log("Context is performed!");
-
-            if (heldDonut == null)
+            // Check if already holding something
+            if (heldObject != null)
             {
-                Debug.Log("Dropping donut!");
-                TryGrabDonut();
+                // DROP the donut
+                print("Dropping donut!");
+                DropObject();
             }
             else
             {
-                Debug.Log("Trying to pickup...");
-                DropDonut();
+                // this is to pick up the donut 
+                Vector2 direction = transform.right;
+                int layerMask = LayerMask.GetMask("Donut");
+
+                RaycastHit2D hit = Physics2D.Raycast(rayP1.position, direction, grabRange, layerMask);
+                Debug.DrawRay(rayP1.position, direction * grabRange, Color.red, 0.5f);
+
+                if (hit.collider != null)
+                {
+                    print("Working Donut: " + hit.collider.name);
+                    PickUpObject(hit.collider.gameObject);
+                }
+                else
+                {
+                    print("No donut found to pick up");
+                }
             }
         }
     }
 
-    void TryGrabDonut()
+    void PickUpObject(GameObject obj)
     {
-        // Detect all donuts in range
-        Debug.Log("Found donuts: ");
-        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, 1.5f, LayerMask.GetMask("Donut"));
-        if (hits.Length == 0) return;
+        heldObject = obj;
 
-        // Pick the closest one
-        Collider2D closest = hits[0];
-        float closestDist = Vector2.Distance(transform.position, closest.transform.position);
+        // Make it a child of the hold point
+        obj.transform.SetParent(holdPoint);
 
-        foreach (var hit in hits)
+        // Reset position to match hold point
+        obj.transform.localPosition = Vector3.zero;
+
+        // Disable physics so it doesn't interfere while held
+        if (obj.TryGetComponent<Rigidbody2D>(out Rigidbody2D rb))
         {
-            float dist = Vector2.Distance(transform.position, hit.transform.position);
-            if (dist < closestDist)
-            {
-                closest = hit;
-                closestDist = dist;
-            }
+            rb.simulated = false;
+        }
+        if (obj.TryGetComponent<Collider2D>(out Collider2D col))
+        {
+            col.enabled = false;
         }
 
-        heldDonut = closest.gameObject;
-
-        // If it was on a plate, remove it
-        Plate plate = heldDonut.transform.parent?.GetComponentInParent<Plate>();
-        if (plate != null)
-        {
-            plate.RemoveDonut(heldDonut);
-        }
-
-        // Grab it
-        heldDonut.transform.parent = holdPoint;
-        heldDonut.transform.position = holdPoint.position;
-        //heldDonut.GetComponent<Rigidbody2D>().simulated = false;
+        print("Donut is picked");
     }
 
+    void DropObject()
+    {
+        if (heldObject == null) return;
 
-
-    void DropDonut()
-    {  // Check for nearby plate
-        Collider2D hit = Physics2D.OverlapCircle(transform.position, 1.5f, LayerMask.GetMask("Plate"));
-        if (hit != null)
+        
+        Rigidbody2D rb = heldObject.GetComponent<Rigidbody2D>();
+        if (rb != null)
         {
+            rb.simulated = true;
+        }
+
+        Collider2D col = heldObject.GetComponent<Collider2D>();
+        if (col != null)
+        {
+            col.enabled = true;
+        }
+
+
+        // sooo check the position where we dropped the donut to see if it touched a plate
+        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, plateDetect, plateLayer);
+
+        foreach (var hit in hitColliders)
+        {
+            Debug.Log("Found plate: " + hit.name);
             Plate plate = hit.GetComponent<Plate>();
-            if (plate != null && plate.PlaceDonut(heldDonut))
+            if (plate != null)
             {
-                heldDonut = null; // Successfully placed
+                plate.PlaceDonut(heldObject);// Tell the plate a donut was dropped
+                heldObject = null;
                 return;
             }
         }
 
-        // If no plate or plate full, drop in world
-        //heldDonut.GetComponent<Rigidbody2D>().simulated = true;
-        heldDonut.transform.parent = null;
-        heldDonut = null;
+        
+        heldObject.transform.SetParent(null);
+        print("Donut is Dropped");
+        heldObject = null;
     }
 
     public void OpenDoor(InputAction.CallbackContext context)
@@ -168,20 +223,73 @@ public class PlayerControls : MonoBehaviour
 
             if (hit.collider != null)
             {
-                door = hit.collider.gameObject;
-                door.gameObject.SetActive(false);
-                StartCoroutine(Door());
+                GameObject door = hit.collider.gameObject;
+                print("Detected Door: " + hit.collider.name);
 
-                print("Working Door: " + hit.collider.name);
+                OpenedDoor(door);
+            }
+            else
+            {
+                Debug.Log("no door in range");
             }
         }
     }
 
-    IEnumerator Door()
+    private void OpenedDoor(GameObject door)
     {
-        yield return new WaitForSeconds(7f);
-        door.gameObject.SetActive(true);
+        if(doorIsOpen && doorCurrent == door)
+            return;
+        doorCurrent = door;
+        door.SetActive(false);
+        doorIsOpen = true;
+        StartCoroutine(Door());
+    }
 
-        yield return null;
+    private IEnumerator Door()
+    {
+        yield return new WaitForSeconds(doorOpenTime);
+        if (doorCurrent != null && doorIsOpen)
+        {
+            doorCurrent.SetActive(true);
+            doorIsOpen=false;
+            Debug.Log("door closed");
+        }
+    }
+
+    //public void OnCollisionEnter2D(Collision2D other)
+    //{
+    //    if (other.gameObject.CompareTag("PLAYER"))
+    //    {
+    //        StartCoroutine(PlayerControls.instance.Bounce(lastBounceTime, bounceCoolDown, this.transform));
+    //    }
+    //}
+
+    public IEnumerator Bounce(float bounceTime, float bounceForce, Transform obj)
+    {
+        float timer = 0;
+        while(bounceTime > timer)
+        {
+            timer += Time.deltaTime;
+            Vector2 direction = (this.transform.position - obj.transform.position).normalized;
+            rbP1.AddForce(direction * bounceForce);
+        }
+
+        yield return 0;
+    }
+
+    public void OnEnterSlipperySurface(SlipperySurface surface)
+    {
+        isOnSlipperySurface = true;
+        controlDisabled = true;
+        currentFriction = slipFriction;
+        Debug.Log("Controls disabled and sliding");
+    }
+
+    public void OnExitSlipperySurface()
+    {
+        isOnSlipperySurface = false;
+        controlDisabled = false;
+        currentFriction = 0.1f;
+        Debug.Log("Controls enabled");
     }
 }
