@@ -102,6 +102,7 @@ public class PlayerControls : MonoBehaviour
     void TryGrabDonut()
     {
         // Detect all donuts in range
+        Debug.Log("Found donuts: ");
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, 1.5f, LayerMask.GetMask("Donut"));
         if (hits.Length == 0) return;
 
@@ -131,7 +132,7 @@ public class PlayerControls : MonoBehaviour
         // Grab it
         heldDonut.transform.parent = holdPoint;
         heldDonut.transform.position = holdPoint.position;
-        heldDonut.GetComponent<Rigidbody2D>().simulated = false;
+        //heldDonut.GetComponent<Rigidbody2D>().simulated = false;
     }
 
 
@@ -150,7 +151,7 @@ public class PlayerControls : MonoBehaviour
         }
 
         // If no plate or plate full, drop in world
-        heldDonut.GetComponent<Rigidbody2D>().simulated = true;
+        //heldDonut.GetComponent<Rigidbody2D>().simulated = true;
         heldDonut.transform.parent = null;
         heldDonut = null;
     }

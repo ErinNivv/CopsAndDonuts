@@ -330,16 +330,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1774f2a7299ecec479d12f239be186cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerControls
-  rayP1: {fileID: 141271366}
-  rayPoint: {fileID: 0}
-  holdPoint: {fileID: 0}
   rbP1: {fileID: 0}
+  rayP1: {fileID: 141271366}
+  holdPoint: {fileID: 0}
   door: {fileID: 0}
   Sprites: []
-  plateDetect: 1.5
-  plateLayer:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!114 &141271368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -681,16 +676,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1774f2a7299ecec479d12f239be186cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerControls
-  rayP1: {fileID: 234881296}
-  rayPoint: {fileID: 0}
-  holdPoint: {fileID: 0}
   rbP1: {fileID: 0}
+  rayP1: {fileID: 234881296}
+  holdPoint: {fileID: 0}
   door: {fileID: 0}
   Sprites: []
-  plateDetect: 1.5
-  plateLayer:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!114 &234881298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -953,10 +943,9 @@ GameObject:
   - component: {fileID: 498474414}
   - component: {fileID: 498474413}
   - component: {fileID: 498474412}
-  - component: {fileID: 498474415}
   m_Layer: 3
   m_Name: Donut
-  m_TagString: Donut
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1081,33 +1070,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &498474415
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 498474411}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 7
 --- !u!1 &622705423
 GameObject:
   m_ObjectHideFlags: 0
@@ -1216,10 +1178,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b05be10746775c74ebe145b64eaf2d44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Plate
-  donutPoints:
+  donutSpots:
   - {fileID: 1721193199}
   - {fileID: 318036643}
   - {fileID: 1644961423}
+  winAmount: 3
   winPanel: {fileID: 148870135}
 --- !u!61 &622705428
 BoxCollider2D:
@@ -1473,10 +1436,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b05be10746775c74ebe145b64eaf2d44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Plate
-  donutPoints:
+  donutSpots:
   - {fileID: 1772566683}
   - {fileID: 1014624551}
   - {fileID: 994430030}
+  winAmount: 3
   winPanel: {fileID: 148870135}
 --- !u!1 &1285564459
 GameObject:
@@ -1489,7 +1453,6 @@ GameObject:
   - component: {fileID: 1285564463}
   - component: {fileID: 1285564462}
   - component: {fileID: 1285564461}
-  - component: {fileID: 1285564460}
   m_Layer: 3
   m_Name: Donut (2)
   m_TagString: Donut
@@ -1497,33 +1460,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!50 &1285564460
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1285564459}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 7
 --- !u!61 &1285564461
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1925,10 +1861,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b05be10746775c74ebe145b64eaf2d44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Plate
-  donutPoints:
+  donutSpots:
   - {fileID: 399609887}
   - {fileID: 21230338}
   - {fileID: 400084545}
+  winAmount: 3
   winPanel: {fileID: 148870135}
 --- !u!1 &1644961422
 GameObject:
@@ -2200,7 +2137,6 @@ GameObject:
   - component: {fileID: 1918865861}
   - component: {fileID: 1918865860}
   - component: {fileID: 1918865859}
-  - component: {fileID: 1918865858}
   m_Layer: 3
   m_Name: Donut (1)
   m_TagString: Donut
@@ -2208,33 +2144,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!50 &1918865858
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1918865857}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 7
 --- !u!61 &1918865859
 BoxCollider2D:
   m_ObjectHideFlags: 0
