@@ -28,7 +28,7 @@ public class PlayerControls : MonoBehaviour
 
     [Header("PickUp")]
     [SerializeField] Transform holdPoint;
-    private GameObject heldObject;
+    private GameObject heldDonut;
 
     [SerializeField] private Rigidbody2D rbP1;
 
@@ -118,40 +118,54 @@ public class PlayerControls : MonoBehaviour
 
     public void Interact(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (!context.performed) return;
+
+        if (heldDonut == null)
+            TryGrabDonut();
+        else
+            DropDonut();
+    }
+
+    void TryGrabDonut()
+    {
+        Collider2D[] hits = Physics2D.OverlapCircleAll(
+            transform.position,
+            grabRange,
+            LayerMask.GetMask("Donut")
+        );
+
+        if (hits.Length == 0) return;
+
+        // Get closest donut
+        Collider2D closest = hits[0];
+        float closestDist = Vector2.Distance(transform.position, closest.transform.position);
+
+        foreach (Collider2D hit in hits)
         {
-            // Check if already holding something
-            if (heldObject != null)
+            float dist = Vector2.Distance(transform.position, hit.transform.position);
+            if (dist < closestDist)
             {
-                // DROP the donut
-                print("Dropping donut!");
-                DropObject();
-            }
-            else
-            {
-                // this is to pick up the donut 
-                Vector2 direction = transform.right;
-                int layerMask = LayerMask.GetMask("Donut");
-
-                RaycastHit2D hit = Physics2D.Raycast(rayP1.position, direction, grabRange, layerMask);
-                Debug.DrawRay(rayP1.position, direction * grabRange, Color.red, 0.5f);
-
-                if (hit.collider != null)
-                {
-                    print("Working Donut: " + hit.collider.name);
-                    PickUpObject(hit.collider.gameObject);
-                }
-                else
-                {
-                    print("No donut found to pick up");
-                }
+                closest = hit;
+                closestDist = dist;
             }
         }
+
+        heldDonut = closest.gameObject;
+
+        // If donut was on a plate, remove it
+        Plate plate = heldDonut.GetComponentInParent<Plate>();
+        if (plate != null)
+        {
+            plate.RemoveDonut(heldDonut);
+        }
+
+        heldDonut.transform.parent = holdPoint;
     }
+
 
     void PickUpObject(GameObject obj)
     {
-        heldObject = obj;
+        heldDonut = obj;
 
         // Make it a child of the hold point
         obj.transform.SetParent(holdPoint);
@@ -172,43 +186,28 @@ public class PlayerControls : MonoBehaviour
         print("Donut is picked");
     }
 
-    void DropObject()
+    void DropDonut()
     {
-        if (heldObject == null) return;
+        Collider2D hit = Physics2D.OverlapCircle(
+            transform.position,
+            grabRange,
+            LayerMask.GetMask("Plate")
+        );
 
-        
-        Rigidbody2D rb = heldObject.GetComponent<Rigidbody2D>();
-        if (rb != null)
+        if (hit != null)
         {
-            rb.simulated = true;
-        }
-
-        Collider2D col = heldObject.GetComponent<Collider2D>();
-        if (col != null)
-        {
-            col.enabled = true;
-        }
-
-
-        // sooo check the position where we dropped the donut to see if it touched a plate
-        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, plateDetect, plateLayer);
-
-        foreach (var hit in hitColliders)
-        {
-            Debug.Log("Found plate: " + hit.name);
             Plate plate = hit.GetComponent<Plate>();
-            if (plate != null)
+            if (plate != null && plate.PlaceDonut(heldDonut))
             {
-                plate.PlaceDonut(heldObject);// Tell the plate a donut was dropped
-                heldObject = null;
+                heldDonut = null;
                 return;
             }
         }
 
-        
-        heldObject.transform.SetParent(null);
-        print("Donut is Dropped");
-        heldObject = null;
+        // Drop on ground
+        heldDonut.transform.parent = null;
+        heldDonut = null;
+    
     }
 
     public void OpenDoor(InputAction.CallbackContext context)

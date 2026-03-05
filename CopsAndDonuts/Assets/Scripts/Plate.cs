@@ -2,9 +2,10 @@ using UnityEngine;
 
 public class Plate : MonoBehaviour
 {
-    public Transform[] donutSpots;   // Assign empty child transforms as spots
+    [Header("Donut Spots")]
+    public Transform[] donutSpots;   // Empty child transforms as stack spots
     public int winAmount = 3;
-    public GameObject winPanel;
+    public GameObject winPanel;      // Assign a UI panel for win
 
     private GameObject[] donutsOnPlate;
 
@@ -21,20 +22,21 @@ public class Plate : MonoBehaviour
             if (donutsOnPlate[i] == null)
             {
                 donutsOnPlate[i] = donut;
+
+                // Snap to the spot
                 donut.transform.position = donutSpots[i].position;
-                donut.transform.parent = donutSpots[i];
-                donut.GetComponent<Rigidbody2D>().simulated = false;
+                donut.transform.parent = donutSpots[i]; // Parent for stacking
 
                 if (CountDonuts() >= winAmount)
                     Win();
 
-                return true; // Successfully placed
+                return true; // Placed successfully
             }
         }
         return false; // Plate full
     }
 
-    // Remove donut from plate so player can pick it up
+    // Remove a donut from the plate so player can pick it up
     public void RemoveDonut(GameObject donut)
     {
         for (int i = 0; i < donutsOnPlate.Length; i++)
@@ -42,9 +44,10 @@ public class Plate : MonoBehaviour
             if (donutsOnPlate[i] == donut)
             {
                 donutsOnPlate[i] = null;
+
+                // Unparent so player can hold it
                 donut.transform.parent = null;
-                donut.GetComponent<Rigidbody2D>().simulated = true;
-                break;
+                return;
             }
         }
     }
@@ -57,7 +60,7 @@ public class Plate : MonoBehaviour
         return count;
     }
 
-    void Win()
+    private void Win()
     {
         if (winPanel != null)
             winPanel.SetActive(true);
