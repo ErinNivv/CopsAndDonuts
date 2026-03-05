@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2352599367992285800}
   - component: {fileID: 7739537857720277465}
   - component: {fileID: 4135873639979632214}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PlayerOne
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.004309386}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -143,7 +143,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 1.2154706}
   m_EdgeRadius: 0
 --- !u!50 &9196905261255741158
 Rigidbody2D:
@@ -261,6 +261,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 8696cc24-d649-44a3-b508-308b5e0c10d1
     m_ActionName: 'PlayerOne/OpenDoor[/SwitchProControllerHID/buttonWest]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7739537857720277465}
+        m_TargetAssemblyTypeName: PlayerControls, Assembly-CSharp
+        m_MethodName: Push
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: dd5db2aa-5252-41ec-89da-1682de604aa4
+    m_ActionName: 'PlayerOne/Push[/DualShock4GamepadHID/rightTrigger,/SwitchProControllerHID/rightTrigger]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: PlayerOne
@@ -283,8 +299,7 @@ MonoBehaviour:
   rbP1: {fileID: 9196905261255741158}
   doorCurrent: {fileID: 0}
   openDoor: {fileID: 8382117582331657852, guid: 2ed895c6ccdd4a646a8544e5ac9715ad, type: 3}
-  Sprites:
-  - {fileID: 5942708808982506984, guid: 57e972c82494df940b5df3a280356bcf, type: 3}
+  Sprites: []
   doorIsOpen: 0
   plateDetect: 1.5
   plateLayer:

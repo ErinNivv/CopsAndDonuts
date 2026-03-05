@@ -61,6 +61,10 @@ public class PlayerControls : MonoBehaviour
     private bool controlDisabled;
     private float currentFriction;
 
+    [Header("Push")]
+    private float pushRange = 0.5f;
+    private float pushBack = 25f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -263,18 +267,18 @@ public class PlayerControls : MonoBehaviour
     //    }
     //}
 
-    public IEnumerator Bounce(float bounceTime, float bounceForce, Transform obj)
-    {
-        float timer = 0;
-        while(bounceTime > timer)
-        {
-            timer += Time.deltaTime;
-            Vector2 direction = (this.transform.position - obj.transform.position).normalized;
-            rbP1.AddForce(direction * bounceForce);
-        }
+    //public IEnumerator Bounce(float bounceTime, float bounceForce, Transform obj)
+    //{
+    //    float timer = 0;
+    //    while(bounceTime > timer)
+    //    {
+    //        timer += Time.deltaTime;
+    //        Vector2 direction = (this.transform.position - obj.transform.position).normalized;
+    //        rbP1.AddForce(direction * bounceForce);
+    //    }
 
-        yield return 0;
-    }
+    //    yield return 0;
+    //}
 
     public void OnEnterSlipperySurface(SlipperySurface surface)
     {
@@ -290,5 +294,44 @@ public class PlayerControls : MonoBehaviour
         controlDisabled = false;
         currentFriction = 0.1f;
         Debug.Log("Controls enabled");
+    }
+
+    public void Push(InputAction.CallbackContext context)
+    {
+        if(context.performed)
+        {
+            Vector2 direction = transform.right;
+            int layerMask = LayerMask.GetMask("Player");
+
+            RaycastHit2D hit = Physics2D.Raycast(rayP1.position, direction, pushRange, layerMask);
+            Debug.DrawRay(rayP1.position, direction * pushRange, Color.red, 0.5f);
+
+            if(hit.collider != null)
+            {
+                Rigidbody2D otherRB = hit.collider.gameObject.GetComponent<Rigidbody2D>();
+
+                if(otherRB != null)
+                {
+                    Vector2 directionToTarget = hit.collider.gameObject.transform.position - transform.position;
+
+                    if (directionToTarget.magnitude > 0)
+                    {
+                        directionToTarget.Normalize();
+                        otherRB.AddForce(directionToTarget * pushBack, ForceMode2D.Impulse);
+                        Debug.Log("Player pushed");
+                    }
+                }
+                else
+                {
+                    Debug.Log("No Rigidbody");
+                }
+              
+            }
+            else
+            {
+                Debug.Log("No player in range");
+            }
+
+        }
     }
 }
