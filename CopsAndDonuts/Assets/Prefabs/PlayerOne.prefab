@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 9196905261255741158}
   - component: {fileID: 2352599367992285800}
   - component: {fileID: 7739537857720277465}
+  - component: {fileID: 4135873639979632214}
   m_Layer: 0
   m_Name: PlayerOne
   m_TagString: Player
@@ -31,8 +32,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -1.604, z: 0}
-  m_LocalScale: {x: 0.6971384, y: 0.6971384, z: 0.6971384}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.87, y: 0.87, z: 0.87}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3832574407340837232}
   - {fileID: 1661022780376845044}
@@ -89,11 +90,11 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0.050943315, b: 0.050943315, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 5.12, y: 1.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -137,7 +138,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
+    newSize: {x: 5.12, y: 1.28}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -282,7 +283,8 @@ MonoBehaviour:
   rbP1: {fileID: 9196905261255741158}
   doorCurrent: {fileID: 0}
   openDoor: {fileID: 8382117582331657852, guid: 2ed895c6ccdd4a646a8544e5ac9715ad, type: 3}
-  Sprites: []
+  Sprites:
+  - {fileID: 5942708808982506984, guid: 57e972c82494df940b5df3a280356bcf, type: 3}
   doorIsOpen: 0
   plateDetect: 1.5
   plateLayer:
@@ -291,6 +293,28 @@ MonoBehaviour:
   slipFriction: 0.01
   slideDecrease: 0.95
   minSlideSpeed: 0.1
+--- !u!95 &4135873639979632214
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418133086775621154}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a9136d694dd672848b525e0ebbd98379, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1308890985346607320
 GameObject:
   m_ObjectHideFlags: 0
