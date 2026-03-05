@@ -2,43 +2,69 @@ using UnityEngine;
 
 public class Plate : MonoBehaviour
 {
-    public int donutCount = 0;
-    public int donutsToWin = 3;
-    public Transform donutPlate;
+    [Header("Donut Spots")]
+    public Transform[] donutSpots;   // Empty child transforms as stack spots
+    public int winAmount = 3;
+    public GameObject winPanel;      // Assign a UI panel for win
 
-    [Header("UI")]
-    public GameObject winPanel;
+    private GameObject[] donutsOnPlate;
 
-    // This function is called by the Player
-    public void PlaceDonut(GameObject donut)
+    private void Awake()
     {
-        if (donutCount >= donutsToWin) return;
+        donutsOnPlate = new GameObject[donutSpots.Length];
+    }
 
-        // Snap donut to plate point
-        donut.transform.position = donutPlate.position;
-        donut.transform.rotation = donutPlate.rotation;
-        donut.transform.SetParent(donutPlate);
-
-        // Disable physics
-        Rigidbody2D rb = donut.GetComponent<Rigidbody2D>();
-        if (rb != null) rb.simulated = false;
-
-        donutCount++;
-        Debug.Log("Donut placed! Total: " + donutCount);
-
-        if (donutCount >= donutsToWin)
+    // Try to place a donut on this plate
+    public bool PlaceDonut(GameObject donut)
+    {
+        for (int i = 0; i < donutsOnPlate.Length; i++)
         {
-            WinGame();
+            if (donutsOnPlate[i] == null)
+            {
+                donutsOnPlate[i] = donut;
+
+                // Snap to the spot
+                donut.transform.position = donutSpots[i].position;
+                donut.transform.parent = donutSpots[i]; // Parent for stacking
+
+                if (CountDonuts() >= winAmount)
+                    Win();
+
+                return true; // Placed successfully
+            }
+        }
+        return false; // Plate full
+    }
+
+    // Remove a donut from the plate so player can pick it up
+    public void RemoveDonut(GameObject donut)
+    {
+        for (int i = 0; i < donutsOnPlate.Length; i++)
+        {
+            if (donutsOnPlate[i] == donut)
+            {
+                donutsOnPlate[i] = null;
+
+                // Unparent so player can hold it
+                donut.transform.parent = null;
+                return;
+            }
         }
     }
 
-    void WinGame()
+    public int CountDonuts()
     {
-        Debug.Log("YOU WIN!");
+        int count = 0;
+        foreach (var d in donutsOnPlate)
+            if (d != null) count++;
+        return count;
+    }
+
+    private void Win()
+    {
         if (winPanel != null)
-        {
             winPanel.SetActive(true);
-        }
+
+        Debug.Log(name + " wins!");
     }
 }
-
