@@ -65,11 +65,15 @@ public class PlayerControls : MonoBehaviour
     private float pushRange = 0.5f;
     private float pushBack = 25f;
 
+    [Header("Animations")]
+    private Animator animator;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rbP1 = GetComponent<Rigidbody2D>();
         playerInput = GetComponent<PlayerInput>();
+        animator = GetComponent<Animator>();
 
         // if its Player 1
         if (playerInput.playerIndex == 0)
@@ -117,7 +121,16 @@ public class PlayerControls : MonoBehaviour
 
     public void Move(InputAction.CallbackContext context)
     {
+        animator.SetBool("isWalking", true);
+
+        if (context.canceled)
+        {
+            animator.SetBool("isWalking",false);
+        }
+
         moveP1 = context.ReadValue<Vector2>();
+        animator.SetFloat("InputX", moveP1.x);
+        animator.SetFloat("InputY", moveP1.y);
     }
 
     public void Interact(InputAction.CallbackContext context)
@@ -282,6 +295,9 @@ public class PlayerControls : MonoBehaviour
 
     public void OnEnterSlipperySurface(SlipperySurface surface)
     {
+        animator.SetBool("isSliding", true);
+        animator.SetFloat("LastInputX", moveP1.x);
+        animator.SetFloat("LastInputY", moveP1.y);
         isOnSlipperySurface = true;
         controlDisabled = true;
         currentFriction = slipFriction;
@@ -290,6 +306,7 @@ public class PlayerControls : MonoBehaviour
 
     public void OnExitSlipperySurface()
     {
+        animator.SetBool("isSliding", false);
         isOnSlipperySurface = false;
         controlDisabled = false;
         currentFriction = 0.1f;
