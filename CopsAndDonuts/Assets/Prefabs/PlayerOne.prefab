@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2352599367992285800}
   - component: {fileID: 7739537857720277465}
   - component: {fileID: 4135873639979632214}
+  - component: {fileID: 4262579240931875038}
   m_Layer: 9
   m_Name: PlayerOne
   m_TagString: Player
@@ -37,7 +38,6 @@ Transform:
   m_Children:
   - {fileID: 3832574407340837232}
   - {fileID: 1661022780376845044}
-  - {fileID: 8263486027447679303}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2642996038599070837
@@ -330,6 +330,27 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4262579240931875038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418133086775621154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46f301c171d21bb47b04e828eb659e1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimationsController
+  playerInput: {fileID: 0}
+  AnimationBools:
+  - SideSlide
+  - SideRun
+  - BackRun
+  - BackSlide
+  - FrontRun
+  - FrontSlide
+  - Idle
 --- !u!1 &1308890985346607320
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,99 +382,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4821864943052070302}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &7395377153475927641
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8263486027447679303}
-  - component: {fileID: 3329900114545370411}
-  - component: {fileID: 3496586985925006062}
-  m_Layer: 0
-  m_Name: BounceCol
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8263486027447679303
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7395377153475927641}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.04, y: -0.01, z: 0}
-  m_LocalScale: {x: 1.4344352, y: 1.4344352, z: 1.4344352}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4821864943052070302}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &3329900114545370411
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7395377153475927641}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0.026048124, y: 0.006512165}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 0.71347034, y: 0.70044637}
-  m_EdgeRadius: 0
---- !u!114 &3496586985925006062
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7395377153475927641}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 715c423d3478b784b825f842e581d3bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BounceCollide
-  bounceForce: 25
-  bounceTime: 0.5
 --- !u!1 &8055200063776139276
 GameObject:
   m_ObjectHideFlags: 0

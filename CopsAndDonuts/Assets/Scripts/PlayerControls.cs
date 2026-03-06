@@ -309,17 +309,13 @@ public class PlayerControls : MonoBehaviour
             if(hit.collider != null)
             {
                 Rigidbody2D otherRB = hit.collider.gameObject.GetComponent<Rigidbody2D>();
+                Debug.Log("collider hit");
 
                 if(otherRB != null)
                 {
-                    Vector2 directionToTarget = hit.collider.gameObject.transform.position - transform.position;
-
-                    if (directionToTarget.magnitude > 0)
-                    {
-                        directionToTarget.Normalize();
-                        otherRB.AddForce(directionToTarget * pushBack, ForceMode2D.Impulse);
-                        Debug.Log("Player pushed");
-                    }
+                    Vector2 directionToTarget = (transform.position - hit.collider.gameObject.transform.position).normalized;
+                    otherRB.AddForce(directionToTarget * pushBack, ForceMode2D.Impulse);
+                    Debug.Log("Player pushed");
                 }
                 else
                 {
