@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -17,6 +18,7 @@ public class PlayerControls : MonoBehaviour
     private float interactP1;
 
     [SerializeField] Transform rayP1;
+    private GameObject player;
 
     [Header("BOUNCE")]
     private float bounceForce = 10f;
@@ -61,11 +63,19 @@ public class PlayerControls : MonoBehaviour
     private bool controlDisabled;
     private float currentFriction;
 
+    [Header("Push")]
+    private float pushRange = 0.5f;
+    private float pushBack = 25f;
+
+    [Header("Animations")]
+    private Animator animator;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rbP1 = GetComponent<Rigidbody2D>();
         playerInput = GetComponent<PlayerInput>();
+        animator = GetComponent<Animator>();
 
         // if its Player 1
         if (playerInput.playerIndex == 0)
@@ -113,7 +123,32 @@ public class PlayerControls : MonoBehaviour
 
     public void Move(InputAction.CallbackContext context)
     {
+        animator.SetBool("isWalking", true);
+
+        if (context.canceled)
+        {
+            animator.SetBool("isWalking",false);
+        }
+
         moveP1 = context.ReadValue<Vector2>();
+        animator.SetFloat("InputX", moveP1.x);
+        if (moveP1.x < 0)
+        {
+            flipSprite();
+        }
+        else if(moveP1.x > 0)
+        {
+            flipSprite();
+        }
+        animator.SetFloat("InputY", moveP1.y);
+        if (moveP1.y < 0)
+        {
+
+        }
+        else if (moveP1.y > 0)
+        {
+
+        }
     }
 
     public void Interact(InputAction.CallbackContext context)
@@ -263,21 +298,24 @@ public class PlayerControls : MonoBehaviour
     //    }
     //}
 
-    public IEnumerator Bounce(float bounceTime, float bounceForce, Transform obj)
-    {
-        float timer = 0;
-        while(bounceTime > timer)
-        {
-            timer += Time.deltaTime;
-            Vector2 direction = (this.transform.position - obj.transform.position).normalized;
-            rbP1.AddForce(direction * bounceForce);
-        }
+    //public IEnumerator Bounce(float bounceTime, float bounceForce, Transform obj)
+    //{
+    //    float timer = 0;
+    //    while(bounceTime > timer)
+    //    {
+    //        timer += Time.deltaTime;
+    //        Vector2 direction = (this.transform.position - obj.transform.position).normalized;
+    //        rbP1.AddForce(direction * bounceForce);
+    //    }
 
-        yield return 0;
-    }
+    //    yield return 0;
+    //}
 
     public void OnEnterSlipperySurface(SlipperySurface surface)
     {
+        animator.SetBool("isSliding", true);
+        animator.SetFloat("LastInputX", moveP1.x);
+        animator.SetFloat("LastInputY", moveP1.y);
         isOnSlipperySurface = true;
         controlDisabled = true;
         currentFriction = slipFriction;
@@ -286,9 +324,50 @@ public class PlayerControls : MonoBehaviour
 
     public void OnExitSlipperySurface()
     {
+        animator.SetBool("isSliding", false);
         isOnSlipperySurface = false;
         controlDisabled = false;
         currentFriction = 0.1f;
         Debug.Log("Controls enabled");
+    }
+
+    public void Push(InputAction.CallbackContext context)
+    {
+        if(context.performed)
+        {
+            Vector2 direction = transform.right;
+            int layerMask = LayerMask.GetMask("Player");
+
+            RaycastHit2D hit = Physics2D.Raycast(rayP1.position, direction, pushRange, layerMask);
+            Debug.DrawRay(rayP1.position, direction * pushRange, Color.red, 0.5f);
+
+            if(hit.collider != null)
+            {
+                Rigidbody2D otherRB = hit.collider.gameObject.GetComponent<Rigidbody2D>();
+                Debug.Log("collider hit");
+
+                if(otherRB != null)
+                {
+                    Vector2 directionToTarget = (transform.position - hit.collider.gameObject.transform.position).normalized;
+                    otherRB.AddForce(directionToTarget * pushBack, ForceMode2D.Impulse);
+                    Debug.Log("Player pushed");
+                }
+                else
+                {
+                    Debug.Log("No Rigidbody");
+                }
+              
+            }
+            else
+            {
+                Debug.Log("No player in range");
+            }
+
+        }
+    }
+
+    public void flipSprite()
+    {
+
     }
 }
