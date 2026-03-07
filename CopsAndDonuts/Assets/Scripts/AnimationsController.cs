@@ -18,74 +18,78 @@ public class AnimationsController : MonoBehaviour
         {
             animator.SetBool("IsPlayer1", true);
         }
-        else
+        if(playerInput.playerIndex == 1 )
         {
             animator.SetBool("IsPlayer2", true);
         }
-    }
-
-
-    public void PlaySideSlide()
-    {
-        for (int i = 0; i < AnimationBools.Count; i++)
+        else if(playerInput.playerIndex == 2 )
         {
-            animator.SetBool(AnimationBools[i], false);
+            animator.SetBool("IsPlayer3", true);
         }
-        animator.SetBool(AnimationBools[0], true);
     }
 
-    public void PlaySideRun()
-    {
-        for (int i = 0; i < AnimationBools.Count; i++)
-        {
-            animator.SetBool(AnimationBools[i], false);
-        }
-        animator.SetBool(AnimationBools[1], true);
-    }
 
-    public void PlayBackRun()
-    {
-        for (int i = 0; i < AnimationBools.Count; i++)
-        {
-            animator.SetBool(AnimationBools[i], false);
-        }
-        animator.SetBool(AnimationBools[2], true);
-    }
+    //public void PlaySideSlide()
+    //{
+    //    for (int i = 0; i < AnimationBools.Count; i++)
+    //    {
+    //        animator.SetBool(AnimationBools[i], false);
+    //    }
+    //    animator.SetBool(AnimationBools[0], true);
+    //}
 
-    public void PlayBackSlide()
-    {
-        for (int i = 0; i < AnimationBools.Count; i++)
-        {
-            animator.SetBool(AnimationBools[i], false);
-        }
-        animator.SetBool(AnimationBools[3], true);
-    }
+    //public void PlaySideRun()
+    //{
+    //    for (int i = 0; i < AnimationBools.Count; i++)
+    //    {
+    //        animator.SetBool(AnimationBools[i], false);
+    //    }
+    //    animator.SetBool(AnimationBools[1], true);
+    //}
 
-    public void PlayFrontRun()
-    {
-        for (int i = 0; i < AnimationBools.Count; i++)
-        {
-            animator.SetBool(AnimationBools[i], false);
-        }
-        animator.SetBool(AnimationBools[4], true);
-    }
+    //public void PlayBackRun()
+    //{
+    //    for (int i = 0; i < AnimationBools.Count; i++)
+    //    {
+    //        animator.SetBool(AnimationBools[i], false);
+    //    }
+    //    animator.SetBool(AnimationBools[2], true);
+    //}
 
-    public void PlayFrontSlide()
-    {
-        for (int i = 0; i < AnimationBools.Count; i++)
-        {
-            animator.SetBool(AnimationBools[i], false);
-        }
-        animator.SetBool(AnimationBools[5], true);
-    }
+    //public void PlayBackSlide()
+    //{
+    //    for (int i = 0; i < AnimationBools.Count; i++)
+    //    {
+    //        animator.SetBool(AnimationBools[i], false);
+    //    }
+    //    animator.SetBool(AnimationBools[3], true);
+    //}
 
-    public void PlayIdle()
-    {
-        for (int i = 0; i < AnimationBools.Count; i++)
-        {
-            animator.SetBool(AnimationBools[i], false);
-        }
-        animator.SetBool(AnimationBools[6], true);
-    }
+    //public void PlayFrontRun()
+    //{
+    //    for (int i = 0; i < AnimationBools.Count; i++)
+    //    {
+    //        animator.SetBool(AnimationBools[i], false);
+    //    }
+    //    animator.SetBool(AnimationBools[4], true);
+    //}
+
+    //public void PlayFrontSlide()
+    //{
+    //    for (int i = 0; i < AnimationBools.Count; i++)
+    //    {
+    //        animator.SetBool(AnimationBools[i], false);
+    //    }
+    //    animator.SetBool(AnimationBools[5], true);
+    //}
+
+    //public void PlayIdle()
+    //{
+    //    for (int i = 0; i < AnimationBools.Count; i++)
+    //    {
+    //        animator.SetBool(AnimationBools[i], false);
+    //    }
+    //    animator.SetBool(AnimationBools[6], true);
+    //}
 
 }
