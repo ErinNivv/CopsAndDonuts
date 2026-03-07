@@ -19,6 +19,7 @@ public class PlayerControls : MonoBehaviour
 
     [SerializeField] Transform rayP1;
     private GameObject player;
+    private bool isFacingRight;
 
     [Header("BOUNCE")]
     private float bounceForce = 10f;
@@ -35,7 +36,7 @@ public class PlayerControls : MonoBehaviour
     [SerializeField] private Rigidbody2D rbP1;
 
     [Header("Door")]
-    [SerializeField] private GameObject doorCurrent;
+    [SerializeField] private Collider2D doorCurrent;
     public GameObject openDoor;
     private SpriteRenderer spriteRenderer;
     [SerializeField] private List<Sprite> Sprites;
@@ -132,14 +133,11 @@ public class PlayerControls : MonoBehaviour
 
         moveP1 = context.ReadValue<Vector2>();
         animator.SetFloat("InputX", moveP1.x);
-        if (moveP1.x < 0)
-        {
-            flipSprite();
-        }
-        else if(moveP1.x > 0)
-        {
-            flipSprite();
-        }
+        //if (moveP1.x < 0 && isFacingRight || moveP1.x > 0 && !isFacingRight)
+        //{
+        //    isFacingRight = !isFacingRight;
+        //    transform.Rotate(new Vector3(0, 180, 0));
+        //}
         animator.SetFloat("InputY", moveP1.y);
         if (moveP1.y < 0)
         {
@@ -163,11 +161,7 @@ public class PlayerControls : MonoBehaviour
 
     void TryGrabDonut()
     {
-        Collider2D[] hits = Physics2D.OverlapCircleAll(
-            transform.position,
-            grabRange,
-            LayerMask.GetMask("Donut")
-        );
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position,grabRange,LayerMask.GetMask("Donut"));
 
         if (hits.Length == 0) return;
 
@@ -223,11 +217,7 @@ public class PlayerControls : MonoBehaviour
 
     void DropDonut()
     {
-        Collider2D hit = Physics2D.OverlapCircle(
-            transform.position,
-            grabRange,
-            LayerMask.GetMask("Plate")
-        );
+        Collider2D hit = Physics2D.OverlapCircle(transform.position,grabRange,LayerMask.GetMask("Plate"));
 
         if (hit != null)
         {
@@ -249,16 +239,18 @@ public class PlayerControls : MonoBehaviour
     {
         if (context.performed)
         {
-            Vector2 direction = transform.right;
-            int layerMask = LayerMask.GetMask("Door");
+            //Vector2 direction = transform.right;
+            //int layerMask = LayerMask.GetMask("Door");
 
-            RaycastHit2D hit = Physics2D.Raycast(rayP1.position, direction, grabRange, layerMask);
-            Debug.DrawRay(rayP1.position, direction * grabRange, Color.red, 0.5f);
+            //RaycastHit2D hit = Physics2D.Raycast(rayP1.position, direction, grabRange, layerMask);
+            //Debug.DrawRay(rayP1.position, direction * grabRange, Color.red, 0.5f);
 
-            if (hit.collider != null)
+            Collider2D hit = Physics2D.OverlapCircle(transform.position, grabRange, LayerMask.GetMask("Door"));
+
+            if (hit != null)
             {
-                GameObject door = hit.collider.gameObject;
-                print("Detected Door: " + hit.collider.name);
+                Collider2D door = hit;
+                print("Detected Door: " + door.name);
 
                 OpenedDoor(door);
             }
@@ -269,13 +261,23 @@ public class PlayerControls : MonoBehaviour
         }
     }
 
-    private void OpenedDoor(GameObject door)
+    private void OpenedDoor(Collider2D door)
     {
         if(doorIsOpen && doorCurrent == door)
             return;
         doorCurrent = door;
-        door.SetActive(false);
         doorIsOpen = true;
+
+        Animator doorAnimator = door.gameObject.GetComponent<Animator>();
+
+        if(doorAnimator != null)
+        {
+            doorAnimator.SetTrigger("Open");
+        }
+        else
+        {
+            Debug.Log("No animator component on door");
+        }
         StartCoroutine(Door());
     }
 
@@ -284,7 +286,11 @@ public class PlayerControls : MonoBehaviour
         yield return new WaitForSeconds(doorOpenTime);
         if (doorCurrent != null && doorIsOpen)
         {
-            doorCurrent.SetActive(true);
+            Animator doorAnimator = doorCurrent.gameObject.GetComponent<Animator>();
+            if (doorAnimator != null)
+            {
+                doorAnimator.SetTrigger("Close");
+            }
             doorIsOpen=false;
             Debug.Log("door closed");
         }
@@ -331,40 +337,40 @@ public class PlayerControls : MonoBehaviour
         Debug.Log("Controls enabled");
     }
 
-    public void Push(InputAction.CallbackContext context)
-    {
-        if(context.performed)
-        {
-            Vector2 direction = transform.right;
-            int layerMask = LayerMask.GetMask("Player");
+    //public void Push(InputAction.CallbackContext context)
+    //{
+    //    if(context.performed)
+    //    {
+    //        Vector2 direction = transform.right;
+    //        int layerMask = LayerMask.GetMask("Player");
 
-            RaycastHit2D hit = Physics2D.Raycast(rayP1.position, direction, pushRange, layerMask);
-            Debug.DrawRay(rayP1.position, direction * pushRange, Color.red, 0.5f);
+    //        RaycastHit2D hit = Physics2D.Raycast(rayP1.position, direction, pushRange, layerMask);
+    //        Debug.DrawRay(rayP1.position, direction * pushRange, Color.red, 0.5f);
 
-            if(hit.collider != null)
-            {
-                Rigidbody2D otherRB = hit.collider.gameObject.GetComponent<Rigidbody2D>();
-                Debug.Log("collider hit");
+    //        if(hit.collider != null)
+    //        {
+    //            Rigidbody2D otherRB = hit.collider.gameObject.GetComponent<Rigidbody2D>();
+    //            Debug.Log("collider hit");
 
-                if(otherRB != null)
-                {
-                    Vector2 directionToTarget = (transform.position - hit.collider.gameObject.transform.position).normalized;
-                    otherRB.AddForce(directionToTarget * pushBack, ForceMode2D.Impulse);
-                    Debug.Log("Player pushed");
-                }
-                else
-                {
-                    Debug.Log("No Rigidbody");
-                }
+    //            if(otherRB != null)
+    //            {
+    //                Vector2 directionToTarget = (transform.position - hit.collider.gameObject.transform.position).normalized;
+    //                otherRB.AddForce(directionToTarget * pushBack, ForceMode2D.Impulse);
+    //                Debug.Log("Player pushed");
+    //            }
+    //            else
+    //            {
+    //                Debug.Log("No Rigidbody");
+    //            }
               
-            }
-            else
-            {
-                Debug.Log("No player in range");
-            }
+    //        }
+    //        else
+    //        {
+    //            Debug.Log("No player in range");
+    //        }
 
-        }
-    }
+    //    }
+    //}
 
     public void flipSprite()
     {
