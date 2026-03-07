@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -17,6 +18,7 @@ public class PlayerControls : MonoBehaviour
     private float interactP1;
 
     [SerializeField] Transform rayP1;
+    private GameObject player;
 
     [Header("BOUNCE")]
     private float bounceForce = 10f;
@@ -130,7 +132,23 @@ public class PlayerControls : MonoBehaviour
 
         moveP1 = context.ReadValue<Vector2>();
         animator.SetFloat("InputX", moveP1.x);
+        if (moveP1.x < 0)
+        {
+            flipSprite();
+        }
+        else if(moveP1.x > 0)
+        {
+            flipSprite();
+        }
         animator.SetFloat("InputY", moveP1.y);
+        if (moveP1.y < 0)
+        {
+
+        }
+        else if (moveP1.y > 0)
+        {
+
+        }
     }
 
     public void Interact(InputAction.CallbackContext context)
@@ -346,5 +364,10 @@ public class PlayerControls : MonoBehaviour
             }
 
         }
+    }
+
+    public void flipSprite()
+    {
+
     }
 }
