@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: 7f7836a87689ff342832bcaec254c52b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -336229883570030866
+    second: Cop3_Grab_-Sheet_0
+  - first:
+      213: 5777034848859523833
+    second: Cop3_Grab_-Sheet_1
+  - first:
+      213: 1542639378585518275
+    second: Cop3_Grab_-Sheet_2
+  - first:
+      213: 4074208555373797494
+    second: Cop3_Grab_-Sheet_3
+  - first:
+      213: 2500904920998779705
+    second: Cop3_Grab_-Sheet_4
+  - first:
+      213: -2604660485033228501
+    second: Cop3_Grab_-Sheet_5
+  - first:
+      213: 2643175352119755609
+    second: Cop3_Grab_-Sheet_6
+  - first:
+      213: -8495911916394604855
+    second: Cop3_Grab_-Sheet_7
+  - first:
+      213: -4769868299675875217
+    second: Cop3_Grab_-Sheet_8
+  - first:
+      213: -8923889468713466038
+    second: Cop3_Grab_-Sheet_9
+  - first:
+      213: -4199175964347027337
+    second: Cop3_Grab_-Sheet_10
+  - first:
+      213: -8507665350522346042
+    second: Cop3_Grab_-Sheet_11
+  - first:
+      213: -8546345112875284103
+    second: Cop3_Grab_-Sheet_12
+  - first:
+      213: -213301758923570537
+    second: Cop3_Grab_-Sheet_13
+  - first:
+      213: -4316503783991354002
+    second: Cop3_Grab_-Sheet_14
+  - first:
+      213: -521989473191242187
+    second: Cop3_Grab_-Sheet_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Cop3_Grab_-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 385
+        width: 82
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee6ffeac3b8755bf0800000000000000
+      internalID: -336229883570030866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cop3_Grab_-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 385
+        width: 94
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fa035546962c2050800000000000000
+      internalID: 5777034848859523833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cop3_Grab_-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 385
+        width: 91
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c08e11775e886510800000000000000
+      internalID: 1542639378585518275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cop3_Grab_-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 385
+        width: 80
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 670a9e3581f7a8830800000000000000
+      internalID: 4074208555373797494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cop3_Grab_-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 257
+        width: 82
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93b982976cff4b220800000000000000
+      internalID: 2500904920998779705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cop3_Grab_-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 257
+        width: 92
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b270915c6136adbd0800000000000000
+      internalID: -2604660485033228501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cop3_Grab_-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 257
+        width: 84
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9538a268af17ea420800000000000000
+      internalID: 2643175352119755609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cop3_Grab_-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 257
+        width: 76
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c69a441025781a80800000000000000
+      internalID: -8495911916394604855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cop3_Grab_-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 129
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f684c64ad060ecdb0800000000000000
+      internalID: -4769868299675875217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cop3_Grab_-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 129
+        width: 77
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a470c7a1fc9f72480800000000000000
+      internalID: -8923889468713466038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cop3_Grab_-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 129
+        width: 77
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 770bcb765b789b5c0800000000000000
+      internalID: -4199175964347027337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cop3_Grab_-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 129
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c567327073bee980800000000000000
+      internalID: -8507665350522346042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cop3_Grab_-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 1
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9794c2b7668456980800000000000000
+      internalID: -8546345112875284103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cop3_Grab_-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 1
+        width: 77
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 792056d2e233a0df0800000000000000
+      internalID: -213301758923570537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cop3_Grab_-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 1
+        width: 77
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6dd093ada2b814c0800000000000000
+      internalID: -4316503783991354002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cop3_Grab_-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 1
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53651f9f65581c8f0800000000000000
+      internalID: -521989473191242187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Cop3_Grab_-Sheet_0: -336229883570030866
+      Cop3_Grab_-Sheet_1: 5777034848859523833
+      Cop3_Grab_-Sheet_10: -4199175964347027337
+      Cop3_Grab_-Sheet_11: -8507665350522346042
+      Cop3_Grab_-Sheet_12: -8546345112875284103
+      Cop3_Grab_-Sheet_13: -213301758923570537
+      Cop3_Grab_-Sheet_14: -4316503783991354002
+      Cop3_Grab_-Sheet_15: -521989473191242187
+      Cop3_Grab_-Sheet_2: 1542639378585518275
+      Cop3_Grab_-Sheet_3: 4074208555373797494
+      Cop3_Grab_-Sheet_4: 2500904920998779705
+      Cop3_Grab_-Sheet_5: -2604660485033228501
+      Cop3_Grab_-Sheet_6: 2643175352119755609
+      Cop3_Grab_-Sheet_7: -8495911916394604855
+      Cop3_Grab_-Sheet_8: -4769868299675875217
+      Cop3_Grab_-Sheet_9: -8923889468713466038
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

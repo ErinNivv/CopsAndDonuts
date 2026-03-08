@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: 540c9414c44c9cf4899418ba8f21ecfa
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4567902153318686921
+    second: Grab_Swipe_Animation-Sheet_0
+  - first:
+      213: 6469007074570361509
+    second: Grab_Swipe_Animation-Sheet_1
+  - first:
+      213: 1111649118794116961
+    second: Grab_Swipe_Animation-Sheet_2
+  - first:
+      213: -8417257580077764796
+    second: Grab_Swipe_Animation-Sheet_3
+  - first:
+      213: 951800062164266648
+    second: Grab_Swipe_Animation-Sheet_4
+  - first:
+      213: -3819098772748321381
+    second: Grab_Swipe_Animation-Sheet_5
+  - first:
+      213: -1331804105979037778
+    second: Grab_Swipe_Animation-Sheet_6
+  - first:
+      213: -7246065872112627872
+    second: Grab_Swipe_Animation-Sheet_7
+  - first:
+      213: -2765068945452243796
+    second: Grab_Swipe_Animation-Sheet_8
+  - first:
+      213: -5281439520048129326
+    second: Grab_Swipe_Animation-Sheet_9
+  - first:
+      213: -1385619137990292871
+    second: Grab_Swipe_Animation-Sheet_10
+  - first:
+      213: 7415421753275591360
+    second: Grab_Swipe_Animation-Sheet_11
+  - first:
+      213: -4138853288809721276
+    second: Grab_Swipe_Animation-Sheet_12
+  - first:
+      213: 5115926003363449784
+    second: Grab_Swipe_Animation-Sheet_13
+  - first:
+      213: -1033722550214722394
+    second: Grab_Swipe_Animation-Sheet_14
+  - first:
+      213: 3990747682721394729
+    second: Grab_Swipe_Animation-Sheet_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Grab_Swipe_Animation-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 385
+        width: 82
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c06d418ec2746f30800000000000000
+      internalID: 4567902153318686921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_Swipe_Animation-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 385
+        width: 94
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5aa5149f8a786c950800000000000000
+      internalID: 6469007074570361509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_Swipe_Animation-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 385
+        width: 91
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16f6998dbfe5d6f00800000000000000
+      internalID: 1111649118794116961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_Swipe_Animation-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 385
+        width: 80
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44f2084d3d4ef2b80800000000000000
+      internalID: -8417257580077764796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_Swipe_Animation-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 257
+        width: 82
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89eee7a1d19753d00800000000000000
+      internalID: 951800062164266648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_Swipe_Animation-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 257
+        width: 92
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9db43096e5dffac0800000000000000
+      internalID: -3819098772748321381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_Swipe_Animation-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 257
+        width: 84
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea776b8c83b748de0800000000000000
+      internalID: -1331804105979037778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_Swipe_Animation-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 257
+        width: 76
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06f45a90b7dc07b90800000000000000
+      internalID: -7246065872112627872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_Swipe_Animation-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 129
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca4eadea17080a9d0800000000000000
+      internalID: -2765068945452243796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_Swipe_Animation-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 129
+        width: 77
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2da52d02dbe84b6b0800000000000000
+      internalID: -5281439520048129326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_Swipe_Animation-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 129
+        width: 77
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97a0b1e3cba45cce0800000000000000
+      internalID: -1385619137990292871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_Swipe_Animation-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 129
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ca22b7cbced8e660800000000000000
+      internalID: 7415421753275591360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_Swipe_Animation-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 1
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4421a07ccd6df86c0800000000000000
+      internalID: -4138853288809721276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_Swipe_Animation-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 1
+        width: 77
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bb89af389b6ff640800000000000000
+      internalID: 5115926003363449784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_Swipe_Animation-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 1
+        width: 77
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6acf32641da77a1f0800000000000000
+      internalID: -1033722550214722394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_Swipe_Animation-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 1
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92072d0afdbf16730800000000000000
+      internalID: 3990747682721394729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Grab_Swipe_Animation-Sheet_0: 4567902153318686921
+      Grab_Swipe_Animation-Sheet_1: 6469007074570361509
+      Grab_Swipe_Animation-Sheet_10: -1385619137990292871
+      Grab_Swipe_Animation-Sheet_11: 7415421753275591360
+      Grab_Swipe_Animation-Sheet_12: -4138853288809721276
+      Grab_Swipe_Animation-Sheet_13: 5115926003363449784
+      Grab_Swipe_Animation-Sheet_14: -1033722550214722394
+      Grab_Swipe_Animation-Sheet_15: 3990747682721394729
+      Grab_Swipe_Animation-Sheet_2: 1111649118794116961
+      Grab_Swipe_Animation-Sheet_3: -8417257580077764796
+      Grab_Swipe_Animation-Sheet_4: 951800062164266648
+      Grab_Swipe_Animation-Sheet_5: -3819098772748321381
+      Grab_Swipe_Animation-Sheet_6: -1331804105979037778
+      Grab_Swipe_Animation-Sheet_7: -7246065872112627872
+      Grab_Swipe_Animation-Sheet_8: -2765068945452243796
+      Grab_Swipe_Animation-Sheet_9: -5281439520048129326
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
