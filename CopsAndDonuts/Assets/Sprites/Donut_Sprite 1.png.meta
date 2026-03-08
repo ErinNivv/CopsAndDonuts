@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 50d9302e2104cc34096331d0a61116b2
+guid: 9c0398c9ac48d894da7d61f18dafa94b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2039140068721456475
-    second: Donut_Sprite_0
+      213: 2881356494620169619
+    second: Donut_Sprite 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,24 +96,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Donut_Sprite_0
+      name: Donut_Sprite 1_0
       rect:
         serializedVersion: 2
         x: 12
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5aa879c49e483b3e0800000000000000
-      internalID: -2039140068721456475
+      spriteID: 395991d3772acf720800000000000000
+      internalID: 2881356494620169619
       vertices: []
       indices: 
       edges: []
@@ -148,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Donut_Sprite_0: -2039140068721456475
+      Donut_Sprite 1_0: 2881356494620169619
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

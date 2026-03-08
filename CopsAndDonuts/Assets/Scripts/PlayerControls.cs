@@ -12,6 +12,8 @@ public class PlayerControls : MonoBehaviour
     [Header("PLAYERS")]
     private float moveSpeed = 5f;
     private float grabRange = 1f;
+   
+    public int playerID;
 
     private Vector2 moveP1;
 
@@ -57,7 +59,7 @@ public class PlayerControls : MonoBehaviour
     private int donutsWin = 3;
     private bool hasWon = false;
     //input Manager
-    private PlayerInput playerInput;
+    public PlayerInput playerInput;
 
     [Header("Slide")]
     public float slipFriction = 0.01f;
@@ -112,10 +114,6 @@ public class PlayerControls : MonoBehaviour
         {
             rbP1.linearVelocity = new Vector2(moveP1.x * moveSpeed, moveP1.y * moveSpeed);
         }
-       
-        
-       
-
 
     }
 
@@ -160,7 +158,7 @@ public class PlayerControls : MonoBehaviour
 
     void TryGrabDonut()
     {
-        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position,grabRange,LayerMask.GetMask("Donut"));
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, grabRange, LayerMask.GetMask("Donut"));
 
         if (hits.Length == 0) return;
 
@@ -187,7 +185,7 @@ public class PlayerControls : MonoBehaviour
             plate.RemoveDonut(heldDonut);
         }
 
-        heldDonut.transform.parent = holdPoint;
+        PickUpObject(heldDonut);
     }
 
 
@@ -195,43 +193,48 @@ public class PlayerControls : MonoBehaviour
     {
         heldDonut = obj;
 
-        // Make it a child of the hold point
+        // Store world scale before parenting
+        Vector3 originalScale = obj.transform.lossyScale;
+
+        // Parent to hold point
         obj.transform.SetParent(holdPoint);
 
-        // Reset position to match hold point
+        // Snap to hold point
         obj.transform.localPosition = Vector3.zero;
+        obj.transform.localRotation = Quaternion.identity;
 
-        // Disable physics so it doesn't interfere while held
-        if (obj.TryGetComponent<Rigidbody2D>(out Rigidbody2D rb))
-        {
-            rb.simulated = false;
-        }
-        if (obj.TryGetComponent<Collider2D>(out Collider2D col))
-        {
-            col.enabled = false;
-        }
+        // Force original world scale (prevents weird scaling)
+        obj.transform.localScale = Vector3.one;
+        obj.transform.localScale = new Vector3(originalScale.x / holdPoint.lossyScale.x,originalScale.y / holdPoint.lossyScale.y,originalScale.z / holdPoint.lossyScale.z);
 
-        print("Donut is picked");
+        // Make sure donut renders above player
+        SpriteRenderer sr = obj.GetComponent<SpriteRenderer>();
+        if (sr != null) sr.sortingOrder = 10;
     }
 
     void DropDonut()
     {
-        Collider2D hit = Physics2D.OverlapCircle(transform.position,grabRange,LayerMask.GetMask("Plate"));
+        // Check if player is over a plate
+        Collider2D hit = Physics2D.OverlapCircle(transform.position, grabRange, LayerMask.GetMask("Plate"));
 
         if (hit != null)
         {
             Plate plate = hit.GetComponent<Plate>();
-            if (plate != null && plate.PlaceDonut(heldDonut))
+            if (plate != null)
             {
-                heldDonut = null;
-                return;
+                // Let plate handle snapping to its donut spots
+                if (plate.PlaceDonut(heldDonut, this))
+                {
+                    heldDonut = null;
+                    return;
+                }
             }
         }
 
-        // Drop on ground
+        // If not placed on a plate, just drop at current position
         heldDonut.transform.parent = null;
+        heldDonut.transform.localPosition = Vector3.zero; // optional snap
         heldDonut = null;
-    
     }
 
     public void OpenDoor(InputAction.CallbackContext context)
