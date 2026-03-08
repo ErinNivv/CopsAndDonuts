@@ -240,9 +240,8 @@ public class PlayerControls : MonoBehaviour
             }
         }
 
-        // If not placed on a plate, just drop at current position
-        heldDonut.transform.parent = null;
-        heldDonut.transform.localPosition = Vector3.zero; // optional snap
+        // If not placed on a plate, just drop where it is
+        heldDonut.transform.SetParent(null);
         heldDonut = null;
     }
 
