@@ -12,6 +12,8 @@ public class PlayerControls : MonoBehaviour
     [Header("PLAYERS")]
     private float moveSpeed = 5f;
     private float grabRange = 1f;
+   
+    public int playerID;
 
     private Vector2 moveP1;
 
@@ -53,7 +55,7 @@ public class PlayerControls : MonoBehaviour
     private int donutsWin = 3;
     private bool hasWon = false;
     //input Manager
-    private PlayerInput playerInput;
+    public PlayerInput playerInput;
 
     [Header("Slide")]
     public float slipFriction = 0.01f;
@@ -222,7 +224,7 @@ public class PlayerControls : MonoBehaviour
         if (hit != null)
         {
             Plate plate = hit.GetComponent<Plate>();
-            if (plate != null && plate.PlaceDonut(heldDonut))
+            if (plate != null && plate.PlaceDonut(heldDonut, this))
             {
                 heldDonut = null;
                 return;
