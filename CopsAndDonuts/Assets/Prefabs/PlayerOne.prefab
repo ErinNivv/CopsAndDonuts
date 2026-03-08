@@ -133,7 +133,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.010769337, y: -0.004309416}
+  m_Offset: {x: -0.0000005364418, y: -0.004309416}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -143,7 +143,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.1938481, y: 1.2154706}
+  m_Size: {x: 1.0430776, y: 1.2154706}
   m_EdgeRadius: 0
 --- !u!50 &9196905261255741158
 Rigidbody2D:
@@ -288,7 +288,12 @@ MonoBehaviour:
   doorCurrent: {fileID: 0}
   openDoor: {fileID: 8382117582331657852, guid: 2ed895c6ccdd4a646a8544e5ac9715ad, type: 3}
   Sprites: []
-  doorIsOpen: 0
+  door1IsOpen: 0
+  door2IsOpen: 0
+  door3IsOpen: 0
+  door1: {fileID: 0}
+  door2: {fileID: 0}
+  door3: {fileID: 0}
   plateDetect: 1.5
   plateLayer:
     serializedVersion: 2
