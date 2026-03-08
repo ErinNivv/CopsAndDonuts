@@ -32,8 +32,8 @@ public class Plate : MonoBehaviour
     {
         if (restrictToPlayer && player.playerInput.playerIndex != allowedPlayerID)
         {
-            Debug.Log("Wrong plate for this player!");
-            StartCoroutine(ShowWrongPlate());
+            if (wrongPlateSprite != null)
+                StartCoroutine(ShowWrongPlate());
             return false;
         }
 
@@ -43,13 +43,31 @@ public class Plate : MonoBehaviour
             {
                 donutsOnPlate[i] = donut;
 
-                donut.transform.position = donutSpots[i].position;
-                donut.transform.parent = donutSpots[i];
+                // Store world scale
+                Vector3 originalScale = donut.transform.lossyScale;
 
+                // Snap to spot
+                donut.transform.parent = null;
+                donut.transform.position = donutSpots[i].position;
+                donut.transform.SetParent(donutSpots[i]);
+
+                donut.transform.localPosition = Vector3.zero;
+                donut.transform.localRotation = Quaternion.identity;
+
+                // Fix scale
+                donut.transform.localScale = new Vector3(
+                    originalScale.x / donutSpots[i].lossyScale.x,
+                    originalScale.y / donutSpots[i].lossyScale.y,
+                    originalScale.z / donutSpots[i].lossyScale.z
+                );
+
+                // Sorting order above plate
+                SpriteRenderer sr = donut.GetComponent<SpriteRenderer>();
+                if (sr != null) sr.sortingOrder = 5;
+
+                // Check win
                 if (CountDonuts() >= winAmount)
-                {
                     Win(player);
-                }
 
                 return true;
             }
