@@ -40,9 +40,13 @@ public class PlayerControls : MonoBehaviour
     public GameObject openDoor;
     private SpriteRenderer spriteRenderer;
     [SerializeField] private List<Sprite> Sprites;
-    public bool doorIsOpen = false;
+    public bool door1IsOpen = false;
+    public bool door2IsOpen = false;
+    public bool door3IsOpen = false;
     private float doorOpenTime = 5f;
-    
+    public GameObject door1;
+    public GameObject door2;
+    public GameObject door3;
 
 
     [Header("Plate")]
@@ -133,11 +137,6 @@ public class PlayerControls : MonoBehaviour
 
         moveP1 = context.ReadValue<Vector2>();
         animator.SetFloat("InputX", moveP1.x);
-        //if (moveP1.x < 0 && isFacingRight || moveP1.x > 0 && !isFacingRight)
-        //{
-        //    isFacingRight = !isFacingRight;
-        //    transform.Rotate(new Vector3(0, 180, 0));
-        //}
         animator.SetFloat("InputY", moveP1.y);
         if (moveP1.y < 0)
         {
@@ -249,26 +248,53 @@ public class PlayerControls : MonoBehaviour
 
             if (hit != null)
             {
-                Collider2D door = hit;
-                print("Detected Door: " + door.name);
+                door1 = hit.gameObject;
+                print("Detected Door: " + door1.name);
 
-                OpenedDoor(door);
+                OpenedDoor1();
+            }
+            
+            else
+            {
+                Debug.Log("no door in range");
+            }
+
+            Collider2D hit2 = Physics2D.OverlapCircle(transform.position, grabRange, LayerMask.GetMask("Door2"));
+            if (hit2 != null)
+            {
+                door2 = hit2.gameObject;
+                print("Detected Door: " + door2.name);
+
+                OpenedDoor2();
             }
             else
             {
                 Debug.Log("no door in range");
             }
+
+            Collider2D hit3 = Physics2D.OverlapCircle(transform.position, grabRange, LayerMask.GetMask("Door3"));
+            if (hit3 != null)
+            {
+                door3 = hit3.gameObject;
+                print("Detected Door: " + door3.name);
+
+                OpenedDoor3();
+            }
+            else
+            {
+                Debug.Log("no door in range");
+            }
+
         }
     }
 
-    private void OpenedDoor(Collider2D door)
+    private void OpenedDoor1()
     {
-        if(doorIsOpen && doorCurrent == door)
+        if(door1IsOpen)
             return;
-        doorCurrent = door;
-        doorIsOpen = true;
+        door1IsOpen = true;
 
-        Animator doorAnimator = door.gameObject.GetComponent<Animator>();
+        Animator doorAnimator = door1.gameObject.GetComponent<Animator>();
 
         if(doorAnimator != null)
         {
@@ -278,22 +304,93 @@ public class PlayerControls : MonoBehaviour
         {
             Debug.Log("No animator component on door");
         }
-        StartCoroutine(Door());
+        StartCoroutine(Door1());
     }
 
-    private IEnumerator Door()
+    private void OpenedDoor2()
+    {
+        if (door2IsOpen)
+            return;
+        door2IsOpen = true;
+
+        Animator doorAnimator = door2.gameObject.GetComponent<Animator>();
+
+        if (doorAnimator != null)
+        {
+            doorAnimator.SetTrigger("Open");
+        }
+        else
+        {
+            Debug.Log("No animator component on door");
+        }
+        StartCoroutine(Door2());
+    }
+
+    private void OpenedDoor3()
+    {
+        if (door3IsOpen)
+            return;
+        door3IsOpen = true;
+
+        Animator doorAnimator = door3.gameObject.GetComponent<Animator>();
+
+        if (doorAnimator != null)
+        {
+            doorAnimator.SetTrigger("Open");
+        }
+        else
+        {
+            Debug.Log("No animator component on door");
+        }
+        StartCoroutine(Door3());
+    }
+
+    private IEnumerator Door1()
     {
         yield return new WaitForSeconds(doorOpenTime);
-        if (doorCurrent != null && doorIsOpen)
+        if (door1 != null && door1IsOpen)
         {
-            Animator doorAnimator = doorCurrent.gameObject.GetComponent<Animator>();
+            Animator doorAnimator = door1.gameObject.GetComponent<Animator>();
             if (doorAnimator != null)
             {
                 doorAnimator.SetTrigger("Close");
             }
-            doorIsOpen=false;
+            door1IsOpen=false;
             Debug.Log("door closed");
         }
+        yield return 0;
+    }
+
+    private IEnumerator Door2()
+    {
+        yield return new WaitForSeconds(doorOpenTime);
+        if (door2 != null && door2IsOpen)
+        {
+            Animator doorAnimator = door2.gameObject.GetComponent<Animator>();
+            if (doorAnimator != null)
+            {
+                doorAnimator.SetTrigger("Close");
+            }
+            door2IsOpen = false;
+            Debug.Log("door closed");
+        }
+        yield return 0;
+    }
+
+    private IEnumerator Door3()
+    {
+        yield return new WaitForSeconds(doorOpenTime);
+        if (door3 != null && door3IsOpen)
+        {
+            Animator doorAnimator = door3.gameObject.GetComponent<Animator>();
+            if (doorAnimator != null)
+            {
+                doorAnimator.SetTrigger("Close");
+            }
+            door3IsOpen = false;
+            Debug.Log("door closed");
+        }
+        yield return 0;
     }
 
     //public void OnCollisionEnter2D(Collision2D other)
