@@ -148,7 +148,16 @@ public class PlayerControls : MonoBehaviour
 
     public void Interact(InputAction.CallbackContext context)
     {
-        if (!context.performed) return;
+        if (!context.performed)
+        {
+            animator.SetBool("isGrabbing", true );
+            animator.SetFloat("LastInputX", moveP1.x);
+            animator.SetFloat("LastInputY", moveP1.y);
+        }
+        if (context.canceled)
+        {
+            animator.SetBool("isGrabbing", false);
+        }
 
         if (heldDonut == null)
             TryGrabDonut();
