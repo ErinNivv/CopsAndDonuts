@@ -956,7 +956,7 @@ MonoBehaviour:
   player1WinPanel: {fileID: 523605642}
   player2WinPanel: {fileID: 2059976998}
   player3WinPanel: {fileID: 748428101}
-  restrictToPlayer: 1
+  restrictToPlayer: 0
   allowedPlayerID: 1
   wrongPlateSprite: {fileID: 2080266116}
   popupTime: 1
@@ -1046,7 +1046,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -8938819534478884857, guid: f7a6a416a41f7af47a9d37dfb7baae6a, type: 3}
-  m_Color: {r: 0.3791362, g: 0.6301887, b: 0.20332502, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1909,7 +1909,7 @@ MonoBehaviour:
   player1WinPanel: {fileID: 523605642}
   player2WinPanel: {fileID: 2059976998}
   player3WinPanel: {fileID: 748428101}
-  restrictToPlayer: 1
+  restrictToPlayer: 0
   allowedPlayerID: 2
   wrongPlateSprite: {fileID: 210949665}
   popupTime: 1
@@ -1999,7 +1999,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -8938819534478884857, guid: f7a6a416a41f7af47a9d37dfb7baae6a, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2537,7 +2537,7 @@ MonoBehaviour:
   player1WinPanel: {fileID: 523605642}
   player2WinPanel: {fileID: 2059976998}
   player3WinPanel: {fileID: 748428101}
-  restrictToPlayer: 1
+  restrictToPlayer: 0
   allowedPlayerID: 0
   wrongPlateSprite: {fileID: 1046696610}
   popupTime: 1
@@ -2591,7 +2591,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -8938819534478884857, guid: f7a6a416a41f7af47a9d37dfb7baae6a, type: 3}
-  m_Color: {r: 0.22908504, g: 0.34027097, b: 0.8490566, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
