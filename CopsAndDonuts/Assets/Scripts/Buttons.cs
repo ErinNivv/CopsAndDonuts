@@ -25,6 +25,19 @@ public class Buttons : MonoBehaviour
         controlPanel.SetActive(false);
     }
 
+    public void NextLvl2()
+    {
+        SceneManager.LoadScene("LEVEL 4");
+    }
 
+    public void NextLvl3()
+    {
+        SceneManager.LoadScene("LEVEL 1");
+    }
+
+    public void NextLvl4()
+    {
+        SceneManager.LoadScene("LEVEL 3");
+    }
 
 }

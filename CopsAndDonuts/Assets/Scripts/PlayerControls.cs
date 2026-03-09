@@ -231,7 +231,7 @@ public class PlayerControls : MonoBehaviour
             Plate plate = hit.GetComponent<Plate>();
             if (plate != null)
             {
-                // Let plate handle snapping to its donut spots
+                // Let plate do the snapping to its donut spots 
                 if (plate.PlaceDonut(heldDonut, this))
                 {
                     heldDonut = null;
