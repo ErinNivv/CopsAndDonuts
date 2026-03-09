@@ -55,9 +55,9 @@ public class PlayerControls : MonoBehaviour
     [SerializeField] private float plateDetect = 1.5f;
     [SerializeField] private LayerMask plateLayer;
 
-    private int donutsOnPlate = 0;
-    private int donutsWin = 3;
-    private bool hasWon = false;
+    //private int donutsOnPlate = 0;
+    //private int donutsWin = 3;
+    //private bool hasWon = false;
     //input Manager
     public PlayerInput playerInput;
 
@@ -70,9 +70,7 @@ public class PlayerControls : MonoBehaviour
     private bool controlDisabled;
     private float currentFriction;
 
-    [Header("Push")]
-    private float pushRange = 0.5f;
-    private float pushBack = 25f;
+ 
 
     [Header("Animations")]
     private Animator animator;
@@ -231,7 +229,7 @@ public class PlayerControls : MonoBehaviour
             Plate plate = hit.GetComponent<Plate>();
             if (plate != null)
             {
-                // Let plate handle snapping to its donut spots
+                // Let plate do the snapping to its donut spots 
                 if (plate.PlaceDonut(heldDonut, this))
                 {
                     heldDonut = null;

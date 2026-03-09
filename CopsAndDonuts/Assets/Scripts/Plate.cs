@@ -104,24 +104,32 @@ public class Plate : MonoBehaviour
         return count;
     }
 
+    bool roundFinished = false;
+
     void Win(PlayerControls player)
     {
+        if (roundFinished) return;
+
+        roundFinished = true;
+
         int playerIndex = player.playerInput.playerIndex;
 
-        if (playerIndex == 0 && player1WinPanel != null)
-        {
-            player1WinPanel.SetActive(true);
-        }
-        else if (playerIndex == 1 && player2WinPanel != null)
-        {
-            player2WinPanel.SetActive(true);
-        }
-        else if (playerIndex == 2 && player3WinPanel != null)
-        {
-            player3WinPanel.SetActive(true);
-        }
+        GameManager.instance.PlayerWon(playerIndex);
 
-        Debug.Log("Player " + playerIndex + " wins!");
+        if (playerIndex == 0)
+            player1WinPanel.SetActive(true);
+
+        if (playerIndex == 1)
+            player2WinPanel.SetActive(true);
+
+        if (playerIndex == 2)
+            player3WinPanel.SetActive(true);
+
+        if (roundFinished) return;
+
+        roundFinished = true;
+
+ 
     }
 
     IEnumerator ShowWrongPlate()
