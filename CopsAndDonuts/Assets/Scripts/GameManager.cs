@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public int player3Score;
 
     public int currentRound = 1;
-    public int totalRounds = 4;
+    public int totalRounds = 5;
 
     void Awake()
     {
