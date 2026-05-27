@@ -21,8 +21,8 @@ public class PlayerControls : MonoBehaviour
     private GameObject player;
     private bool isFacingRight;
 
-    [Header("BOUNCE")]
-    private float bounceForce = 10f;
+    [Header("Knockback")]
+    private float bounceForce = 5f;
     private float lastBounceTime;
     private float bounceCoolDown = 0.5f;
     private Vector2 bounceVelocity;
@@ -466,7 +466,7 @@ public class PlayerControls : MonoBehaviour
     //            {
     //                Debug.Log("No Rigidbody");
     //            }
-              
+
     //        }
     //        else
     //        {
@@ -476,8 +476,14 @@ public class PlayerControls : MonoBehaviour
     //    }
     //}
 
-    public void flipSprite()
+    private void OnCollisionEnter2D(Collision2D other)
     {
+        if (other.gameObject.CompareTag("Car"))
+        {
+            Debug.Log("Car hit!");
 
+            Vector2 direction = (other.transform.position - transform.position).normalized;
+            rbP1.AddForce(direction * bounceForce);
+        }
     }
 }

@@ -9,6 +9,7 @@ TagManager:
   - PLAYER
   - Puddle
   - Barrier
+  - Car
   layers:
   - Default
   - TransparentFX
