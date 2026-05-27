@@ -8,6 +8,7 @@ TagManager:
   - Plate
   - PLAYER
   - Puddle
+  - Barrier
   layers:
   - Default
   - TransparentFX
