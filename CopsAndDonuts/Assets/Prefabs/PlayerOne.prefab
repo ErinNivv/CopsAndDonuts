@@ -282,6 +282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1774f2a7299ecec479d12f239be186cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerControls
+  playerID: 0
   rayP1: {fileID: 4821864943052070302}
   holdPoint: {fileID: 1661022780376845044}
   rbP1: {fileID: 9196905261255741158}
@@ -298,6 +299,7 @@ MonoBehaviour:
   plateLayer:
     serializedVersion: 2
     m_Bits: 256
+  playerInput: {fileID: 0}
   slipFriction: 0.01
   slideDecrease: 0.95
   minSlideSpeed: 0.1

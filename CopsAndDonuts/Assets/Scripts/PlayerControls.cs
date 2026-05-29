@@ -22,12 +22,12 @@ public class PlayerControls : MonoBehaviour
     private bool isFacingRight;
 
     [Header("Knockback")]
-    private float bounceForce = 5f;
+    private float bounceForce = 7f;
     private float lastBounceTime;
     private float bounceCoolDown = 0.5f;
     private Vector2 bounceVelocity;
     public static PlayerControls instance;
-
+    private bool isBouncing = false;
 
     [Header("PickUp")]
     [SerializeField] Transform holdPoint;
@@ -106,11 +106,10 @@ public class PlayerControls : MonoBehaviour
                 Debug.Log("Controls re-enabled");
             }
         }
-        else
+        else if(!isBouncing)
         {
             rbP1.linearVelocity = new Vector2(moveP1.x * moveSpeed, moveP1.y * moveSpeed);
         }
-
     }
 
     public void Awake()
@@ -482,8 +481,10 @@ public class PlayerControls : MonoBehaviour
         {
             Debug.Log("Car hit!");
 
-            Vector2 direction = (other.transform.position - transform.position).normalized;
-            rbP1.AddForce(direction * bounceForce);
+            Vector2 direction = (transform.position - other.transform.position).normalized;
+            rbP1.AddForce(direction * bounceForce, ForceMode2D.Impulse);
+            Debug.Log("Velocity after bounce: " + rbP1.linearVelocity);
+            controlDisabled = true;
         }
     }
 }
