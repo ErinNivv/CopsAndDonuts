@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: ff257e5e014e37547990c03c7f03d9ca
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6359127273683353411
+    second: Cops_Grab_Blue-Sheet_0
+  - first:
+      213: 7012037157176196287
+    second: Cops_Grab_Blue-Sheet_1
+  - first:
+      213: -1717500571727903266
+    second: Cops_Grab_Blue-Sheet_2
+  - first:
+      213: 2474125760702140704
+    second: Cops_Grab_Blue-Sheet_3
+  - first:
+      213: 3006466240373821318
+    second: Cops_Grab_Blue-Sheet_4
+  - first:
+      213: -8529576824981552814
+    second: Cops_Grab_Blue-Sheet_5
+  - first:
+      213: -4746109482369027434
+    second: Cops_Grab_Blue-Sheet_6
+  - first:
+      213: -7570420458642356108
+    second: Cops_Grab_Blue-Sheet_7
+  - first:
+      213: -5860934568714404474
+    second: Cops_Grab_Blue-Sheet_8
+  - first:
+      213: 7273685150537303487
+    second: Cops_Grab_Blue-Sheet_9
+  - first:
+      213: -6050593287334470625
+    second: Cops_Grab_Blue-Sheet_10
+  - first:
+      213: 1224647998925648966
+    second: Cops_Grab_Blue-Sheet_11
+  - first:
+      213: -117785794729002942
+    second: Cops_Grab_Blue-Sheet_12
+  - first:
+      213: 1393971364346141766
+    second: Cops_Grab_Blue-Sheet_13
+  - first:
+      213: -8175107214034743903
+    second: Cops_Grab_Blue-Sheet_14
+  - first:
+      213: 2576169166605060331
+    second: Cops_Grab_Blue-Sheet_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Cops_Grab_Blue-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 398
+        width: 84
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34ff4653098204850800000000000000
+      internalID: 6359127273683353411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cops_Grab_Blue-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 398
+        width: 94
+        height: 120
+      alignment: 9
+      pivot: {x: 0.44, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbcb351a4a2cf4160800000000000000
+      internalID: 7012037157176196287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cops_Grab_Blue-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 398
+        width: 98
+        height: 120
+      alignment: 9
+      pivot: {x: 0.42, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed5c0a864563a28e0800000000000000
+      internalID: -1717500571727903266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cops_Grab_Blue-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 398
+        width: 85
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0215b48554cd55220800000000000000
+      internalID: 2474125760702140704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cops_Grab_Blue-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 267
+        width: 85
+        height: 119
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68f8faedd1d19b920800000000000000
+      internalID: 3006466240373821318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cops_Grab_Blue-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 267
+        width: 94
+        height: 119
+      alignment: 9
+      pivot: {x: 0.56, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 251029eb11bd0a980800000000000000
+      internalID: -8529576824981552814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cops_Grab_Blue-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 267
+        width: 98
+        height: 119
+      alignment: 9
+      pivot: {x: 0.56, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 692f74e529e622eb0800000000000000
+      internalID: -4746109482369027434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cops_Grab_Blue-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 267
+        width: 84
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 478c542e3b670f690800000000000000
+      internalID: -7570420458642356108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cops_Grab_Blue-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 135
+        width: 64
+        height: 119
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68d78f3ff07c9aea0800000000000000
+      internalID: -5860934568714404474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cops_Grab_Blue-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 135
+        width: 64
+        height: 119
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb54fc55b1251f460800000000000000
+      internalID: 7273685150537303487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cops_Grab_Blue-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 135
+        width: 64
+        height: 119
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1cd01c6679f70ca0800000000000000
+      internalID: -6050593287334470625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cops_Grab_Blue-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 135
+        width: 63
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6443bd6ddd2def010800000000000000
+      internalID: 1224647998925648966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cops_Grab_Blue-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 3
+        width: 63
+        height: 119
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2483799917a8d5ef0800000000000000
+      internalID: -117785794729002942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cops_Grab_Blue-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 3
+        width: 64
+        height: 119
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64c1beef191685310800000000000000
+      internalID: 1393971364346141766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cops_Grab_Blue-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 3
+        width: 64
+        height: 119
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1adc9ba6d4f2c8e80800000000000000
+      internalID: -8175107214034743903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cops_Grab_Blue-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 3
+        width: 64
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be80fc8353460c320800000000000000
+      internalID: 2576169166605060331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 26b4a0d2728ff5d40a63cc05a38a37dd
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Cops_Grab_Blue-Sheet_0: 6359127273683353411
+      Cops_Grab_Blue-Sheet_1: 7012037157176196287
+      Cops_Grab_Blue-Sheet_10: -6050593287334470625
+      Cops_Grab_Blue-Sheet_11: 1224647998925648966
+      Cops_Grab_Blue-Sheet_12: -117785794729002942
+      Cops_Grab_Blue-Sheet_13: 1393971364346141766
+      Cops_Grab_Blue-Sheet_14: -8175107214034743903
+      Cops_Grab_Blue-Sheet_15: 2576169166605060331
+      Cops_Grab_Blue-Sheet_2: -1717500571727903266
+      Cops_Grab_Blue-Sheet_3: 2474125760702140704
+      Cops_Grab_Blue-Sheet_4: 3006466240373821318
+      Cops_Grab_Blue-Sheet_5: -8529576824981552814
+      Cops_Grab_Blue-Sheet_6: -4746109482369027434
+      Cops_Grab_Blue-Sheet_7: -7570420458642356108
+      Cops_Grab_Blue-Sheet_8: -5860934568714404474
+      Cops_Grab_Blue-Sheet_9: 7273685150537303487
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

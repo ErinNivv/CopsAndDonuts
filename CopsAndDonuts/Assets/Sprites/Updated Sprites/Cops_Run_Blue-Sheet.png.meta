@@ -106,7 +106,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -185,10 +185,10 @@ TextureImporter:
       name: Cops_Run_Blue-Sheet_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 193
-        width: 42
-        height: 59
+        x: 7
+        y: 396
+        width: 84
+        height: 119
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -207,10 +207,10 @@ TextureImporter:
       name: Cops_Run_Blue-Sheet_1
       rect:
         serializedVersion: 2
-        x: 51
-        y: 193
-        width: 42
-        height: 57
+        x: 106
+        y: 396
+        width: 83
+        height: 115
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,10 +229,10 @@ TextureImporter:
       name: Cops_Run_Blue-Sheet_2
       rect:
         serializedVersion: 2
-        x: 99
-        y: 193
-        width: 42
-        height: 57
+        x: 204
+        y: 396
+        width: 84
+        height: 115
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -251,10 +251,10 @@ TextureImporter:
       name: Cops_Run_Blue-Sheet_3
       rect:
         serializedVersion: 2
-        x: 147
-        y: 193
-        width: 42
-        height: 59
+        x: 302
+        y: 396
+        width: 84
+        height: 119
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -273,10 +273,10 @@ TextureImporter:
       name: Cops_Run_Blue-Sheet_4
       rect:
         serializedVersion: 2
-        x: 195
-        y: 193
-        width: 42
-        height: 57
+        x: 401
+        y: 396
+        width: 83
+        height: 115
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -295,10 +295,10 @@ TextureImporter:
       name: Cops_Run_Blue-Sheet_5
       rect:
         serializedVersion: 2
-        x: 243
-        y: 193
-        width: 42
-        height: 57
+        x: 499
+        y: 396
+        width: 84
+        height: 115
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -317,10 +317,10 @@ TextureImporter:
       name: Cops_Run_Blue-Sheet_6
       rect:
         serializedVersion: 2
-        x: 3
-        y: 129
-        width: 42
-        height: 59
+        x: 7
+        y: 265
+        width: 84
+        height: 119
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -339,10 +339,10 @@ TextureImporter:
       name: Cops_Run_Blue-Sheet_7
       rect:
         serializedVersion: 2
-        x: 51
-        y: 129
-        width: 42
-        height: 57
+        x: 106
+        y: 265
+        width: 83
+        height: 115
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -361,10 +361,10 @@ TextureImporter:
       name: Cops_Run_Blue-Sheet_8
       rect:
         serializedVersion: 2
-        x: 99
-        y: 129
-        width: 42
-        height: 57
+        x: 204
+        y: 265
+        width: 84
+        height: 115
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -383,10 +383,10 @@ TextureImporter:
       name: Cops_Run_Blue-Sheet_9
       rect:
         serializedVersion: 2
-        x: 147
-        y: 129
-        width: 42
-        height: 59
+        x: 302
+        y: 265
+        width: 84
+        height: 119
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -405,10 +405,10 @@ TextureImporter:
       name: Cops_Run_Blue-Sheet_10
       rect:
         serializedVersion: 2
-        x: 195
-        y: 129
-        width: 42
-        height: 57
+        x: 401
+        y: 265
+        width: 83
+        height: 115
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -427,10 +427,10 @@ TextureImporter:
       name: Cops_Run_Blue-Sheet_11
       rect:
         serializedVersion: 2
-        x: 243
-        y: 129
-        width: 42
-        height: 57
+        x: 499
+        y: 265
+        width: 84
+        height: 115
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -449,10 +449,10 @@ TextureImporter:
       name: Cops_Run_Blue-Sheet_12
       rect:
         serializedVersion: 2
-        x: 5
-        y: 65
-        width: 32
-        height: 59
+        x: 11
+        y: 134
+        width: 64
+        height: 119
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -471,10 +471,10 @@ TextureImporter:
       name: Cops_Run_Blue-Sheet_13
       rect:
         serializedVersion: 2
-        x: 53
-        y: 65
-        width: 37
-        height: 57
+        x: 110
+        y: 134
+        width: 73
+        height: 115
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -493,10 +493,10 @@ TextureImporter:
       name: Cops_Run_Blue-Sheet_14
       rect:
         serializedVersion: 2
-        x: 101
-        y: 65
-        width: 37
-        height: 57
+        x: 208
+        y: 134
+        width: 74
+        height: 115
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -515,10 +515,10 @@ TextureImporter:
       name: Cops_Run_Blue-Sheet_15
       rect:
         serializedVersion: 2
-        x: 149
-        y: 65
-        width: 32
-        height: 59
+        x: 306
+        y: 134
+        width: 64
+        height: 119
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -537,10 +537,10 @@ TextureImporter:
       name: Cops_Run_Blue-Sheet_16
       rect:
         serializedVersion: 2
-        x: 197
-        y: 65
-        width: 37
-        height: 57
+        x: 405
+        y: 134
+        width: 73
+        height: 115
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -559,10 +559,10 @@ TextureImporter:
       name: Cops_Run_Blue-Sheet_17
       rect:
         serializedVersion: 2
-        x: 245
-        y: 65
-        width: 37
-        height: 57
+        x: 503
+        y: 134
+        width: 74
+        height: 115
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -581,10 +581,10 @@ TextureImporter:
       name: Cops_Run_Blue-Sheet_18
       rect:
         serializedVersion: 2
-        x: 12
-        y: 1
-        width: 32
-        height: 59
+        x: 26
+        y: 3
+        width: 63
+        height: 119
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -603,10 +603,10 @@ TextureImporter:
       name: Cops_Run_Blue-Sheet_19
       rect:
         serializedVersion: 2
-        x: 54
-        y: 1
-        width: 37
-        height: 57
+        x: 112
+        y: 3
+        width: 73
+        height: 115
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -625,10 +625,10 @@ TextureImporter:
       name: Cops_Run_Blue-Sheet_20
       rect:
         serializedVersion: 2
-        x: 102
-        y: 1
-        width: 37
-        height: 57
+        x: 210
+        y: 3
+        width: 74
+        height: 115
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -647,10 +647,10 @@ TextureImporter:
       name: Cops_Run_Blue-Sheet_21
       rect:
         serializedVersion: 2
-        x: 156
-        y: 1
-        width: 32
-        height: 59
+        x: 321
+        y: 3
+        width: 63
+        height: 119
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -669,10 +669,10 @@ TextureImporter:
       name: Cops_Run_Blue-Sheet_22
       rect:
         serializedVersion: 2
-        x: 198
-        y: 1
-        width: 37
-        height: 57
+        x: 407
+        y: 3
+        width: 73
+        height: 115
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -691,10 +691,10 @@ TextureImporter:
       name: Cops_Run_Blue-Sheet_23
       rect:
         serializedVersion: 2
-        x: 246
-        y: 1
-        width: 37
-        height: 57
+        x: 505
+        y: 3
+        width: 74
+        height: 115
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
