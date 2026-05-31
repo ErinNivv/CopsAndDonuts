@@ -1,0 +1,754 @@
+fileFormatVersion: 2
+guid: e9cdbcc48aaa1574e8d58e9f37896d1c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1755542983545517072
+    second: Cops_Run_Blue-Sheet_0
+  - first:
+      213: -8521002464636035500
+    second: Cops_Run_Blue-Sheet_1
+  - first:
+      213: 6374328853686469059
+    second: Cops_Run_Blue-Sheet_2
+  - first:
+      213: -677976342997498719
+    second: Cops_Run_Blue-Sheet_3
+  - first:
+      213: -5371959944232759614
+    second: Cops_Run_Blue-Sheet_4
+  - first:
+      213: -5508934529941219523
+    second: Cops_Run_Blue-Sheet_5
+  - first:
+      213: 399742851659576994
+    second: Cops_Run_Blue-Sheet_6
+  - first:
+      213: 2184472709780376552
+    second: Cops_Run_Blue-Sheet_7
+  - first:
+      213: -3548271388777539876
+    second: Cops_Run_Blue-Sheet_8
+  - first:
+      213: -2049970582817453267
+    second: Cops_Run_Blue-Sheet_9
+  - first:
+      213: -6674342638968426375
+    second: Cops_Run_Blue-Sheet_10
+  - first:
+      213: 53658892572047060
+    second: Cops_Run_Blue-Sheet_11
+  - first:
+      213: -6451770805327601434
+    second: Cops_Run_Blue-Sheet_12
+  - first:
+      213: -7307715048478099611
+    second: Cops_Run_Blue-Sheet_13
+  - first:
+      213: 6228599039253495441
+    second: Cops_Run_Blue-Sheet_14
+  - first:
+      213: -8062957955174635889
+    second: Cops_Run_Blue-Sheet_15
+  - first:
+      213: -8259974233768724860
+    second: Cops_Run_Blue-Sheet_16
+  - first:
+      213: -1253254054684435813
+    second: Cops_Run_Blue-Sheet_17
+  - first:
+      213: 3448625997700127658
+    second: Cops_Run_Blue-Sheet_18
+  - first:
+      213: -5338457110629931367
+    second: Cops_Run_Blue-Sheet_19
+  - first:
+      213: 206835480536439093
+    second: Cops_Run_Blue-Sheet_20
+  - first:
+      213: 7261399121818029289
+    second: Cops_Run_Blue-Sheet_21
+  - first:
+      213: -838572167739984697
+    second: Cops_Run_Blue-Sheet_22
+  - first:
+      213: 2896553981867630444
+    second: Cops_Run_Blue-Sheet_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Cops_Run_Blue-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 193
+        width: 42
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 014f822da01fc5810800000000000000
+      internalID: 1755542983545517072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cops_Run_Blue-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 193
+        width: 42
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45e142597615fb980800000000000000
+      internalID: -8521002464636035500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cops_Run_Blue-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 193
+        width: 42
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c1418dd15a267850800000000000000
+      internalID: 6374328853686469059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cops_Run_Blue-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 193
+        width: 42
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a4048dab185796f0800000000000000
+      internalID: -677976342997498719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cops_Run_Blue-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 193
+        width: 42
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ce016084e6f275b0800000000000000
+      internalID: -5371959944232759614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cops_Run_Blue-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 193
+        width: 42
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3758fb8b355c83b0800000000000000
+      internalID: -5508934529941219523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cops_Run_Blue-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 129
+        width: 42
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a6bba2710c2c8500800000000000000
+      internalID: 399742851659576994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cops_Run_Blue-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 129
+        width: 42
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8eb8eff0b5ec05e10800000000000000
+      internalID: 2184472709780376552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cops_Run_Blue-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 129
+        width: 42
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd69b31b8f102cec0800000000000000
+      internalID: -3548271388777539876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cops_Run_Blue-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 129
+        width: 42
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2b4a2bbd9a0d83e0800000000000000
+      internalID: -2049970582817453267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cops_Run_Blue-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 129
+        width: 42
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9703b076bb8ff53a0800000000000000
+      internalID: -6674342638968426375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cops_Run_Blue-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 129
+        width: 42
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d63cce7a72aeb000800000000000000
+      internalID: 53658892572047060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cops_Run_Blue-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 65
+        width: 32
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e06630b2a4b676a0800000000000000
+      internalID: -6451770805327601434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cops_Run_Blue-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 65
+        width: 37
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 567bfaf91e7c59a90800000000000000
+      internalID: -7307715048478099611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cops_Run_Blue-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 65
+        width: 37
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19e3b0f53dd607650800000000000000
+      internalID: 6228599039253495441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cops_Run_Blue-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 65
+        width: 32
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f86e7ea857e9a1090800000000000000
+      internalID: -8062957955174635889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cops_Run_Blue-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 65
+        width: 37
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 486f556923dae5d80800000000000000
+      internalID: -8259974233768724860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cops_Run_Blue-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 65
+        width: 37
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9a5739c31c8b9ee0800000000000000
+      internalID: -1253254054684435813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cops_Run_Blue-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 1
+        width: 32
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aabd714c21bfbdf20800000000000000
+      internalID: 3448625997700127658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cops_Run_Blue-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 1
+        width: 37
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 996ae30da8df9e5b0800000000000000
+      internalID: -5338457110629931367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cops_Run_Blue-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 1
+        width: 37
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 539525016c3ded200800000000000000
+      internalID: 206835480536439093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cops_Run_Blue-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 1
+        width: 32
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ec0c4c570ca5c460800000000000000
+      internalID: 7261399121818029289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cops_Run_Blue-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 1
+        width: 37
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c4345f6e0bcc54f0800000000000000
+      internalID: -838572167739984697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cops_Run_Blue-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 1
+        width: 37
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6f96f9ff70a23820800000000000000
+      internalID: 2896553981867630444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Cops_Run_Blue-Sheet_0: 1755542983545517072
+      Cops_Run_Blue-Sheet_1: -8521002464636035500
+      Cops_Run_Blue-Sheet_10: -6674342638968426375
+      Cops_Run_Blue-Sheet_11: 53658892572047060
+      Cops_Run_Blue-Sheet_12: -6451770805327601434
+      Cops_Run_Blue-Sheet_13: -7307715048478099611
+      Cops_Run_Blue-Sheet_14: 6228599039253495441
+      Cops_Run_Blue-Sheet_15: -8062957955174635889
+      Cops_Run_Blue-Sheet_16: -8259974233768724860
+      Cops_Run_Blue-Sheet_17: -1253254054684435813
+      Cops_Run_Blue-Sheet_18: 3448625997700127658
+      Cops_Run_Blue-Sheet_19: -5338457110629931367
+      Cops_Run_Blue-Sheet_2: 6374328853686469059
+      Cops_Run_Blue-Sheet_20: 206835480536439093
+      Cops_Run_Blue-Sheet_21: 7261399121818029289
+      Cops_Run_Blue-Sheet_22: -838572167739984697
+      Cops_Run_Blue-Sheet_23: 2896553981867630444
+      Cops_Run_Blue-Sheet_3: -677976342997498719
+      Cops_Run_Blue-Sheet_4: -5371959944232759614
+      Cops_Run_Blue-Sheet_5: -5508934529941219523
+      Cops_Run_Blue-Sheet_6: 399742851659576994
+      Cops_Run_Blue-Sheet_7: 2184472709780376552
+      Cops_Run_Blue-Sheet_8: -3548271388777539876
+      Cops_Run_Blue-Sheet_9: -2049970582817453267
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
