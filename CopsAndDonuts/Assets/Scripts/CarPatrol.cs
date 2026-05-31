@@ -57,7 +57,7 @@ public class CarPatrol : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Barrier"))
+        if (other.gameObject.CompareTag("Barrier") || other.gameObject.CompareTag("Donut"))
         {
             bc = GetComponent<BoxCollider2D>();
             bc.isTrigger = true;
@@ -67,7 +67,7 @@ public class CarPatrol : MonoBehaviour
 
     public void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Barrier"))
+        if (other.gameObject.CompareTag("Barrier") || other.gameObject.CompareTag("Donut"))
         {
             bc = GetComponent<BoxCollider2D>();
             bc.isTrigger = false;

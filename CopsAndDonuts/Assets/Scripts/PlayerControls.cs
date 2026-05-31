@@ -22,12 +22,13 @@ public class PlayerControls : MonoBehaviour
     private bool isFacingRight;
 
     [Header("Knockback")]
-    private float bounceForce = 7f;
+    private float bounceForce = 10f;
     private float lastBounceTime;
     private float bounceCoolDown = 0.5f;
     private Vector2 bounceVelocity;
     public static PlayerControls instance;
     private bool isBouncing = false;
+    private float dropDonutWaitTime = 0.3f;
 
     [Header("PickUp")]
     [SerializeField] Transform holdPoint;
@@ -483,8 +484,20 @@ public class PlayerControls : MonoBehaviour
 
             Vector2 direction = (transform.position - other.transform.position).normalized;
             rbP1.AddForce(direction * bounceForce, ForceMode2D.Impulse);
-            Debug.Log("Velocity after bounce: " + rbP1.linearVelocity);
             controlDisabled = true;
+            StartCoroutine(HitToDropDonut());
         }
+    }
+
+    private IEnumerator HitToDropDonut()
+    {
+        yield return new WaitForSeconds(dropDonutWaitTime);
+
+        if (heldDonut != null)
+        {
+            DropDonut();
+        }
+
+        yield return 0;
     }
 }
