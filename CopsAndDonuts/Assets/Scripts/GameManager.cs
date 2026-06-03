@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -23,6 +24,21 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    void OnPlayerJoined(PlayerInput playerInput)
+    {
+        int index = playerInput.playerIndex;
+
+        CharacterData selectedCharacter = GameSessionData.Players[index];
+
+        if (selectedCharacter == null) return;
+
+        SpriteRenderer sr = playerInput.GetComponent<SpriteRenderer>();
+        if (sr != null && selectedCharacter.portrait != null)
+            sr.sprite = selectedCharacter.portrait;
+
+        Debug.Log("Player " + index + " joined as " + selectedCharacter.characterName);
     }
 
     public void PlayerWon(int playerIndex)

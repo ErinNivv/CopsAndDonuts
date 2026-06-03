@@ -81,15 +81,12 @@ public class PlayerControls : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         animator = GetComponent<Animator>();
 
-        // if its Player 1
-        if (playerInput.playerIndex == 0)
+        //kinda reads which player was picked 
+        CharacterData selectedCharacter = GameSessionData.Players[playerInput.playerIndex];
+        if (selectedCharacter != null && selectedCharacter.portrait != null)
         {
-            //Assign Sprites
-
-        }
-        else if (playerInput.playerIndex == 1)//if its Player 2
-        {
-            //Assign Sprites
+            SpriteRenderer sr = GetComponent<SpriteRenderer>();
+            if (sr != null) sr.sprite = selectedCharacter.portrait;
         }
 
     }
