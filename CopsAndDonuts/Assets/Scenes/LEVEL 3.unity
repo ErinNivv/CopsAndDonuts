@@ -6901,8 +6901,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14f990c466dcb4c4ca8585d9d3a68a1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InmateAI
-  moveSpeed: 5
+  moveSpeed: 0.5
   rb: {fileID: 1352341435}
+  bc: {fileID: 1352341434}
 --- !u!1 &1505272330
 GameObject:
   m_ObjectHideFlags: 0
