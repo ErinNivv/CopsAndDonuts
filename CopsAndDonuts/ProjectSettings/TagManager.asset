@@ -10,6 +10,7 @@ TagManager:
   - Puddle
   - Barrier
   - Car
+  - Target
   layers:
   - Default
   - TransparentFX
