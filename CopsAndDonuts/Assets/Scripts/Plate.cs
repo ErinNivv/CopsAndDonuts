@@ -23,9 +23,10 @@ public class Plate : MonoBehaviour
     public GameObject wrongPlateSprite;   // assign sprite object in inspector
     public float popupTime = 1f;
 
-    public GameObject p1Button;
-    public GameObject p2Button;
-    public GameObject p3Button;
+    //public GameObject p1Button;
+    //public GameObject p2Button;
+    //public GameObject p3Button;
+    public GameObject nextButton;
 
     public EventSystem eventSystem;
 
@@ -126,24 +127,23 @@ public class Plate : MonoBehaviour
 
         GameManager.instance.PlayerWon(playerIndex);
 
-        if (playerIndex == 1)
-        {
-            player1WinPanel.SetActive(true);
-            eventSystem.firstSelectedGameObject = p1Button;
-        }
-            
-
-        if (playerIndex == 2)
-        {
-            player2WinPanel.SetActive(true);
-            eventSystem.firstSelectedGameObject = p2Button;
-        }
-            
-
         if (playerIndex == 0)
         {
+            player1WinPanel.SetActive(true);
+        //    StartCoroutine(Player1WinSelection());
+            nextButton.SetActive(true);
+        }
+        else if (playerIndex == 1)
+        {
+            player2WinPanel.SetActive(true);
+            //StartCoroutine(Player2WinSelection());
+            nextButton.SetActive(true);
+        }
+        else if (playerIndex == 2)
+        {
             player3WinPanel.SetActive(true);
-            eventSystem.firstSelectedGameObject = p3Button;
+            //StartCoroutine(Player3WinSelection());
+            nextButton.SetActive(true);
         }
             
 
@@ -162,5 +162,24 @@ public class Plate : MonoBehaviour
 
         wrongPlateSprite.SetActive(false);
     }
+
+    //IEnumerator Player1WinSelection()
+    //{
+    //    yield return new WaitForSeconds(0.5f);
+    //    eventSystem.SetSelectedGameObject(p1Button);
+    //}
+
+    //IEnumerator Player2WinSelection()
+    //{
+    //    yield return new WaitForSeconds(0.5f);
+    //    eventSystem.SetSelectedGameObject(p2Button);
+    //}
+
+    //IEnumerator Player3WinSelection()
+    //{
+    //    yield return new WaitForSeconds(0.5f);
+    //    eventSystem.SetSelectedGameObject(p3Button);
+    //}
+
 
 }

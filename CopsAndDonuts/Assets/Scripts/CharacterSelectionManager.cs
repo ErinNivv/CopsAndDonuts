@@ -141,7 +141,7 @@ public class CharacterSelectionManager : MonoBehaviour
             characters[selectedCharacterIndex[2]]
         );
         
-        SceneManager.LoadScene("LEVEL 2");
+        SceneManager.LoadScene("LEVEL 1");
     }
 
     private void ChangeCharacter(int playerIndex, int direction)
