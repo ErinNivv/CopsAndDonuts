@@ -82,12 +82,12 @@ public class PlayerControls : MonoBehaviour
         animator = GetComponent<Animator>();
 
         //kinda reads which player was picked 
-        CharacterData selectedCharacter = GameSessionData.Players[playerInput.playerIndex];
-        if (selectedCharacter != null && selectedCharacter.portrait != null)
-        {
-            SpriteRenderer sr = GetComponent<SpriteRenderer>();
-            if (sr != null) sr.sprite = selectedCharacter.portrait;
-        }
+        //CharacterData selectedCharacter = GameSessionData.Players[playerInput.playerIndex];
+        //if (selectedCharacter != null && selectedCharacter.portrait != null)
+        //{
+        //    SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        //    if (sr != null) sr.sprite = selectedCharacter.portrait;
+        //}
 
     }
 
@@ -113,7 +113,7 @@ public class PlayerControls : MonoBehaviour
     public void Awake()
     {
         instance = this;
-
+        DontDestroyOnLoad(gameObject);
         currentFriction = 0.1f;
     }
 
