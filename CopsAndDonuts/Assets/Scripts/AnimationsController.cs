@@ -14,29 +14,82 @@ public class AnimationsController : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         animator = GetComponent<Animator>();
 
-        int index = playerInput.playerIndex;
-        CharacterData selectedCharacter = GameSessionData.Players[index];
-
-        if (selectedCharacter == null)
-        {
-            Debug.Log("No character data found for player " + index);
-            return;
-        }
-
-      
-        if (selectedCharacter.characterName == "Reddy")
+        if(playerInput.playerIndex == 0 )
         {
             animator.SetBool("IsPlayer1", true);
         }
-        else if (selectedCharacter.characterName == "Greeny")
+        if(playerInput.playerIndex == 1 )
         {
             animator.SetBool("IsPlayer2", true);
         }
-        else if (selectedCharacter.characterName == "Bluey")
+        else if(playerInput.playerIndex == 2 )
         {
             animator.SetBool("IsPlayer3", true);
         }
-
-        Debug.Log("Player " + index + " assigned character: " + selectedCharacter.characterName);
     }
+
+
+    //public void PlaySideSlide()
+    //{
+    //    for (int i = 0; i < AnimationBools.Count; i++)
+    //    {
+    //        animator.SetBool(AnimationBools[i], false);
+    //    }
+    //    animator.SetBool(AnimationBools[0], true);
+    //}
+
+    //public void PlaySideRun()
+    //{
+    //    for (int i = 0; i < AnimationBools.Count; i++)
+    //    {
+    //        animator.SetBool(AnimationBools[i], false);
+    //    }
+    //    animator.SetBool(AnimationBools[1], true);
+    //}
+
+    //public void PlayBackRun()
+    //{
+    //    for (int i = 0; i < AnimationBools.Count; i++)
+    //    {
+    //        animator.SetBool(AnimationBools[i], false);
+    //    }
+    //    animator.SetBool(AnimationBools[2], true);
+    //}
+
+    //public void PlayBackSlide()
+    //{
+    //    for (int i = 0; i < AnimationBools.Count; i++)
+    //    {
+    //        animator.SetBool(AnimationBools[i], false);
+    //    }
+    //    animator.SetBool(AnimationBools[3], true);
+    //}
+
+    //public void PlayFrontRun()
+    //{
+    //    for (int i = 0; i < AnimationBools.Count; i++)
+    //    {
+    //        animator.SetBool(AnimationBools[i], false);
+    //    }
+    //    animator.SetBool(AnimationBools[4], true);
+    //}
+
+    //public void PlayFrontSlide()
+    //{
+    //    for (int i = 0; i < AnimationBools.Count; i++)
+    //    {
+    //        animator.SetBool(AnimationBools[i], false);
+    //    }
+    //    animator.SetBool(AnimationBools[5], true);
+    //}
+
+    //public void PlayIdle()
+    //{
+    //    for (int i = 0; i < AnimationBools.Count; i++)
+    //    {
+    //        animator.SetBool(AnimationBools[i], false);
+    //    }
+    //    animator.SetBool(AnimationBools[6], true);
+    //}
+
 }
