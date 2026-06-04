@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public int currentRound = 1;
     public int totalRounds = 5;
     private PlayerInputManager playerInputManager;
+    public GameObject pressPanel;
 
 
     void Awake()
@@ -20,7 +21,7 @@ public class GameManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -35,11 +36,20 @@ public class GameManager : MonoBehaviour
 
     void OnPlayerJoined(PlayerInput playerInput)
     {
+        
         // Once all 3 players have joined, disable joining
         if (PlayerInput.all.Count >= 3)
         {
             if (playerInputManager != null)
                 playerInputManager.DisableJoining();
+        }
+    }
+
+    private void Update()
+    {
+        if (playerInputManager.playerCount == 3)
+        {
+            pressPanel.SetActive(false);
         }
     }
 

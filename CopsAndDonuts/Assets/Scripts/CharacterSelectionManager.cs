@@ -29,6 +29,9 @@ public class CharacterSelectionManager : MonoBehaviour
     private bool[] playerLocked;
     private float[] scrollTimers;
     private Gamepad[] gamepads;
+   
+
+    
 
     private void Awake()
     {
@@ -137,7 +140,8 @@ public class CharacterSelectionManager : MonoBehaviour
             characters[selectedCharacterIndex[1]],
             characters[selectedCharacterIndex[2]]
         );
-        SceneManager.LoadScene("LEVEL 1");
+        
+        SceneManager.LoadScene("LEVEL 2");
     }
 
     private void ChangeCharacter(int playerIndex, int direction)
