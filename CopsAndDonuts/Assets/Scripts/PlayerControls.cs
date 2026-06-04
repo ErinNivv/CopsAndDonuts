@@ -74,6 +74,12 @@ public class PlayerControls : MonoBehaviour
     [Header("Animations")]
     private Animator animator;
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource playerSrc;
+    [SerializeField] private AudioClip slipAudio;
+    [SerializeField] private AudioClip funnyCrashAudio;
+    [SerializeField] private AudioClip crashAudio;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -427,6 +433,7 @@ public class PlayerControls : MonoBehaviour
         controlDisabled = true;
         currentFriction = slipFriction;
         Debug.Log("Controls disabled and sliding");
+        playerSrc.PlayOneShot(slipAudio);
     }
 
     public void OnExitSlipperySurface()
@@ -482,6 +489,8 @@ public class PlayerControls : MonoBehaviour
             Vector2 direction = (transform.position - other.transform.position).normalized;
             rbP1.AddForce(direction * bounceForce, ForceMode2D.Impulse);
             controlDisabled = true;
+            playerSrc.PlayOneShot(funnyCrashAudio);
+            playerSrc.PlayOneShot(crashAudio);
             StartCoroutine(HitToDropDonut());
         }
     }

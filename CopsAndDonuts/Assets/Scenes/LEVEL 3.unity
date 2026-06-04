@@ -4287,6 +4287,10 @@ MonoBehaviour:
   allowedPlayerID: 0
   wrongPlateSprite: {fileID: 0}
   popupTime: 1
+  p1Button: {fileID: 0}
+  p2Button: {fileID: 0}
+  p3Button: {fileID: 0}
+  eventSystem: {fileID: 0}
 --- !u!61 &622705428
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6451,6 +6455,10 @@ MonoBehaviour:
   allowedPlayerID: 0
   wrongPlateSprite: {fileID: 0}
   popupTime: 1
+  p1Button: {fileID: 0}
+  p2Button: {fileID: 0}
+  p3Button: {fileID: 0}
+  eventSystem: {fileID: 0}
 --- !u!1 &1285564459
 GameObject:
   m_ObjectHideFlags: 0
@@ -6901,7 +6909,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14f990c466dcb4c4ca8585d9d3a68a1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InmateAI
-  moveSpeed: 0.5
+  moveSpeed: 2.5
   rb: {fileID: 1352341435}
   bc: {fileID: 1352341434}
 --- !u!1 &1505272330
@@ -7633,6 +7641,10 @@ MonoBehaviour:
   allowedPlayerID: 0
   wrongPlateSprite: {fileID: 0}
   popupTime: 1
+  p1Button: {fileID: 0}
+  p2Button: {fileID: 0}
+  p3Button: {fileID: 0}
+  eventSystem: {fileID: 0}
 --- !u!1 &1650894064
 GameObject:
   m_ObjectHideFlags: 0
