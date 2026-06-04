@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.EventSystems;
 
 public class Plate : MonoBehaviour
 {
@@ -21,6 +22,12 @@ public class Plate : MonoBehaviour
     [Header("Wrong Plate Feedback")]
     public GameObject wrongPlateSprite;   // assign sprite object in inspector
     public float popupTime = 1f;
+
+    public GameObject p1Button;
+    public GameObject p2Button;
+    public GameObject p3Button;
+
+    public EventSystem eventSystem;
 
     private void Awake()
     {
@@ -108,7 +115,10 @@ public class Plate : MonoBehaviour
 
     void Win(PlayerControls player)
     {
-        if (roundFinished) return;
+        if (roundFinished)
+        {
+            return;
+        }
 
         roundFinished = true;
 
@@ -116,14 +126,26 @@ public class Plate : MonoBehaviour
 
         GameManager.instance.PlayerWon(playerIndex);
 
-        if (playerIndex == 0)
-            player1WinPanel.SetActive(true);
-
         if (playerIndex == 1)
-            player2WinPanel.SetActive(true);
+        {
+            player1WinPanel.SetActive(true);
+            eventSystem.firstSelectedGameObject = p1Button;
+        }
+            
 
         if (playerIndex == 2)
+        {
+            player2WinPanel.SetActive(true);
+            eventSystem.firstSelectedGameObject = p2Button;
+        }
+            
+
+        if (playerIndex == 0)
+        {
             player3WinPanel.SetActive(true);
+            eventSystem.firstSelectedGameObject = p3Button;
+        }
+            
 
         if (roundFinished) return;
 

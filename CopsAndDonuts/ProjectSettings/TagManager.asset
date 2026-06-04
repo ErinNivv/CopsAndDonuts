@@ -10,7 +10,8 @@ TagManager:
   - Puddle
   - Barrier
   - Car
-  - Target
+  - CharacterSelection
+  - PlayerInputManager
   layers:
   - Default
   - TransparentFX

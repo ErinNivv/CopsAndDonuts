@@ -8,6 +8,8 @@ using TMPro;
 
 public class CharacterSelectionManager : MonoBehaviour
 {
+
+   
     [Header("Characters")]
     public CharacterData[] characters;
 
@@ -23,10 +25,13 @@ public class CharacterSelectionManager : MonoBehaviour
     public float stickDeadzone = 0.5f;
     public float scrollCooldown = 0.3f;
 
-    private int[] selectedCharacterIndex;
+    public int[] selectedCharacterIndex;
     private bool[] playerLocked;
     private float[] scrollTimers;
     private Gamepad[] gamepads;
+   
+
+    
 
     private void Awake()
     {
@@ -36,6 +41,8 @@ public class CharacterSelectionManager : MonoBehaviour
 
         if (startPromptObject != null)
             startPromptObject.SetActive(false);
+
+        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
@@ -98,8 +105,11 @@ public class CharacterSelectionManager : MonoBehaviour
         }
 
         playerLocked[playerIndex] = true;
+        GameSessionData.SetDevice(playerIndex, gp); // save which controller this was
         playerPanels[playerIndex].ShowLocked(characters[charIdx]);
         CheckAllLocked();
+
+        Debug.Log(charIdx);
     }
 
     private void CheckAllLocked()
@@ -130,7 +140,8 @@ public class CharacterSelectionManager : MonoBehaviour
             characters[selectedCharacterIndex[1]],
             characters[selectedCharacterIndex[2]]
         );
-        SceneManager.LoadScene("LEVEL 1");
+        
+        SceneManager.LoadScene("LEVEL 2");
     }
 
     private void ChangeCharacter(int playerIndex, int direction)
