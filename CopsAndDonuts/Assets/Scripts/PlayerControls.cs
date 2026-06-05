@@ -41,13 +41,19 @@ public class PlayerControls : MonoBehaviour
     public GameObject openDoor;
     private SpriteRenderer spriteRenderer;
     [SerializeField] private List<Sprite> Sprites;
-    public bool door1IsOpen = false;
-    public bool door2IsOpen = false;
-    public bool door3IsOpen = false;
+    public bool door1TIsOpen = false;
+    public bool door1BIsOpen = false;
+    public bool door2LIsOpen = false;
+    public bool door2RIsOpen = false;
+    public bool door3TIsOpen = false;
+    public bool door3BIsOpen = false;
     private float doorOpenTime = 5f;
-    public GameObject door1;
-    public GameObject door2;
-    public GameObject door3;
+    public GameObject door1T;
+    public GameObject door1B;
+    public GameObject door2L;
+    public GameObject door2R;
+    public GameObject door3T;
+    public GameObject door3B;
 
 
     [Header("Plate")]
@@ -258,8 +264,9 @@ public class PlayerControls : MonoBehaviour
 
             if (hit != null)
             {
-                door1 = hit.gameObject;
-                print("Detected Door: " + door1.name);
+                door1T = hit.gameObject;
+                door1B = hit.gameObject;
+                print("Detected Door: " + name);
 
                 OpenedDoor1();
             }
@@ -272,8 +279,9 @@ public class PlayerControls : MonoBehaviour
             Collider2D hit2 = Physics2D.OverlapCircle(transform.position, grabRange, LayerMask.GetMask("Door2"));
             if (hit2 != null)
             {
-                door2 = hit2.gameObject;
-                print("Detected Door: " + door2.name);
+                door2L = hit2.gameObject;
+                door2R = hit2.gameObject;
+                print("Detected Door: " + name);
 
                 OpenedDoor2();
             }
@@ -285,8 +293,9 @@ public class PlayerControls : MonoBehaviour
             Collider2D hit3 = Physics2D.OverlapCircle(transform.position, grabRange, LayerMask.GetMask("Door3"));
             if (hit3 != null)
             {
-                door3 = hit3.gameObject;
-                print("Detected Door: " + door3.name);
+                door3T = hit3.gameObject;
+                door3B = hit3.gameObject;
+                print("Detected Door: " + name);
 
                 OpenedDoor3();
             }
@@ -300,108 +309,174 @@ public class PlayerControls : MonoBehaviour
 
     private void OpenedDoor1()
     {
-        if(door1IsOpen)
-            return;
-        door1IsOpen = true;
-
-        Animator doorAnimator = door1.gameObject.GetComponent<Animator>();
-
-        if(doorAnimator != null)
+        if(door1TIsOpen && door1BIsOpen)
         {
-            doorAnimator.SetTrigger("Open");
+            ClosedDoor1();
+        }
+            return; // function to close door 
+        door1TIsOpen = true;
+        door1BIsOpen = true;
+
+        Animator doorAnimator1T = door1T.gameObject.GetComponent<Animator>();
+        Animator doorAnimator1B = door1B.gameObject.GetComponent<Animator>();
+
+        if (doorAnimator1T != null && doorAnimator1B != null)
+        {
+            doorAnimator1T.SetTrigger("Open");
+            doorAnimator1B.SetTrigger("Open");
         }
         else
         {
             Debug.Log("No animator component on door");
         }
-        StartCoroutine(Door1());
+        //StartCoroutine(Door1());
     }
 
     private void OpenedDoor2()
     {
-        if (door2IsOpen)
-            return;
-        door2IsOpen = true;
-
-        Animator doorAnimator = door2.gameObject.GetComponent<Animator>();
-
-        if (doorAnimator != null)
+        if (door2LIsOpen && door2RIsOpen)
         {
-            doorAnimator.SetTrigger("Open");
+            ClosedDoor2();
+        }
+        door2LIsOpen = true;
+        door2RIsOpen = true;
+
+        Animator doorAnimator2L = door2L.gameObject.GetComponent<Animator>();
+        Animator doorAnimator2R = door2R.gameObject.GetComponent<Animator>();
+
+        if (doorAnimator2L != null && doorAnimator2R != null)
+        {
+            doorAnimator2L.SetTrigger("Open");
+            doorAnimator2R.SetTrigger("Open");
         }
         else
         {
             Debug.Log("No animator component on door");
         }
-        StartCoroutine(Door2());
+        //StartCoroutine(Door2());
     }
 
     private void OpenedDoor3()
     {
-        if (door3IsOpen)
-            return;
-        door3IsOpen = true;
-
-        Animator doorAnimator = door3.gameObject.GetComponent<Animator>();
-
-        if (doorAnimator != null)
+        if (door3TIsOpen && door3BIsOpen)
         {
-            doorAnimator.SetTrigger("Open");
+            ClosedDoor3();
+        }
+        door3TIsOpen = true;
+        door3BIsOpen = true;
+
+        Animator doorAnimator3T = door3T.gameObject.GetComponent<Animator>();
+        Animator doorAnimator3B = door3B.gameObject.GetComponent<Animator>();
+
+        if (doorAnimator3T != null && doorAnimator3B != null)
+        {
+            doorAnimator3T.SetTrigger("Open");
+            doorAnimator3B.SetTrigger("Open");
         }
         else
         {
             Debug.Log("No animator component on door");
         }
-        StartCoroutine(Door3());
+        //StartCoroutine(Door3());
     }
 
-    private IEnumerator Door1()
+    //private IEnumerator Door1()
+    //{
+    //    yield return new WaitForSeconds(doorOpenTime);
+    //    if (door1 != null && door1IsOpen)
+    //    {
+    //        Animator doorAnimator = door1.gameObject.GetComponent<Animator>();
+    //        if (doorAnimator != null)
+    //        {
+    //            doorAnimator.SetTrigger("Close");
+    //        }
+    //        door1IsOpen=false;
+    //        Debug.Log("door closed");
+    //    }
+    //    yield return 0;
+    //}
+
+    private void ClosedDoor1()
     {
-        yield return new WaitForSeconds(doorOpenTime);
-        if (door1 != null && door1IsOpen)
+        if (door1T != null && door1TIsOpen || door1B != null && door1BIsOpen)
         {
-            Animator doorAnimator = door1.gameObject.GetComponent<Animator>();
-            if (doorAnimator != null)
+            Animator doorAnimator1T = door1T.gameObject.GetComponent<Animator>();
+            Animator doorAnimator1B = door1B.gameObject.GetComponent<Animator>();
+
+            if(doorAnimator1T != null && doorAnimator1B != null)
             {
-                doorAnimator.SetTrigger("Close");
+                doorAnimator1T.SetTrigger("Close");
+                doorAnimator1B.SetTrigger("Close");
             }
-            door1IsOpen=false;
-            Debug.Log("door closed");
+            door1TIsOpen = false;
+            door1BIsOpen = false;
         }
-        yield return 0;
     }
 
-    private IEnumerator Door2()
+    private void ClosedDoor2()
     {
-        yield return new WaitForSeconds(doorOpenTime);
-        if (door2 != null && door2IsOpen)
+        if (door2L != null && door2LIsOpen || door2R != null && door2RIsOpen)
         {
-            Animator doorAnimator = door2.gameObject.GetComponent<Animator>();
-            if (doorAnimator != null)
+            Animator doorAnimator2L = door2L.gameObject.GetComponent<Animator>();
+            Animator doorAnimator2R = door2R.gameObject.GetComponent<Animator>();
+
+            if (doorAnimator2L != null && doorAnimator2R != null)
             {
-                doorAnimator.SetTrigger("Close");
+                doorAnimator2L.SetTrigger("Close");
+                doorAnimator2R.SetTrigger("Close");
             }
-            door2IsOpen = false;
-            Debug.Log("door closed");
+            door2LIsOpen = false;
+            door2RIsOpen = false;
         }
-        yield return 0;
     }
 
-    private IEnumerator Door3()
+    private void ClosedDoor3()
     {
-        yield return new WaitForSeconds(doorOpenTime);
-        if (door3 != null && door3IsOpen)
+        if (door3T != null && door3TIsOpen || door3B != null && door3BIsOpen)
         {
-            Animator doorAnimator = door3.gameObject.GetComponent<Animator>();
-            if (doorAnimator != null)
+            Animator doorAnimator3T = door3T.gameObject.GetComponent<Animator>();
+            Animator doorAnimator3B = door3B.gameObject.GetComponent<Animator>();
+
+            if (doorAnimator3T != null && doorAnimator3B != null)
             {
-                doorAnimator.SetTrigger("Close");
+                doorAnimator3T.SetTrigger("Close");
+                doorAnimator3B.SetTrigger("Close");
             }
-            door3IsOpen = false;
-            Debug.Log("door closed");
+            door3TIsOpen = false;
+            door3BIsOpen = false;
         }
-        yield return 0;
     }
+    //private IEnumerator Door2()
+    //{
+    //    yield return new WaitForSeconds(doorOpenTime);
+    //    if (door2 != null && door2IsOpen)
+    //    {
+    //        Animator doorAnimator = door2.gameObject.GetComponent<Animator>();
+    //        if (doorAnimator != null)
+    //        {
+    //            doorAnimator.SetTrigger("Close");
+    //        }
+    //        door2IsOpen = false;
+    //        Debug.Log("door closed");
+    //    }
+    //    yield return 0;
+    //}
+
+    //private IEnumerator Door3()
+    //{
+    //    yield return new WaitForSeconds(doorOpenTime);
+    //    if (door3 != null && door3IsOpen)
+    //    {
+    //        Animator doorAnimator = door3.gameObject.GetComponent<Animator>();
+    //        if (doorAnimator != null)
+    //        {
+    //            doorAnimator.SetTrigger("Close");
+    //        }
+    //        door3IsOpen = false;
+    //        Debug.Log("door closed");
+    //    }
+    //    yield return 0;
+    //}
 
     //public void OnCollisionEnter2D(Collision2D other)
     //{
