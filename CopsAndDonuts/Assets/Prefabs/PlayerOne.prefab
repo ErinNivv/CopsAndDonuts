@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7739537857720277465}
   - component: {fileID: 4135873639979632214}
   - component: {fileID: 4262579240931875038}
+  - component: {fileID: -5501703081548525274}
   m_Layer: 9
   m_Name: PlayerOne
   m_TagString: Player
@@ -230,22 +231,6 @@ MonoBehaviour:
     m_ActionId: 348021d8-7dd2-4071-9ffe-c14b34dcfb72
     m_ActionName: 'PlayerOne/Interact[/SwitchProControllerHID/buttonNorth]'
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 85b24c44-5883-46fc-97cd-1effe0438b4d
-    m_ActionName: 'PlayerTwo/Move[/SwitchProControllerHID/leftStick,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 4eb82da7-8c96-445d-8f80-43c61b21379e
-    m_ActionName: 'PlayerTwo/Interact[/SwitchProControllerHID/buttonNorth]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 58d6b3e0-bdb7-48f5-8028-46e7947817aa
-    m_ActionName: 'PlayerThree/Move[/SwitchProControllerHID/leftStick]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: e2ae3633-d6be-4c23-96b4-e6bed7e5eef6
-    m_ActionName: 'PlayerThree/Interact[/SwitchProControllerHID/buttonNorth]'
-  - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7739537857720277465}
         m_TargetAssemblyTypeName: PlayerControls, Assembly-CSharp
@@ -289,12 +274,18 @@ MonoBehaviour:
   doorCurrent: {fileID: 0}
   openDoor: {fileID: 8382117582331657852, guid: 2ed895c6ccdd4a646a8544e5ac9715ad, type: 3}
   Sprites: []
-  door1IsOpen: 0
-  door2IsOpen: 0
-  door3IsOpen: 0
-  door1: {fileID: 0}
-  door2: {fileID: 0}
-  door3: {fileID: 0}
+  door1TIsOpen: 0
+  door1BIsOpen: 0
+  door2LIsOpen: 0
+  door2RIsOpen: 0
+  door3TIsOpen: 0
+  door3BIsOpen: 0
+  door1T: {fileID: 0}
+  door1B: {fileID: 0}
+  door2L: {fileID: 0}
+  door2R: {fileID: 0}
+  door3T: {fileID: 0}
+  door3B: {fileID: 0}
   plateDetect: 1.5
   plateLayer:
     serializedVersion: 2
@@ -303,6 +294,10 @@ MonoBehaviour:
   slipFriction: 0.01
   slideDecrease: 0.95
   minSlideSpeed: 0.1
+  playerSrc: {fileID: -5501703081548525274}
+  slipAudio: {fileID: 8300000, guid: bd9bb42cf4df8f34f8aa802454d9675a, type: 3}
+  funnyCrashAudio: {fileID: 8300000, guid: 7f62430b84f3a9b47b76899b34893a71, type: 3}
+  crashAudio: {fileID: 8300000, guid: 5cef9b4ed43fa694692e954f5e9f20c9, type: 3}
 --- !u!95 &4135873639979632214
 Animator:
   serializedVersion: 7
@@ -339,6 +334,103 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AnimationsController
   playerInput: {fileID: 2352599367992285800}
   AnimationBools: []
+--- !u!82 &-5501703081548525274
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418133086775621154}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1308890985346607320
 GameObject:
   m_ObjectHideFlags: 0

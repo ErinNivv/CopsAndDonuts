@@ -12,6 +12,12 @@ TagManager:
   - Car
   - CharacterSelection
   - PlayerInputManager
+  - Door1T
+  - Door1B
+  - Door3T
+  - Door3B
+  - Door2L
+  - Door2R
   layers:
   - Default
   - TransparentFX

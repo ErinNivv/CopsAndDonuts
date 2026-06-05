@@ -48,12 +48,12 @@ public class PlayerControls : MonoBehaviour
     public bool door3TIsOpen = false;
     public bool door3BIsOpen = false;
     private float doorOpenTime = 5f;
-    public GameObject door1T;
-    public GameObject door1B;
-    public GameObject door2L;
-    public GameObject door2R;
-    public GameObject door3T;
-    public GameObject door3B;
+    //public GameObject door1T;
+    //public GameObject door1B;
+    //public GameObject door2L;
+    //public GameObject door2R;
+    //public GameObject door3T;
+    //public GameObject door3B;
 
 
     [Header("Plate")]
@@ -264,9 +264,7 @@ public class PlayerControls : MonoBehaviour
 
             if (hit != null)
             {
-                door1T = hit.gameObject;
-                door1B = hit.gameObject;
-                print("Detected Door: " + name);
+                //print("Detected Door: " + name);
 
                 OpenedDoor1();
             }
@@ -279,10 +277,6 @@ public class PlayerControls : MonoBehaviour
             Collider2D hit2 = Physics2D.OverlapCircle(transform.position, grabRange, LayerMask.GetMask("Door2"));
             if (hit2 != null)
             {
-                door2L = hit2.gameObject;
-                door2R = hit2.gameObject;
-                print("Detected Door: " + name);
-
                 OpenedDoor2();
             }
             else
@@ -293,10 +287,6 @@ public class PlayerControls : MonoBehaviour
             Collider2D hit3 = Physics2D.OverlapCircle(transform.position, grabRange, LayerMask.GetMask("Door3"));
             if (hit3 != null)
             {
-                door3T = hit3.gameObject;
-                door3B = hit3.gameObject;
-                print("Detected Door: " + name);
-
                 OpenedDoor3();
             }
             else
@@ -309,75 +299,86 @@ public class PlayerControls : MonoBehaviour
 
     private void OpenedDoor1()
     {
-        if(door1TIsOpen && door1BIsOpen)
+        if(door1TIsOpen == true && door1BIsOpen == true)
         {
             ClosedDoor1();
         }
-            return; // function to close door 
-        door1TIsOpen = true;
-        door1BIsOpen = true;
-
-        Animator doorAnimator1T = door1T.gameObject.GetComponent<Animator>();
-        Animator doorAnimator1B = door1B.gameObject.GetComponent<Animator>();
-
-        if (doorAnimator1T != null && doorAnimator1B != null)
-        {
-            doorAnimator1T.SetTrigger("Open");
-            doorAnimator1B.SetTrigger("Open");
-        }
         else
         {
-            Debug.Log("No animator component on door");
+            GameObject door1T = GameObject.FindGameObjectWithTag("Door1T");
+            GameObject door1B = GameObject.FindGameObjectWithTag("Door1B");
+
+            Animator doorAnimator1T = door1T.gameObject.GetComponent<Animator>();
+            Animator doorAnimator1B = door1B.gameObject.GetComponent<Animator>();
+
+            if (doorAnimator1T != null && doorAnimator1B != null)
+            {
+                doorAnimator1T.SetTrigger("Open");
+                doorAnimator1B.SetTrigger("Open");
+                door1TIsOpen = true;
+                door1BIsOpen = true;
+            }
+            else
+            {
+                Debug.Log("No animator component on door");
+            }
         }
-        //StartCoroutine(Door1());
     }
 
     private void OpenedDoor2()
     {
-        if (door2LIsOpen && door2RIsOpen)
+        if (door2LIsOpen == true && door2RIsOpen == true)
         {
             ClosedDoor2();
         }
-        door2LIsOpen = true;
-        door2RIsOpen = true;
-
-        Animator doorAnimator2L = door2L.gameObject.GetComponent<Animator>();
-        Animator doorAnimator2R = door2R.gameObject.GetComponent<Animator>();
-
-        if (doorAnimator2L != null && doorAnimator2R != null)
-        {
-            doorAnimator2L.SetTrigger("Open");
-            doorAnimator2R.SetTrigger("Open");
-        }
         else
         {
-            Debug.Log("No animator component on door");
+            GameObject door2L = GameObject.FindGameObjectWithTag("Door2L");
+            GameObject door2R = GameObject.FindGameObjectWithTag("Door2R");
+
+            Animator doorAnimator2L = door2L.gameObject.GetComponent<Animator>();
+            Animator doorAnimator2R = door2R.gameObject.GetComponent<Animator>();
+
+            if (doorAnimator2L != null && doorAnimator2R != null)
+            {
+                doorAnimator2L.SetTrigger("Open");
+                doorAnimator2R.SetTrigger("Open");
+                door2LIsOpen = true;
+                door2RIsOpen = true;
+            }
+            else
+            {
+                Debug.Log("No animator component on door");
+            }
         }
-        //StartCoroutine(Door2());
     }
 
     private void OpenedDoor3()
     {
-        if (door3TIsOpen && door3BIsOpen)
+        if (door3TIsOpen == true && door3BIsOpen == true)
         {
             ClosedDoor3();
         }
-        door3TIsOpen = true;
-        door3BIsOpen = true;
-
-        Animator doorAnimator3T = door3T.gameObject.GetComponent<Animator>();
-        Animator doorAnimator3B = door3B.gameObject.GetComponent<Animator>();
-
-        if (doorAnimator3T != null && doorAnimator3B != null)
-        {
-            doorAnimator3T.SetTrigger("Open");
-            doorAnimator3B.SetTrigger("Open");
-        }
         else
         {
-            Debug.Log("No animator component on door");
+            GameObject door3T = GameObject.FindGameObjectWithTag("Door3T");
+            GameObject door3B = GameObject.FindGameObjectWithTag("Door3B");
+
+            Animator doorAnimator3T = door3T.gameObject.GetComponent<Animator>();
+            Animator doorAnimator3B = door3B.gameObject.GetComponent<Animator>();
+
+            if (doorAnimator3T != null && doorAnimator3B != null)
+            {
+                doorAnimator3T.SetTrigger("Open");
+                doorAnimator3B.SetTrigger("Open");
+                door3TIsOpen = true;
+                door3BIsOpen = true;
+            }
+            else
+            {
+                Debug.Log("No animator component on door");
+            }
         }
-        //StartCoroutine(Door3());
     }
 
     //private IEnumerator Door1()
@@ -398,8 +399,11 @@ public class PlayerControls : MonoBehaviour
 
     private void ClosedDoor1()
     {
-        if (door1T != null && door1TIsOpen || door1B != null && door1BIsOpen)
+        if (door1TIsOpen == true && door1BIsOpen == true)
         {
+            GameObject door1T = GameObject.FindGameObjectWithTag("Door1T");
+            GameObject door1B = GameObject.FindGameObjectWithTag("Door1B");
+
             Animator doorAnimator1T = door1T.gameObject.GetComponent<Animator>();
             Animator doorAnimator1B = door1B.gameObject.GetComponent<Animator>();
 
@@ -407,16 +411,20 @@ public class PlayerControls : MonoBehaviour
             {
                 doorAnimator1T.SetTrigger("Close");
                 doorAnimator1B.SetTrigger("Close");
+                Debug.Log("Trigger is set to close");
+                door1TIsOpen = false;
+                door1BIsOpen = false;
             }
-            door1TIsOpen = false;
-            door1BIsOpen = false;
         }
     }
 
     private void ClosedDoor2()
     {
-        if (door2L != null && door2LIsOpen || door2R != null && door2RIsOpen)
+        if (door2LIsOpen == true && door2RIsOpen == true)
         {
+            GameObject door2L = GameObject.FindGameObjectWithTag("Door2L");
+            GameObject door2R = GameObject.FindGameObjectWithTag("Door2R");
+
             Animator doorAnimator2L = door2L.gameObject.GetComponent<Animator>();
             Animator doorAnimator2R = door2R.gameObject.GetComponent<Animator>();
 
@@ -424,16 +432,20 @@ public class PlayerControls : MonoBehaviour
             {
                 doorAnimator2L.SetTrigger("Close");
                 doorAnimator2R.SetTrigger("Close");
+                Debug.Log("Trigger is set to close");
+                door2LIsOpen = false;
+                door2RIsOpen = false;
             }
-            door2LIsOpen = false;
-            door2RIsOpen = false;
         }
     }
 
     private void ClosedDoor3()
     {
-        if (door3T != null && door3TIsOpen || door3B != null && door3BIsOpen)
+        if (door3TIsOpen == true && door3BIsOpen == true)
         {
+            GameObject door3T = GameObject.FindGameObjectWithTag("Door3T");
+            GameObject door3B = GameObject.FindGameObjectWithTag("Door3B");
+
             Animator doorAnimator3T = door3T.gameObject.GetComponent<Animator>();
             Animator doorAnimator3B = door3B.gameObject.GetComponent<Animator>();
 
@@ -441,11 +453,13 @@ public class PlayerControls : MonoBehaviour
             {
                 doorAnimator3T.SetTrigger("Close");
                 doorAnimator3B.SetTrigger("Close");
+                Debug.Log("Trigger is set to close");
+                door3TIsOpen = false;
+                door3BIsOpen = false;
             }
-            door3TIsOpen = false;
-            door3BIsOpen = false;
         }
     }
+
     //private IEnumerator Door2()
     //{
     //    yield return new WaitForSeconds(doorOpenTime);
