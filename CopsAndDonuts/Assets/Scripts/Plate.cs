@@ -7,11 +7,9 @@ public class Plate : MonoBehaviour
     [Header("Donut Spots")]
     public Transform[] donutSpots;   // Empty child transforms as stack spots
     public int winAmount = 3;
-    public GameObject player1WinPanel;
-    public GameObject player2WinPanel;
-    public GameObject player3WinPanel;
+    public GameObject playerWinPanel;
 
-    
+
 
     [Header("Plate Rules")]
     public bool restrictToPlayer = false;   // Turn ON for Level 1
@@ -127,31 +125,18 @@ public class Plate : MonoBehaviour
 
         GameManager.instance.PlayerWon(playerIndex);
 
-        if (playerIndex == 0)
-        {
-            player1WinPanel.SetActive(true);
-        //    StartCoroutine(Player1WinSelection());
+        
+            playerWinPanel.SetActive(true);
+            StartCoroutine(Player1WinSelection());
             nextButton.SetActive(true);
-        }
-        else if (playerIndex == 1)
-        {
-            player2WinPanel.SetActive(true);
-            //StartCoroutine(Player2WinSelection());
-            nextButton.SetActive(true);
-        }
-        else if (playerIndex == 2)
-        {
-            player3WinPanel.SetActive(true);
-            //StartCoroutine(Player3WinSelection());
-            nextButton.SetActive(true);
-        }
-            
+        
+
 
         if (roundFinished) return;
 
         roundFinished = true;
 
- 
+
     }
 
     IEnumerator ShowWrongPlate()
@@ -163,11 +148,11 @@ public class Plate : MonoBehaviour
         wrongPlateSprite.SetActive(false);
     }
 
-    //IEnumerator Player1WinSelection()
-    //{
-    //    yield return new WaitForSeconds(0.5f);
-    //    eventSystem.SetSelectedGameObject(p1Button);
-    //}
+    IEnumerator Player1WinSelection()
+    {
+        yield return new WaitForSeconds(0.5f);
+        eventSystem.SetSelectedGameObject(nextButton);
+    }
 
     //IEnumerator Player2WinSelection()
     //{

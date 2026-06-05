@@ -141,7 +141,15 @@ public class CharacterSelectionManager : MonoBehaviour
             characters[selectedCharacterIndex[2]]
         );
         
-        SceneManager.LoadScene("LEVEL 1");
+        Scene currentScene = SceneManager.GetActiveScene();
+        if (currentScene.name == "Player Selection" )
+        {
+            SceneManager.LoadScene("LEVEL 1");
+        }
+        else
+        {
+            return;
+        }
     }
 
     private void ChangeCharacter(int playerIndex, int direction)
