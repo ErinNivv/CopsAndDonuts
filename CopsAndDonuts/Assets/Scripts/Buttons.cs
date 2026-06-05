@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine.UI;
-using UnityEngine.EventSystems;
 
 public class Buttons : MonoBehaviour
 {
@@ -11,22 +10,9 @@ public class Buttons : MonoBehaviour
 
     public GameObject levelStartPanel;
     public Slider fillBar;             
-    public float panelTime = 3f;
+    public float panelTime = 3f;       
+    
 
-
-    //void Start()
-    //{
-    //    // Destroy duplicate EventSystems caused by DontDestroyOnLoad objects carrying over
-    //    EventSystem[] eventSystems = FindObjectsByType<EventSystem>(FindObjectsSortMode.None);
-    //    if (eventSystems.Length > 1)
-    //    {
-    //        for (int i = 1; i < eventSystems.Length; i++)
-    //        {
-    //            Destroy(eventSystems[i].gameObject);
-    //            Debug.Log("Destroyed duplicate EventSystem");
-    //        }
-    //    }
-    //}
     public void OnPlayButtonPressed()
     {
         levelStartPanel.SetActive(true); 
@@ -67,7 +53,6 @@ public class Buttons : MonoBehaviour
     public void NextLvl2()
     {
         SceneManager.LoadScene("LEVEL 2");
-        Debug.Log("Current scene: " + UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
         Debug.Log("working");
     }
 
