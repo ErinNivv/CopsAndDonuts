@@ -1,0 +1,650 @@
+fileFormatVersion: 2
+guid: e4a3eb20b39e44d4b800211ff929b6e2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6910249528878489879
+    second: Inmate_Scaled_up_0
+  - first:
+      213: 6203505218928270286
+    second: Inmate_Scaled_up_1
+  - first:
+      213: 4468257859424932304
+    second: Inmate_Scaled_up_2
+  - first:
+      213: 7123983529032484091
+    second: Inmate_Scaled_up_3
+  - first:
+      213: -2673185949559909890
+    second: Inmate_Scaled_up_4
+  - first:
+      213: -2106414382107567425
+    second: Inmate_Scaled_up_5
+  - first:
+      213: -8920253107960049785
+    second: Inmate_Scaled_up_6
+  - first:
+      213: 6688994768790053978
+    second: Inmate_Scaled_up_7
+  - first:
+      213: -5751722665645101317
+    second: Inmate_Scaled_up_8
+  - first:
+      213: -2553492439932187709
+    second: Inmate_Scaled_up_9
+  - first:
+      213: -6392111291520947589
+    second: Inmate_Scaled_up_10
+  - first:
+      213: -7970270048056286072
+    second: Inmate_Scaled_up_11
+  - first:
+      213: -1773772341338954139
+    second: Inmate_Scaled_up_12
+  - first:
+      213: -2934016274935680665
+    second: Inmate_Scaled_up_13
+  - first:
+      213: 8766191090493275947
+    second: Inmate_Scaled_up_14
+  - first:
+      213: 6959618028013583561
+    second: Inmate_Scaled_up_15
+  - first:
+      213: 8765378312832988631
+    second: Inmate_Scaled_up_16
+  - first:
+      213: -8253233573412204856
+    second: Inmate_Scaled_up_17
+  - first:
+      213: -802715890459263940
+    second: Inmate_Scaled_up_18
+  - first:
+      213: -7364809765288684054
+    second: Inmate_Scaled_up_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Inmate_Scaled_up_0
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 420
+        width: 76
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 711ec1e955326ef50800000000000000
+      internalID: 6910249528878489879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inmate_Scaled_up_1
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 420
+        width: 72
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecb50880127471650800000000000000
+      internalID: 6203505218928270286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inmate_Scaled_up_2
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 420
+        width: 76
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d1dedb69d0720e30800000000000000
+      internalID: 4468257859424932304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inmate_Scaled_up_3
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 420
+        width: 71
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf407b176497dd260800000000000000
+      internalID: 7123983529032484091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inmate_Scaled_up_4
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 420
+        width: 76
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef19ae1ca8fe6ead0800000000000000
+      internalID: -2673185949559909890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inmate_Scaled_up_5
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 281
+        width: 76
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fba54bc974384c2e0800000000000000
+      internalID: -2106414382107567425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inmate_Scaled_up_6
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 281
+        width: 71
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78f87715f05e43480800000000000000
+      internalID: -8920253107960049785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inmate_Scaled_up_7
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 281
+        width: 76
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a546d2a6d4514dc50800000000000000
+      internalID: 6688994768790053978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inmate_Scaled_up_8
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 281
+        width: 72
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfe29a3a5b6cd20b0800000000000000
+      internalID: -5751722665645101317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inmate_Scaled_up_9
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 281
+        width: 76
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cb4235a72c209cd0800000000000000
+      internalID: -2553492439932187709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inmate_Scaled_up_10
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 142
+        width: 54
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7a6120b5a8aa47a0800000000000000
+      internalID: -6392111291520947589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inmate_Scaled_up_11
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 142
+        width: 74
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8846bad9e99e36190800000000000000
+      internalID: -7970270048056286072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inmate_Scaled_up_12
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 142
+        width: 54
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5662412147b4267e0800000000000000
+      internalID: -1773772341338954139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inmate_Scaled_up_13
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 142
+        width: 74
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7617e373eb74847d0800000000000000
+      internalID: -2934016274935680665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inmate_Scaled_up_14
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 142
+        width: 54
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2fbb0ef954c7a970800000000000000
+      internalID: 8766191090493275947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inmate_Scaled_up_15
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 3
+        width: 54
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cc772c09b7859060800000000000000
+      internalID: 6959618028013583561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inmate_Scaled_up_16
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 3
+        width: 74
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d5b2527221e4a970800000000000000
+      internalID: 8765378312832988631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inmate_Scaled_up_17
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 3
+        width: 54
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ce0070eacf967d80800000000000000
+      internalID: -8253233573412204856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inmate_Scaled_up_18
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 3
+        width: 74
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3c3d9d862e2cd4f0800000000000000
+      internalID: -802715890459263940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inmate_Scaled_up_19
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 3
+        width: 54
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae5d3a5f980fac990800000000000000
+      internalID: -7364809765288684054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Inmate_Scaled_up_0: 6910249528878489879
+      Inmate_Scaled_up_1: 6203505218928270286
+      Inmate_Scaled_up_10: -6392111291520947589
+      Inmate_Scaled_up_11: -7970270048056286072
+      Inmate_Scaled_up_12: -1773772341338954139
+      Inmate_Scaled_up_13: -2934016274935680665
+      Inmate_Scaled_up_14: 8766191090493275947
+      Inmate_Scaled_up_15: 6959618028013583561
+      Inmate_Scaled_up_16: 8765378312832988631
+      Inmate_Scaled_up_17: -8253233573412204856
+      Inmate_Scaled_up_18: -802715890459263940
+      Inmate_Scaled_up_19: -7364809765288684054
+      Inmate_Scaled_up_2: 4468257859424932304
+      Inmate_Scaled_up_3: 7123983529032484091
+      Inmate_Scaled_up_4: -2673185949559909890
+      Inmate_Scaled_up_5: -2106414382107567425
+      Inmate_Scaled_up_6: -8920253107960049785
+      Inmate_Scaled_up_7: 6688994768790053978
+      Inmate_Scaled_up_8: -5751722665645101317
+      Inmate_Scaled_up_9: -2553492439932187709
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
