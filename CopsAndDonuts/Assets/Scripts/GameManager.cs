@@ -5,23 +5,20 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-
     public int player1Score;
     public int player2Score;
     public int player3Score;
-
     public int currentRound = 1;
     public int totalRounds = 5;
     private PlayerInputManager playerInputManager;
     public GameObject pressPanel;
-
 
     void Awake()
     {
         if (instance == null)
         {
             instance = this;
-            //DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(gameObject); // MUST be on so scores persist across levels
         }
         else
         {
@@ -29,27 +26,44 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void Start()
+    void OnEnable()
     {
-        playerInputManager = GetComponent<PlayerInputManager>();
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, LoadSceneMode mode)
+    {
+        // Re-find PlayerInputManager in the new scene
+        playerInputManager = FindObjectOfType<PlayerInputManager>();
+
+        // Re-find pressPanel in the new scene
+        if (pressPanel != null)
+            pressPanel = null; // reset so it doesn't reference old scene object
     }
 
     void OnPlayerJoined(PlayerInput playerInput)
     {
-        
-        // Once all 3 players have joined, disable joining
         if (PlayerInput.all.Count >= 3)
         {
             if (playerInputManager != null)
+            {
                 playerInputManager.DisableJoining();
+                Debug.Log("All 3 players joined - joining disabled");
+            }
         }
     }
 
     private void Update()
     {
-        if (playerInputManager.playerCount == 3)
+        if (playerInputManager != null && pressPanel != null)
         {
-            pressPanel.SetActive(false);
+            if (playerInputManager.playerCount == 3)
+                pressPanel.SetActive(false);
         }
     }
 
@@ -57,12 +71,12 @@ public class GameManager : MonoBehaviour
     {
         if (playerIndex == 0)
             player1Score++;
-
         else if (playerIndex == 1)
             player2Score++;
-
         else if (playerIndex == 2)
             player3Score++;
+
+        Debug.Log("Scores — P1: " + player1Score + " P2: " + player2Score + " P3: " + player3Score);
 
         currentRound++;
 

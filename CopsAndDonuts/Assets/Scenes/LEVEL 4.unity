@@ -841,12 +841,18 @@ MonoBehaviour:
   doorCurrent: {fileID: 0}
   openDoor: {fileID: 0}
   Sprites: []
-  door1IsOpen: 0
-  door2IsOpen: 0
-  door3IsOpen: 0
-  door1: {fileID: 0}
-  door2: {fileID: 0}
-  door3: {fileID: 0}
+  door1TIsOpen: 0
+  door1BIsOpen: 0
+  door2LIsOpen: 0
+  door2RIsOpen: 0
+  door3TIsOpen: 0
+  door3BIsOpen: 0
+  door1T: {fileID: 0}
+  door1B: {fileID: 0}
+  door2L: {fileID: 0}
+  door2R: {fileID: 0}
+  door3T: {fileID: 0}
+  door3B: {fileID: 0}
   plateDetect: 1.5
   plateLayer:
     serializedVersion: 2
@@ -1667,12 +1673,18 @@ MonoBehaviour:
   doorCurrent: {fileID: 0}
   openDoor: {fileID: 0}
   Sprites: []
-  door1IsOpen: 0
-  door2IsOpen: 0
-  door3IsOpen: 0
-  door1: {fileID: 0}
-  door2: {fileID: 0}
-  door3: {fileID: 0}
+  door1TIsOpen: 0
+  door1BIsOpen: 0
+  door2LIsOpen: 0
+  door2RIsOpen: 0
+  door3TIsOpen: 0
+  door3BIsOpen: 0
+  door1T: {fileID: 0}
+  door1B: {fileID: 0}
+  door2L: {fileID: 0}
+  door2R: {fileID: 0}
+  door3T: {fileID: 0}
+  door3B: {fileID: 0}
   plateDetect: 1.5
   plateLayer:
     serializedVersion: 2
@@ -1937,7 +1949,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &252836349
 Transform:
   m_ObjectHideFlags: 0
@@ -4791,10 +4803,12 @@ MonoBehaviour:
   - {fileID: 791030582}
   - {fileID: 1094206702}
   winAmount: 3
-  thisPlateWinPanel: {fileID: 0}
-  nextButton: {fileID: 0}
+  playerWinPanel: {fileID: 0}
+  restrictToPlayer: 0
+  allowedPlayerID: 0
   wrongPlateSprite: {fileID: 0}
   popupTime: 1
+  nextButton: {fileID: 0}
   eventSystem: {fileID: 0}
 --- !u!61 &622705428
 BoxCollider2D:
@@ -7073,10 +7087,12 @@ MonoBehaviour:
   - {fileID: 349132777}
   - {fileID: 213905182}
   winAmount: 3
-  thisPlateWinPanel: {fileID: 0}
-  nextButton: {fileID: 0}
+  playerWinPanel: {fileID: 0}
+  restrictToPlayer: 0
+  allowedPlayerID: 0
   wrongPlateSprite: {fileID: 0}
   popupTime: 1
+  nextButton: {fileID: 0}
   eventSystem: {fileID: 0}
 --- !u!1 &1285564459
 GameObject:
@@ -8071,10 +8087,12 @@ MonoBehaviour:
   - {fileID: 839684791}
   - {fileID: 254440720}
   winAmount: 3
-  thisPlateWinPanel: {fileID: 0}
-  nextButton: {fileID: 0}
+  playerWinPanel: {fileID: 0}
+  restrictToPlayer: 0
+  allowedPlayerID: 0
   wrongPlateSprite: {fileID: 0}
   popupTime: 1
+  nextButton: {fileID: 0}
   eventSystem: {fileID: 0}
 --- !u!1 &1638176952
 GameObject:
