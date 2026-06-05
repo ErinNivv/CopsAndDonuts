@@ -1,7 +1,6 @@
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
-public class CarPatrol : MonoBehaviour
+public class VerticalCar : MonoBehaviour
 {
     [Header("Transforms")]
     [SerializeField] private GameObject pointA;
@@ -14,7 +13,6 @@ public class CarPatrol : MonoBehaviour
     [SerializeField] private float carSpeed;
     private SpriteRenderer sr;
 
-    private bool isVertical;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -29,18 +27,18 @@ public class CarPatrol : MonoBehaviour
     void Update()
     {
         Vector2 point = currentPoint.position - transform.position;
-        if(currentPoint == pointB.transform)
+        if (currentPoint == pointB.transform)
         {
-            rb.linearVelocity = new Vector2(carSpeed, 0);
+            rb.linearVelocity = new Vector2(0, carSpeed);
             sr.flipX = true;
         }
         else
         {
-            rb.linearVelocity = new Vector2 (-carSpeed, 0);
+            rb.linearVelocity = new Vector2(0, -carSpeed);
             sr.flipX = false;
         }
 
-        if(Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == pointB.transform)
+        if (Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == pointB.transform)
         {
             currentPoint = pointA.transform;
 
