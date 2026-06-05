@@ -52,21 +52,27 @@ public class Buttons : MonoBehaviour
 
     public void NextLvl2()
     {
-        SceneManager.LoadScene("LEVEL 4");
+        SceneManager.LoadScene("LEVEL 2");
+        Debug.Log("working");
     }
 
     public void NextLvl3()
     {
-        SceneManager.LoadScene("LEVEL 1");
+        SceneManager.LoadScene("LEVEL 3");
     }
 
     public void NextLvl4()
     {
-        SceneManager.LoadScene("LEVEL 3");
+        SceneManager.LoadScene("LEVEL 4");
     }
 
     public void Home()
     {
         SceneManager.LoadScene("START");
+    }
+
+    public void Next()
+    {
+        SceneManager.LoadScene(sceneName);
     }
 }
