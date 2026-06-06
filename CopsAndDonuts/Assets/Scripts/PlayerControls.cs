@@ -158,16 +158,28 @@ public class PlayerControls : MonoBehaviour
             animator.SetBool("isGrabbing", true );
             animator.SetFloat("LastInputX", moveP1.x);
             animator.SetFloat("LastInputY", moveP1.y);
+            StartCoroutine(StopPickUpAnim());
         }
-        if (context.canceled)
-        {
-            animator.SetBool("isGrabbing", false);
-        }
+        //if (context.canceled)
+        //{
+        //    animator.SetBool("isGrabbing", false);
+        //}
 
         if (heldDonut == null)
             TryGrabDonut();
         else
             DropDonut();
+    }
+
+    IEnumerator StopPickUpAnim()
+    {
+        yield return new WaitForSeconds(0.20f);
+
+        animator.SetBool("isGrabbing", false );
+        animator.SetFloat("LastInputX", moveP1.x);
+        animator.SetFloat("LastInputY", moveP1.y);
+
+        yield return 0;
     }
 
     void TryGrabDonut()
