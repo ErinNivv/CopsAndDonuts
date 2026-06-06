@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
-public class InmateAI : MonoBehaviour
+public class Inmate2 : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 2f;
     [SerializeField] private Rigidbody2D rb;
@@ -23,13 +23,13 @@ public class InmateAI : MonoBehaviour
     }
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        GameObject found = GameObject.FindGameObjectWithTag("Target");
+        GameObject found = GameObject.FindGameObjectWithTag("Target2");
         target = found != null ? found.transform : null;
 
         if (target && !isAtTarget)
@@ -42,7 +42,7 @@ public class InmateAI : MonoBehaviour
     private void FixedUpdate()
     {
         if (isAtTarget) return;
-        
+
         if (target)
         {
             rb.linearVelocity = new Vector2(movedirection.x, movedirection.y) * moveSpeed;
@@ -78,7 +78,7 @@ public class InmateAI : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Target") && !isAtTarget)
+        if (other.gameObject.CompareTag("Target2") && !isAtTarget)
         {
             isAtTarget = true;
             StartCoroutine(WaitAtTarget());

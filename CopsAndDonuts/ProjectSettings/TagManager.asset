@@ -19,6 +19,7 @@ TagManager:
   - Door2L
   - Door2R
   - Target
+  - Target2
   layers:
   - Default
   - TransparentFX
