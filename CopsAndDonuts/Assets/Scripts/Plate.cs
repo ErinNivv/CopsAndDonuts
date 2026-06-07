@@ -15,6 +15,10 @@ public class Plate : MonoBehaviour
 
     private GameObject[] donutsOnPlate;
 
+
+    [Header("Plate ID")]
+    public int plateID = 0;
+
     [Header("Wrong Plate Feedback")]
     public GameObject wrongPlateSprite;
     public float popupTime = 1f;
@@ -63,7 +67,7 @@ public class Plate : MonoBehaviour
                 if (sr != null) sr.sortingOrder = 5;
 
                 if (CountDonuts() >= winAmount)
-                    Win(player);
+                    Win();
 
                 return true;
             }
@@ -95,19 +99,17 @@ public class Plate : MonoBehaviour
         return count;
     }
 
-    void Win(PlayerControls player)
+    void Win()
     {
         if (roundFinished) return;
         roundFinished = true;
 
-        int playerIndex = player.playerInput.playerIndex;
-        Debug.Log("Plate won by player " + playerIndex);
+        Debug.Log("Plate " + plateID + " won!");
 
-        // Tell GameManager to update score
+       
         if (GameManager.instance != null)
-            GameManager.instance.PlayerWon(playerIndex);
+            GameManager.instance.PlateWon(plateID);
 
-        // Show this plate's win panel
         if (playerWinPanel != null)
             playerWinPanel.SetActive(true);
 

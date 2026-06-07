@@ -67,22 +67,21 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void PlayerWon(int playerIndex)
+
+    public void PlateWon(int plateID)
     {
-        if (playerIndex == 0)
+        if (plateID == 0)
             player1Score++;
-        else if (playerIndex == 1)
+        else if (plateID == 1)
             player2Score++;
-        else if (playerIndex == 2)
+        else if (plateID == 2)
             player3Score++;
 
-        Debug.Log("Scores — P1: " + player1Score + " P2: " + player2Score + " P3: " + player3Score);
+        Debug.Log("Plate " + plateID + " won! Scores — P1: " + player1Score + " P2: " + player2Score + " P3: " + player3Score);
 
         currentRound++;
 
         if (currentRound > totalRounds)
-        {
             SceneManager.LoadScene("FinalScene");
-        }
     }
 }

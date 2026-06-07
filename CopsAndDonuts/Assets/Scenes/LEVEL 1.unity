@@ -185,8 +185,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281597696
-  m_fontColor: {r: 0, g: 1, b: 0.19853926, a: 1}
+    rgba: 4294918912
+  m_fontColor: {r: 0, g: 0.26456785, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1130,7 +1130,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 613.9687, y: 189}
+  m_AnchoredPosition: {x: 313, y: 189}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &465708778
@@ -1590,6 +1590,7 @@ MonoBehaviour:
   playerWinPanel: {fileID: 2059976998}
   restrictToPlayer: 0
   allowedPlayerID: 2
+  plateID: 0
   wrongPlateSprite: {fileID: 2080266116}
   popupTime: 1
   nextButton: {fileID: 1079038476}
@@ -3333,6 +3334,7 @@ MonoBehaviour:
   playerWinPanel: {fileID: 523605642}
   restrictToPlayer: 0
   allowedPlayerID: 1
+  plateID: 1
   wrongPlateSprite: {fileID: 210949665}
   popupTime: 1
   nextButton: {fileID: 1079038476}
@@ -4056,8 +4058,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294907136
-  m_fontColor: {r: 0, g: 0.08170819, b: 1, a: 1}
+    rgba: 4278255428
+  m_fontColor: {r: 0.26655436, g: 1, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4161,7 +4163,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 319, y: 189}
+  m_AnchoredPosition: {x: 617, y: 189}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1755491032
@@ -4420,6 +4422,7 @@ MonoBehaviour:
   playerWinPanel: {fileID: 748428101}
   restrictToPlayer: 0
   allowedPlayerID: 0
+  plateID: 2
   wrongPlateSprite: {fileID: 1046696610}
   popupTime: 1
   nextButton: {fileID: 1079038476}
