@@ -39,12 +39,15 @@ public class GameManager : MonoBehaviour
 
     void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, LoadSceneMode mode)
     {
-        // Re-find PlayerInputManager in the new scene
+      
         playerInputManager = FindObjectOfType<PlayerInputManager>();
 
-        // Re-find pressPanel in the new scene
-        if (pressPanel != null)
-            pressPanel = null; // reset so it doesn't reference old scene object
+        //// Re-find pressPanel in the new scene
+        //if (pressPanel != null)
+        //{
+        //    pressPanel = null; // reset so it doesn't reference old scene object
+
+        //}
     }
 
     void OnPlayerJoined(PlayerInput playerInput)
@@ -64,7 +67,10 @@ public class GameManager : MonoBehaviour
         if (playerInputManager != null && pressPanel != null)
         {
             if (playerInputManager.playerCount == 3)
+            {
                 pressPanel.SetActive(false);
+
+            }
         }
     }
 

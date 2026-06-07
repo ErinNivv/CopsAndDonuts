@@ -28,25 +28,24 @@ public class Buttons : MonoBehaviour
     }
     public void OnPlayButtonPressed()
     {
-        levelStartPanel.SetActive(true); 
-        StartCoroutine(ShowPanelAndLoad());
+        SceneManager.LoadScene("Player Selection");
     }
 
-    private IEnumerator ShowPanelAndLoad()
-    {
-        fillBar.value = 0f;
-        float elapsed = 0f;
+    //private IEnumerator ShowPanelAndLoad()
+    //{
+    //    fillBar.value = 0f;
+    //    float elapsed = 0f;
 
-        while (elapsed < panelTime)
-        {
-            elapsed += Time.deltaTime;
-            fillBar.value = elapsed / panelTime;
-            yield return null;
-        }
+    //    while (elapsed < panelTime)
+    //    {
+    //        elapsed += Time.deltaTime;
+    //        fillBar.value = elapsed / panelTime;
+    //        yield return null;
+    //    }
 
-        levelStartPanel.SetActive(false); 
-        SceneManager.LoadScene("LEVEL 2"); 
-    }
+    //    levelStartPanel.SetActive(false); 
+    //    SceneManager.LoadScene("levell"); 
+    //}
 
     public void ControlPanel()
     {
@@ -60,7 +59,7 @@ public class Buttons : MonoBehaviour
 
     public void BackButton()
     {
-        controlPanel.SetActive(false);
+        SceneManager.LoadScene("START");
     }
 
     public void NextLvl2()
