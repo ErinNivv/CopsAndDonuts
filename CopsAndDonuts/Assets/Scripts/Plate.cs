@@ -5,35 +5,34 @@ using UnityEngine.EventSystems;
 public class Plate : MonoBehaviour
 {
     [Header("Donut Spots")]
-    public Transform[] donutSpots;   // Empty child transforms as stack spots
+    public Transform[] donutSpots;
     public int winAmount = 3;
     public GameObject playerWinPanel;
 
-
-
     [Header("Plate Rules")]
-    public bool restrictToPlayer = false;   // Turn ON for Level 1
-    public int allowedPlayerID = 0;         // 0 = Red Player, 1 = Blue Player
+    public bool restrictToPlayer = false;
+    public int allowedPlayerID = 0;
 
     private GameObject[] donutsOnPlate;
 
+
+    [Header("Plate ID")]
+    public int plateID = 0;
+
     [Header("Wrong Plate Feedback")]
-    public GameObject wrongPlateSprite;   // assign sprite object in inspector
+    public GameObject wrongPlateSprite;
     public float popupTime = 1f;
 
-    //public GameObject p1Button;
-    //public GameObject p2Button;
-    //public GameObject p3Button;
     public GameObject nextButton;
-
     public EventSystem eventSystem;
+
+    private bool roundFinished = false;
 
     private void Awake()
     {
         donutsOnPlate = new GameObject[donutSpots.Length];
     }
 
-    // Try to place a donut on this plate
     public bool PlaceDonut(GameObject donut, PlayerControls player)
     {
         if (restrictToPlayer && player.playerInput.playerIndex != allowedPlayerID)
@@ -49,10 +48,8 @@ public class Plate : MonoBehaviour
             {
                 donutsOnPlate[i] = donut;
 
-                // Store world scale
                 Vector3 originalScale = donut.transform.lossyScale;
 
-                // Snap to spot
                 donut.transform.parent = null;
                 donut.transform.position = donutSpots[i].position;
                 donut.transform.SetParent(donutSpots[i]);
@@ -60,20 +57,17 @@ public class Plate : MonoBehaviour
                 donut.transform.localPosition = Vector3.zero;
                 donut.transform.localRotation = Quaternion.identity;
 
-                // Fix scale
                 donut.transform.localScale = new Vector3(
                     originalScale.x / donutSpots[i].lossyScale.x,
                     originalScale.y / donutSpots[i].lossyScale.y,
                     originalScale.z / donutSpots[i].lossyScale.z
                 );
 
-                // Sorting order above plate
                 SpriteRenderer sr = donut.GetComponent<SpriteRenderer>();
                 if (sr != null) sr.sortingOrder = 5;
 
-                // Check win
                 if (CountDonuts() >= winAmount)
-                    Win(player);
+                    Win();
 
                 return true;
             }
@@ -82,7 +76,6 @@ public class Plate : MonoBehaviour
         return false;
     }
 
-    // Remove a donut from the plate so a player can pick it up
     public void RemoveDonut(GameObject donut)
     {
         for (int i = 0; i < donutsOnPlate.Length; i++)
@@ -90,7 +83,6 @@ public class Plate : MonoBehaviour
             if (donutsOnPlate[i] == donut)
             {
                 donutsOnPlate[i] = null;
-
                 donut.transform.parent = null;
                 return;
             }
@@ -100,71 +92,45 @@ public class Plate : MonoBehaviour
     public int CountDonuts()
     {
         int count = 0;
-
         foreach (var d in donutsOnPlate)
         {
-            if (d != null)
-                count++;
+            if (d != null) count++;
         }
-
         return count;
     }
 
-    bool roundFinished = false;
-
-    void Win(PlayerControls player)
+    void Win()
     {
-        if (roundFinished)
-        {
-            return;
-        }
-
-        roundFinished = true;
-
-        int playerIndex = player.playerInput.playerIndex;
-
-        GameManager.instance.PlayerWon(playerIndex);
-
-        
-            playerWinPanel.SetActive(true);
-            StartCoroutine(Player1WinSelection());
-            nextButton.SetActive(true);
-        
-
-
         if (roundFinished) return;
-
         roundFinished = true;
 
+        Debug.Log("Plate " + plateID + " won!");
 
+       
+        if (GameManager.instance != null)
+            GameManager.instance.PlateWon(plateID);
+
+        if (playerWinPanel != null)
+            playerWinPanel.SetActive(true);
+
+        if (nextButton != null)
+        {
+            nextButton.SetActive(true);
+            StartCoroutine(SelectNextButton());
+        }
+    }
+
+    IEnumerator SelectNextButton()
+    {
+        yield return new WaitForSeconds(0.5f);
+        if (eventSystem != null)
+            eventSystem.SetSelectedGameObject(nextButton);
     }
 
     IEnumerator ShowWrongPlate()
     {
         wrongPlateSprite.SetActive(true);
-
         yield return new WaitForSeconds(popupTime);
-
         wrongPlateSprite.SetActive(false);
     }
-
-    IEnumerator Player1WinSelection()
-    {
-        yield return new WaitForSeconds(0.5f);
-        eventSystem.SetSelectedGameObject(nextButton);
-    }
-
-    //IEnumerator Player2WinSelection()
-    //{
-    //    yield return new WaitForSeconds(0.5f);
-    //    eventSystem.SetSelectedGameObject(p2Button);
-    //}
-
-    //IEnumerator Player3WinSelection()
-    //{
-    //    yield return new WaitForSeconds(0.5f);
-    //    eventSystem.SetSelectedGameObject(p3Button);
-    //}
-
-
 }

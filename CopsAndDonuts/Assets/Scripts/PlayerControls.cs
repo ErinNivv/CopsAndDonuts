@@ -153,6 +153,11 @@ public class PlayerControls : MonoBehaviour
 
     public void Interact(InputAction.CallbackContext context)
     {
+
+        if (animator == null) animator = GetComponent<Animator>();
+        if (animator == null) return;
+
+
         if (!context.performed)
         {
             animator.SetBool("isGrabbing", true );
