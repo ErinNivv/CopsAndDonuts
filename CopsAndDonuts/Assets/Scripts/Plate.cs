@@ -26,6 +26,10 @@ public class Plate : MonoBehaviour
     public GameObject nextButton;
     public EventSystem eventSystem;
 
+    [Header("Final Round")]
+    public bool isFinalRound = false;
+    public FinalResults finalRoundManager;
+
     private bool roundFinished = false;
 
     private void Awake()
@@ -104,9 +108,6 @@ public class Plate : MonoBehaviour
         if (roundFinished) return;
         roundFinished = true;
 
-        Debug.Log("Plate " + plateID + " won!");
-
-       
         if (GameManager.instance != null)
             GameManager.instance.PlateWon(plateID);
 
@@ -118,11 +119,15 @@ public class Plate : MonoBehaviour
             nextButton.SetActive(true);
             StartCoroutine(SelectNextButton());
         }
+
+        // If last round, tell FinalRoundManager to show winner
+        if (isFinalRound && finalRoundManager != null)
+            finalRoundManager.ShowWinner();
     }
 
     IEnumerator SelectNextButton()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.3f);
         if (eventSystem != null)
             eventSystem.SetSelectedGameObject(nextButton);
     }

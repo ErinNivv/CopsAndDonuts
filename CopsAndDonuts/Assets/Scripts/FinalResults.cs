@@ -2,32 +2,26 @@ using UnityEngine;
 
 public class FinalResults : MonoBehaviour
 {
-    public GameObject player1Panel;
-    public GameObject player2Panel;
-    public GameObject player3Panel;
+    public GameObject greenWinPanel;
+    public GameObject blueWinPanel;
+    public GameObject redWinPanel;
     public GameObject tiePanel;
 
-    void Start()
+    public void ShowWinner()
     {
         int p1 = GameManager.instance.player1Score;
         int p2 = GameManager.instance.player2Score;
         int p3 = GameManager.instance.player3Score;
 
+        Debug.Log("Final scores — P1: " + p1 + " P2: " + p2 + " P3: " + p3);
+
         if (p1 > p2 && p1 > p3)
-        {
-            player1Panel.SetActive(true);
-        }
+            greenWinPanel.SetActive(true);
         else if (p2 > p1 && p2 > p3)
-        {
-            player2Panel.SetActive(true);
-        }
+            blueWinPanel.SetActive(true);
         else if (p3 > p1 && p3 > p2)
-        {
-            player3Panel.SetActive(true);
-        }
+            redWinPanel.SetActive(true);
         else
-        {
             tiePanel.SetActive(true);
-        }
     }
 }

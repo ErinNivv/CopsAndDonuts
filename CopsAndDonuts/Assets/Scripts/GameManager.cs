@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     private PlayerInputManager playerInputManager;
     public GameObject pressPanel;
 
+    
     void Awake()
     {
         if (instance == null)
@@ -70,18 +71,20 @@ public class GameManager : MonoBehaviour
 
     public void PlateWon(int plateID)
     {
-        if (plateID == 0)
-            player1Score++;
-        else if (plateID == 1)
-            player2Score++;
-        else if (plateID == 2)
-            player3Score++;
+        if (plateID == 0) player1Score++;
+        else if (plateID == 1) player2Score++;
+        else if (plateID == 2) player3Score++;
 
-        Debug.Log("Plate " + plateID + " won! Scores — P1: " + player1Score + " P2: " + player2Score + " P3: " + player3Score);
+        Debug.Log("Round " + currentRound + " of " + totalRounds + " complete");
 
         currentRound++;
 
-        if (currentRound > totalRounds)
-            SceneManager.LoadScene("FinalScene");
+        //if (currentRound > totalRounds)
+        //{
+        //    Debug.Log("All rounds done — loading FinalpANEL");
+        //    ShowWinner();
+        //}
     }
+
+  
 }
