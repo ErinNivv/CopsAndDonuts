@@ -29,8 +29,9 @@ public class CharacterSelectionManager : MonoBehaviour
     private bool[] playerLocked;
     private float[] scrollTimers;
     private Gamepad[] gamepads;
-   
 
+    public AudioSource sceneSrc;
+    public AudioClip selectionSfx;
     
 
     private void Awake()
@@ -105,6 +106,7 @@ public class CharacterSelectionManager : MonoBehaviour
         }
 
         playerLocked[playerIndex] = true;
+        sceneSrc.PlayOneShot(selectionSfx);
         GameSessionData.SetDevice(playerIndex, gp); // save which controller this was
         playerPanels[playerIndex].ShowLocked(characters[charIdx]);
         CheckAllLocked();

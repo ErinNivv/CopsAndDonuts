@@ -32,6 +32,9 @@ public class Plate : MonoBehaviour
 
     private bool roundFinished = false;
 
+    [SerializeField] private AudioSource sceneSrc;
+    [SerializeField] private AudioClip placeSfx;
+
     private void Awake()
     {
         donutsOnPlate = new GameObject[donutSpots.Length];
@@ -66,6 +69,8 @@ public class Plate : MonoBehaviour
                     originalScale.y / donutSpots[i].lossyScale.y,
                     originalScale.z / donutSpots[i].lossyScale.z
                 );
+
+                sceneSrc.PlayOneShot(placeSfx);
 
                 SpriteRenderer sr = donut.GetComponent<SpriteRenderer>();
                 if (sr != null) sr.sortingOrder = 5;
