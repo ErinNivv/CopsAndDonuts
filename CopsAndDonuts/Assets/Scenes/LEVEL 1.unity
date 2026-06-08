@@ -499,6 +499,8 @@ MonoBehaviour:
   blueWinPanel: {fileID: 0}
   redWinPanel: {fileID: 0}
   tiePanel: {fileID: 1786079528}
+  sceneSrc: {fileID: 0}
+  winSfx: {fileID: 0}
 --- !u!1 &200988085
 GameObject:
   m_ObjectHideFlags: 0
@@ -5088,8 +5090,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
-  m_fontSizeBase: 100
+  m_fontSize: 82.55
+  m_fontSizeBase: 82.55
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6587,7 +6589,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2016809619301173969, guid: 5b6ef4ad4db7a2c48bf35de9c586284a, type: 3}
+  m_Sprite: {fileID: -6541366929006808883, guid: f17c70f585c915840a0368d0fabc86cc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6790,7 +6792,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2016809619301173969, guid: 5b6ef4ad4db7a2c48bf35de9c586284a, type: 3}
+  m_Sprite: {fileID: -6541366929006808883, guid: f17c70f585c915840a0368d0fabc86cc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
