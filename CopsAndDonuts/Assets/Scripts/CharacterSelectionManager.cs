@@ -75,6 +75,34 @@ public class CharacterSelectionManager : MonoBehaviour
         HandleStartGame();
     }
 
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "Player Selection")
+        {
+            selectedCharacterIndex = new int[3];
+            playerLocked = new bool[3];
+            scrollTimers = new float[3];
+
+            if (startPromptObject != null)
+                startPromptObject.SetActive(false);
+
+            PlayerSelectionPanel[] panels = FindObjectsByType<PlayerSelectionPanel>(FindObjectsSortMode.None);
+            if (panels.Length == 3)
+            {
+                playerPanels = panels;
+                Debug.Log("Re-found 3 PlayerSelectionPanels");
+            }
+
+            CacheGamepads();
+
+            for (int i = 0; i < 3; i++)
+            {
+                selectedCharacterIndex[i] = i < characters.Length ? i : 0;
+                RefreshPanel(i);
+            }
+        }
+    }
+
     private void HandleScroll(int playerIndex, Gamepad gp)
     {
         scrollTimers[playerIndex] -= Time.deltaTime;

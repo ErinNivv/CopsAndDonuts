@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerControls : MonoBehaviour
@@ -127,6 +128,17 @@ public class PlayerControls : MonoBehaviour
         instance = this;
         DontDestroyOnLoad(gameObject);
         currentFriction = 0.1f;
+    }
+
+    void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode mode)
+    {
+        if (heldDonut != null)
+        {
+            heldDonut.transform.SetParent(null);
+            Destroy(heldDonut);
+            heldDonut = null;
+            Debug.Log("Dropped and destroyed held donut on scene load");
+        }
     }
 
     public void Move(InputAction.CallbackContext context)
@@ -266,6 +278,8 @@ public class PlayerControls : MonoBehaviour
         heldDonut.transform.SetParent(null);
         heldDonut = null;
     }
+
+  
 
     public void OpenDoor(InputAction.CallbackContext context)
     {

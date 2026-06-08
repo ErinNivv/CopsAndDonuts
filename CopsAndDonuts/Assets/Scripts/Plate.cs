@@ -76,7 +76,10 @@ public class Plate : MonoBehaviour
                 if (sr != null) sr.sortingOrder = 5;
 
                 if (CountDonuts() >= winAmount)
+                {
                     Win();
+
+                }
 
                 return true;
             }

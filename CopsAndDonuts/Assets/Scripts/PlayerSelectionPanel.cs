@@ -28,6 +28,7 @@ public class PlayerSelectionPanel : MonoBehaviour
         if (takenIndicator != null) takenIndicator.gameObject.SetActive(false);
     }
 
+
     public void UpdateDisplay(CharacterData data, bool isTaken)
     {
         if (characterPortrait != null && data.portrait != null)
