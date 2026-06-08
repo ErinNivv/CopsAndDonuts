@@ -27,4 +27,10 @@ public static class GameSessionData
         }
         return null;
     }
+
+    public static void ResetData()
+    {
+        Players = new CharacterData[3];
+        Devices = new InputDevice[3];
+    }
 }

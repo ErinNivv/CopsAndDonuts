@@ -80,9 +80,23 @@ public class Buttons : MonoBehaviour
 
     public void Home()
     {
-        SceneManager.LoadScene("START");
-        Debug.Log("working home button");
+        Debug.Log("Home button pressed");
+        if (GameManager.instance != null)
+            GameManager.instance.ResetGame();
+        else
+            SceneManager.LoadScene("START");
     }
+
+    public void Quit()
+    {
+    Debug.Log("Home button pressed");
+    
+    #if UNITY_EDITOR
+    UnityEditor.EditorApplication.isPlaying = false;
+    #else
+    Application.Quit();
+    #endif
+     }
 
     public void Next()
     {

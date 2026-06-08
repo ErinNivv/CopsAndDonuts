@@ -37,17 +37,9 @@ public class GameManager : MonoBehaviour
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
-    void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, LoadSceneMode mode)
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-      
-        playerInputManager = FindObjectOfType<PlayerInputManager>();
-
-        //// Re-find pressPanel in the new scene
-        //if (pressPanel != null)
-        //{
-        //    pressPanel = null; // reset so it doesn't reference old scene object
-
-        //}
+        playerInputManager = FindFirstObjectByType<PlayerInputManager>();
     }
 
     void OnPlayerJoined(PlayerInput playerInput)
@@ -92,5 +84,27 @@ public class GameManager : MonoBehaviour
         //}
     }
 
-  
+    public void ResetGame()
+    {
+        player1Score = 0;
+        player2Score = 0;
+        player3Score = 0;
+        currentRound = 1;
+
+        GameSessionData.SetSelectedCharacters(null, null, null);
+
+        // Destroy all players
+        PlayerInput[] players = FindObjectsByType<PlayerInput>(FindObjectsSortMode.None);
+        foreach (PlayerInput player in players)
+        {
+            Destroy(player.gameObject);
+        }
+
+        Debug.Log("Game reset — loading START");
+        SceneManager.LoadScene("START");
+
+        // Destroy GameManager last so it doesn't carry over
+        Destroy(gameObject);
+    }
+
 }

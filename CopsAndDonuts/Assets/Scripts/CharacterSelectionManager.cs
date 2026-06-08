@@ -36,6 +36,7 @@ public class CharacterSelectionManager : MonoBehaviour
 
     private void Awake()
     {
+        //sceneSrc = GetComponent<AudioSource>();
         selectedCharacterIndex = new int[3];
         playerLocked = new bool[3];
         scrollTimers = new float[3];
@@ -79,6 +80,9 @@ public class CharacterSelectionManager : MonoBehaviour
     {
         if (scene.name == "Player Selection")
         {
+            // Re-find AudioSource in the fresh scene
+            sceneSrc = FindFirstObjectByType<AudioSource>();
+
             selectedCharacterIndex = new int[3];
             playerLocked = new bool[3];
             scrollTimers = new float[3];
@@ -134,7 +138,15 @@ public class CharacterSelectionManager : MonoBehaviour
         }
 
         playerLocked[playerIndex] = true;
-        sceneSrc.PlayOneShot(selectionSfx);
+        if (sceneSrc != null)
+        {
+            sceneSrc.PlayOneShot(selectionSfx);
+
+        }
+
+        
+
+
         GameSessionData.SetDevice(playerIndex, gp); // save which controller this was
         playerPanels[playerIndex].ShowLocked(characters[charIdx]);
         CheckAllLocked();
@@ -224,4 +236,6 @@ public class CharacterSelectionManager : MonoBehaviour
         if (gamepads == null || playerIndex >= gamepads.Length) return null;
         return gamepads[playerIndex];
     }
+
+
 }
