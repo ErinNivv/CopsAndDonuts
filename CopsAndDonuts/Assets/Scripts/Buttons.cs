@@ -80,8 +80,8 @@ public class Buttons : MonoBehaviour
 
     public void Home()
     {
-        Debug.Log("Home button pressed");
         SceneManager.LoadScene("START");
+        Debug.Log("working home button");
     }
 
     public void Next()

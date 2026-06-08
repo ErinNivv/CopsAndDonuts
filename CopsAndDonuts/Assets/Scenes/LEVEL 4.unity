@@ -8899,9 +8899,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c87e33650fa97024384e7a90ee6f66f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FinalResults
-  greenWinPanel: {fileID: 0}
-  blueWinPanel: {fileID: 0}
-  redWinPanel: {fileID: 0}
+  greenWinPanel: {fileID: 244482944}
+  blueWinPanel: {fileID: 495647466}
+  redWinPanel: {fileID: 2026780601}
   tiePanel: {fileID: 1652538875}
 --- !u!1 &1772566682
 GameObject:
@@ -9843,7 +9843,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 252836351}
+      - m_Target: {fileID: 1977480051}
         m_TargetAssemblyTypeName: Buttons, Assembly-CSharp
         m_MethodName: Home
         m_Mode: 1
